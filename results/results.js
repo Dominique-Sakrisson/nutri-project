@@ -4,7 +4,7 @@ var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
         labels: ['Calories VS. Goal', 'Carbs VS. Goal', 'Fats VS. Goal', 'Protein VS. Goal'],
-        responsive: true,
+       
         maintainAspectRatio: false,
         datasets: [{
             label: 'Current macro',
@@ -42,12 +42,15 @@ var myChart = new Chart(ctx, {
         }]
     },
     options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
+        layout: {
+
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
         }
     }
 });
