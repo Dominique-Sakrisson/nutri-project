@@ -87,7 +87,7 @@ export const foodData = [
         id: 7,
         name: 'wheat cracker',
         img: 'cracker.png',
-        serving: '6 crackers',
+        serving:'6 crackers',
         calories: 123,
         protein: 2.8,
         carbs: 20.3,
