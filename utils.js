@@ -1,4 +1,3 @@
-
 export function findById(array, id){
     for (let item of array){
         if (item.id === id) return item;
@@ -8,7 +7,6 @@ export function findById(array, id){
 export function renderTableRows(foodObject){
     const tableRow = document.createElement('tr');
     const tdFood = document.createElement('td');
-    console.log(foodObject.name);
     tdFood.textContent = foodObject.name;
     tableRow.append(tdFood);
 
@@ -30,3 +28,36 @@ export function renderTableRows(foodObject){
 
     return tableRow;
 }
+
+export function calculateTotalCalories(dayFoodData){
+    let totalCalories = 0;
+    for (let item of dayFoodData) {
+        totalCalories += item.calories;
+    }
+    return totalCalories;
+}
+
+export function calculateTotalFat(dayFoodData){
+    let totalFat = 0;
+    for (let item of dayFoodData) {
+        totalFat += item.fat;
+    }
+    return totalFat;
+}
+
+export function calculateTotalCarbs(dayFoodData){
+    let totalCarbs = 0;
+    for (let item of dayFoodData) {
+        totalCarbs += item.carbs;
+    }
+    return totalCarbs;
+}
+
+export function calculateTotalProtein(dayFoodData){
+    let totalProtein = 0;
+    for (let item of dayFoodData) {
+        totalProtein += item.protein;
+    }
+    return totalProtein;
+}
+
