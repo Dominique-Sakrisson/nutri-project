@@ -1,5 +1,5 @@
 import { getDayStorage, setDayStorage } from '../localStorage-utils.js';
-import { findById } from '../utils.js';
+import { calculateAllMacros, findById } from '../utils.js';
 
 export let dataTotals = [];
 
@@ -46,6 +46,8 @@ export function renderTableRows(userFoodObject, foodObject){
     
     addButton.addEventListener('click', () => {
         getDayStorage();
+        const userFoods = getDayStorage();
+        calculateAllMacros(userFoods);
         const foodToChange = findById(updatedFood, userFoodObject.id);
         foodToChange.consumed++;
         setDayStorage(updatedFood);
