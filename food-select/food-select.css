@@ -1,17 +1,26 @@
 .food-image{
-    height: 100px;
+    height: 3rem;
 }
-.product-stats{
+.food-facts{
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
 .food-list-item{
     display: flex;
     margin: 8px;
 }
-.products-div{
+.food-list-item:hover{
+    cursor: pointer;
+    
+}
+.food-div{
     width: 80%;
+}
+.food-list{
+    width: 500px;
+    position: relative;
+    margin: 0 auto;
 }
