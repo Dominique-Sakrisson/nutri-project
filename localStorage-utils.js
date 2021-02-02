@@ -27,7 +27,7 @@ export function getDayStorage() {
     const dayStorage = JSON.parse(stringDay);
 
     if (!stringDay) {
-        localStorage.setItem(USER, '[]');
+        localStorage.setItem(DAYUSERFOODS, '[]');
     }
     return dayStorage;
 }

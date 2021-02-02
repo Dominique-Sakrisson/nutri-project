@@ -4,30 +4,6 @@ export function findById(array, id){
     }
     return;
 }
-export function renderTableRows(foodObject){
-    const tableRow = document.createElement('tr');
-    const tdFood = document.createElement('td');
-    tdFood.textContent = foodObject.name;
-    tableRow.append(tdFood);
-
-    const tdCalorie = document.createElement('td');
-    tdCalorie.textContent = foodObject.calories;
-    tableRow.append(tdCalorie);
-
-    const tdProtein = document.createElement('td');
-    tdProtein.textContent = foodObject.protein;
-    tableRow.append(tdProtein);
-
-    const tdFat = document.createElement('td');
-    tdFat.textContent = foodObject.fat;
-    tableRow.append(tdFat);
-
-    const tdCarb = document.createElement('td');
-    tdCarb.textContent = foodObject.carbs;
-    tableRow.append(tdCarb);
-
-    return tableRow;
-}
 
 export function calculateTotalCalories(dayFoodData){
     let totalCalories = 0;

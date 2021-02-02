@@ -1,7 +1,11 @@
 import { foodData } from '../data.js';
-import { setDayStorage } from '../localStorage-utils.js';
-import { findById, renderTableRows } from '../utils.js';
+import { getDayStorage, setDayStorage } from '../localStorage-utils.js';
+import { findById } from '../utils.js';
+import { renderTableRows } from './food-log-utils.js';
+const resultsButton = document.getElementById('results-button');
+const endDayButton = document.getElementById('end-day-button');
 
+// const dayFoodData = getDayStorage();
 const testData = [
     {
         id: 1,
@@ -15,7 +19,8 @@ const testData = [
         category: 'fruit',
         isVegetarian: true,
         isPaleo: true,
-        isGlutenFree: true
+        isGlutenFree: true,
+        consumed: 2,
     },
     {
         id: 2,
@@ -29,7 +34,8 @@ const testData = [
         category: 'fruit',
         isVegetarian: true,
         isPaleo: true,
-        isGlutenFree: true
+        isGlutenFree: true,
+        consumed: 1,
     },
     {
         id: 3,
@@ -43,15 +49,26 @@ const testData = [
         category: 'fish',
         isVegetarian: false,
         isPaleo: true,
-        isGlutenFree: true
+        isGlutenFree: true,
+        consumed: 3,
     }
 ];
 
+setDayStorage(testData);
+const userFoods = getDayStorage();
+
 const table = document.getElementById('log-table');
 
-for (let food of testData){
-    const foodObject = findById(foodData, food.id);
-    let fullTableRow = renderTableRows(foodObject);
+for (let food of userFoods){
+    const foodObject = findById(userFoods, food.id);
+    let fullTableRow = renderTableRows(food, foodObject);
     table.append(fullTableRow);
 }
 setDayStorage(testData);
+
+resultsButton.addEventListener('click', () =>{
+    alert('clicked results');
+});
+endDayButton.addEventListener('click', () =>{
+    alert('clicked end day');
+});
