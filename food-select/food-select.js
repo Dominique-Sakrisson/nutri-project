@@ -1,6 +1,5 @@
 import { displayUserInfo } from '../display-user-info.js';
 import { getUserStorage } from '../localStorage-utils.js';
-import { foodData } from '../data.js';
 import { renderFood } from './renderfood.js';
 import { glutenFreeFoods, paleoFoods, vegetarianFoods } from './filter-functions.js';
 
@@ -24,19 +23,13 @@ function eventHandler(e) {
     } else if (e.target.value === 'gluten-free') {
         dietType = glutenFreeFoods;
     }
+
     for (let iterator of dietType) {
         const foodItem = renderFood(iterator);
         ul.append(foodItem);
     }
 }
 
-console.log(dietType);
-
-
-
 paleoButton.addEventListener('click', eventHandler);
 vegetarianButton.addEventListener('click', eventHandler);
 glutenFreeButton.addEventListener('click', eventHandler);
-
-
-
