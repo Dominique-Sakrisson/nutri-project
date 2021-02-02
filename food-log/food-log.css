@@ -1,0 +1,15 @@
+table {
+    width: fit-content;
+    text-align: center;
+}
+th {
+    font-size: 20px;
+    font-weight: bold;
+    width: fit-content;
+}
+td {
+    font-size: 20px;
+    padding: 5px;
+    margin: 5px;
+    border-bottom: 1px dotted black;
+}
