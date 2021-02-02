@@ -1,12 +1,22 @@
 import { getDayStorage } from './localStorage-utils.js';
 
 // const dayFoodData = getDayStorage();
-
-export function findById(array, id){
-    for (let item of array){
-        if (item.id === id) return item;
+export function findById2(array, id){
+    // console.log(array, id);
+    let item = {};
+    for (let i = 0; i < array.length; i++) {
+        if (array[i].id === id){
+            item = array[i];
+            
+        }
+        return item;
     }
-    return null;
+
+}
+export function findById(array, id){
+    for (let item of array)
+        if (item.id === id)
+            return item;
 }
 
 export function calculateTotalCalories(dayFoodData){
