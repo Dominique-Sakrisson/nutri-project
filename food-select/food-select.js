@@ -1,6 +1,5 @@
 import { displayUserInfo } from '../display-user-info.js';
 import { getUserStorage } from '../localStorage-utils.js';
-import { foodData } from '../data.js';
 import { renderFood } from './renderfood.js';
 import { glutenFreeFoods, paleoFoods, vegetarianFoods } from './filter-functions.js';
 
@@ -30,13 +29,6 @@ function eventHandler(e) {
     }
 }
 
-console.log(dietType);
-
-
-
 paleoButton.addEventListener('click', eventHandler);
 vegetarianButton.addEventListener('click', eventHandler);
 glutenFreeButton.addEventListener('click', eventHandler);
-
-
-
