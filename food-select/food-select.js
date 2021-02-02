@@ -23,6 +23,7 @@ function eventHandler(e) {
     } else if (e.target.value === 'gluten-free') {
         dietType = glutenFreeFoods;
     }
+
     for (let iterator of dietType) {
         const foodItem = renderFood(iterator);
         ul.append(foodItem);
