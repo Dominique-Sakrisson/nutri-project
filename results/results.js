@@ -8,13 +8,13 @@ topSection.append(button);
 
 button.addEventListener('click', (e) =>{
     e.preventDefault();
-    console.log(calculateTotalCalories(foodData));
+    //console.log(calculateTotalCalories(foodData));
 });
 
 
-var ctx = document.getElementById('myChart').getContext('2d');
-
-var myChart = new Chart(ctx, {
+const ctx = document.getElementById('myChart').getContext('2d');
+//eslint-disable-next-line no-undef
+myChart = new Chart(ctx, { 
     type: 'bar',
     data: {
         labels: ['Calories VS. Goal', 'Carbs VS. Goal', 'Fats VS. Goal', 'Protein VS. Goal'],
