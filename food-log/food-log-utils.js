@@ -47,7 +47,8 @@ export function renderTableRows(userFoodObject, foodObject){
     addButton.addEventListener('click', () => {
         getDayStorage();
         const userFoods = getDayStorage();
-        calculateAllMacros(userFoods);
+        dataTotals = calculateAllMacros(userFoods);
+        console.log(dataTotals);
         const foodToChange = findById(updatedFood, userFoodObject.id);
         foodToChange.consumed++;
         setDayStorage(updatedFood);
