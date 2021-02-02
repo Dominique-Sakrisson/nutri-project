@@ -1,3 +1,7 @@
+import { findById } from './utils.js';
+import { foodData } from './data.js';
+const data = foodData;
+
 export const USER = 'USER';
 export const DAYUSERFOODS = 'DAYUSERFOODS';
 export const WEEKUSERFOODS = 'WEEKUSERFOODS';
@@ -24,10 +28,12 @@ export function setDayStorage(array) {
 
 export function getDayStorage() {
     const stringDay = localStorage.getItem(DAYUSERFOODS);
-    const dayStorage = JSON.parse(stringDay);
+    let dayStorage = JSON.parse(stringDay);
 
     if (!stringDay) {
         localStorage.setItem(DAYUSERFOODS, '[]');
+
+        dayStorage = [];
     }
     return dayStorage;
 }
@@ -45,4 +51,30 @@ export function getWeekStorage() {
         localStorage.setItem(WEEKUSERFOODS, '[]');
     }
     return weekStorage;
+}
+
+export function addFoodToStorage(id) {
+    const storage = getDayStorage();
+
+    const selectedFood = findById(data, id);
+
+    if (localStorage.getItem(selectedFood)) {
+
+        selectedFood.quantity++;
+
+    } else {
+
+        const newSelection =
+        {
+            id: selectedFood.id,
+            name: selectedFood.name,
+            calories: selectedFood.calories,
+            protein: selectedFood.protein,
+            carbs: selectedFood.carbs,
+            fat: selectedFood.fat,
+            quantity: 1
+        };
+        storage.push(newSelection);
+    }
+    setDayStorage(storage);
 }
