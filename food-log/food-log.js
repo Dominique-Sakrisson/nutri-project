@@ -1,7 +1,7 @@
 // import { foodData } from '../data.js';
 import { getDayStorage, setDayStorage } from '../localStorage-utils.js';
 import { calculateAllMacros, findById } from '../utils.js';
-import { renderTableRows } from './food-log-utils.js';
+import { renderTableRows, dataTotals } from './food-log-utils.js';
 
 
 const resultsButton = document.getElementById('results-button');
@@ -67,7 +67,7 @@ for (let food of userFoods){
     table.append(fullTableRow);
 }
 
-const dataTotals = calculateAllMacros(userFoods);
+// const dataTotals = calculateAllMacros(userFoods);
 const totalsRow = document.createElement('tr');
 const tdBlank1 = document.createElement('td');
 const tdBlank2 = document.createElement('td');
@@ -76,7 +76,7 @@ const tdTotalCals = document.createElement('td');
 const tdTotalProtein = document.createElement('td');
 const tdTotalFat = document.createElement('td');
 const tdTotalCarbs = document.createElement('td');
-
+console.log(dataTotals);
 tdTotalCals.textContent = dataTotals[0];
 tdTotalProtein.textContent = dataTotals[3];
 tdTotalFat.textContent = dataTotals[2];

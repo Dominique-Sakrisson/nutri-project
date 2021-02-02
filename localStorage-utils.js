@@ -53,27 +53,28 @@ export function getWeekStorage() {
     return weekStorage;
 }
 
-export function addFoodToStorage(id) {
+export function addFoodToStorage(food) {
     const storage = getDayStorage();
 
-    const selectedFood = findById(data, id);
+    const selectedFood = findById(storage, food.id);
 
-    if (localStorage.getItem(selectedFood)) {
-
+    if (selectedFood) {
+        
         selectedFood.quantity++;
-
+        
     } else {
-
+        // console.log(selectedFood.id);
         const newSelection =
         {
-            id: selectedFood.id,
-            name: selectedFood.name,
-            calories: selectedFood.calories,
-            protein: selectedFood.protein,
-            carbs: selectedFood.carbs,
-            fat: selectedFood.fat,
-            quantity: 1
+            id: food.id,
+            name: food.name,
+            calories: food.calories,
+            protein: food.protein,
+            carbs: food.carbs,
+            fat: food.fat,
+            quantity: 1,
         };
+        
         storage.push(newSelection);
     }
     setDayStorage(storage);

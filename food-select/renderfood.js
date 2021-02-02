@@ -1,4 +1,4 @@
-import { addFoodToStorage } from '../localStorage-utils.js';
+import { addFoodToStorage, getDayStorage, setDayStorage } from '../localStorage-utils.js';
 
 export function renderFood(food) {
 
@@ -22,8 +22,7 @@ export function renderFood(food) {
     li.append(foodImage, foodFactsDiv);
 
     li.addEventListener('click', () => {
-
-        addFoodToStorage(food.id);
+        addFoodToStorage(food);
     });
 
     return li;
