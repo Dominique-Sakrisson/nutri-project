@@ -15,7 +15,7 @@
 <body>
     <header>
         <nav>
-            <ul>
+            <ul class="navbar">
                 <li><a href="./index.html">Homepage</a></li>
                 <li><a href="./food-select/index.html">Food Select</a></li>
                 <li><a href="./food-log/index.html">Food Log</a></li>
@@ -35,11 +35,18 @@
 
             <form>
                 <label for="fname">First name:</label><br>
-                <input type="text" id="fname" name="fname"><br>
+                <input type="text" id="fname" name="fname"><br><br>
                 <label for="lname">Last name:</label><br>
-                <input type="text" id="lname" name="lname"><br>
+                <input type="text" id="lname" name="lname"><br><br>
                 <label for="calories">Daily Calories Goal:</label><br>
-                <input type="text" id="calories" name="calories"></br>
+                <input type="text" id="calories" name="calories"></br><br>
+                <label for="diet-type">Preferred Diet-Type</label><br>
+                <select name="diet-type" id="diet-type">
+                    <option value="no-diet">None</option>
+                    <option value="paleo">Paleo</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="gluten-free">Gluten-Free</option>
+                </select><br><br>
                 <button type="submit" id="submit">Submit Here</button>
             </form>
         </section>
