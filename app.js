@@ -14,3 +14,12 @@ form.addEventListener('submit', (e) => {
     setUserStorage(user);
     window.location = './food-select';
 });
+
+var button = document.getElementById('submit');
+button.addEventListener("click", function () {
+    document.location.href = './food-select/index.html';
+
+
+
+})
+
