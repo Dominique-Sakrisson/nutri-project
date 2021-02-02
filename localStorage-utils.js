@@ -1,4 +1,4 @@
-import { findById, findById2 } from './utils.js';
+import { findById } from './utils.js';
 import { foodData } from './data.js';
 const data = foodData;
 
@@ -53,26 +53,28 @@ export function getWeekStorage() {
     return weekStorage;
 }
 
-export function addFoodToStorage(id) {
+export function addFoodToStorage(food) {
     const storage = getDayStorage();
-    const selectedFood = findById2(storage, id);
-    // console.log(selectedFood);
+
+    const selectedFood = findById(storage, food.id);
+
     if (selectedFood) {
         
         selectedFood.quantity++;
         
     } else {
-        console.log(selectedFood.id);
+        // console.log(selectedFood.id);
         const newSelection =
         {
-            id: selectedFood.id,
-            name: selectedFood.name,
-            calories: selectedFood.calories,
-            protein: selectedFood.protein,
-            carbs: selectedFood.carbs,
-            fat: selectedFood.fat,
+            id: food.id,
+            name: food.name,
+            calories: food.calories,
+            protein: food.protein,
+            carbs: food.carbs,
+            fat: food.fat,
             quantity: 1,
         };
+        
         storage.push(newSelection);
     }
     setDayStorage(storage);

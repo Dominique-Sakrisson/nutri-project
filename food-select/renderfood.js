@@ -22,11 +22,7 @@ export function renderFood(food) {
     li.append(foodImage, foodFactsDiv);
 
     li.addEventListener('click', () => {
-        const userFoods = getDayStorage();
-        userFoods.push(food);
-        setDayStorage(userFoods);
-        console.log(food.id);
-        addFoodToStorage(food.id);
+        addFoodToStorage(food);
     });
 
     return li;
