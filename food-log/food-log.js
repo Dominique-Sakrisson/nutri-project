@@ -1,9 +1,11 @@
-import { foodData } from '../data.js';
+// import { foodData } from '../data.js';
 import { getDayStorage, setDayStorage } from '../localStorage-utils.js';
-import { findById } from '../utils.js';
+import { calculateAllMacros, findById } from '../utils.js';
 import { renderTableRows } from './food-log-utils.js';
+
+
 const resultsButton = document.getElementById('results-button');
-const endDayButton = document.getElementById('end-day-button');
+
 
 // const dayFoodData = getDayStorage();
 const testData = [
@@ -64,11 +66,30 @@ for (let food of userFoods){
     let fullTableRow = renderTableRows(food, foodObject);
     table.append(fullTableRow);
 }
+
+const dataTotals = calculateAllMacros(userFoods);
+const totalsRow = document.createElement('tr');
+const tdBlank1 = document.createElement('td');
+const tdBlank2 = document.createElement('td');
+const tdBlank3 = document.createElement('td');
+const tdTotalCals = document.createElement('td');
+const tdTotalProtein = document.createElement('td');
+const tdTotalFat = document.createElement('td');
+const tdTotalCarbs = document.createElement('td');
+
+tdTotalCals.textContent = dataTotals[0];
+tdTotalProtein.textContent = dataTotals[3];
+tdTotalFat.textContent = dataTotals[2];
+tdTotalCarbs.textContent = dataTotals[1];
+
+totalsRow.append(tdBlank1, tdBlank2, tdBlank3, tdTotalCals, tdTotalProtein, tdTotalFat, tdTotalCarbs);
+// tdTotalCals.colspan = '3';
+
+table.append(totalsRow);
 setDayStorage(testData);
 
 resultsButton.addEventListener('click', () =>{
-    alert('clicked results');
-});
-endDayButton.addEventListener('click', () =>{
-    alert('clicked end day');
+    const updatedFood = getDayStorage();
+    setDayStorage(updatedFood);
+    window.location = '../results';
 });

@@ -1,6 +1,8 @@
 import { getDayStorage, setDayStorage } from '../localStorage-utils.js';
 import { findById } from '../utils.js';
 
+export let dataTotals = [];
+
 export function renderTableRows(userFoodObject, foodObject){
     const tableRow = document.createElement('tr');
     const updatedFood = getDayStorage();
@@ -8,6 +10,10 @@ export function renderTableRows(userFoodObject, foodObject){
     const addButton = document.createElement('button');
     addButton.textContent = '+';
     tableRow.append(addButton);
+
+    const subButton = document.createElement('button');
+    subButton.textContent = '-';
+    tableRow.append(subButton);
     
     const tdServings = document.createElement('td');
     tdServings.textContent = userFoodObject.consumed;
@@ -18,50 +24,63 @@ export function renderTableRows(userFoodObject, foodObject){
     tableRow.append(tdFood);
 
     const tdCalorie = document.createElement('td');
-    tdCalorie.textContent = foodObject.calories;
+    tdCalorie.textContent = foodObject.calories * userFoodObject.consumed;
     tableRow.append(tdCalorie);
 
     const tdProtein = document.createElement('td');
-    tdProtein.textContent = foodObject.protein;
+    tdProtein.textContent = (foodObject.protein * userFoodObject.consumed).toFixed(1);
     tableRow.append(tdProtein);
 
     const tdFat = document.createElement('td');
-    tdFat.textContent = foodObject.fat;
+    tdFat.textContent = (foodObject.fat * userFoodObject.consumed).toFixed(1);
     tableRow.append(tdFat);
 
     const tdCarb = document.createElement('td');
-    tdCarb.textContent = foodObject.carbs;
+    tdCarb.textContent = (foodObject.carbs * userFoodObject.consumed).toFixed(1);
     tableRow.append(tdCarb);
 
-        // let numServings = 0;
+    const delButton = document.createElement('button');
+    delButton.textContent = 'remove';
+    tableRow.append(delButton);
 
+    
     addButton.addEventListener('click', () => {
         getDayStorage();
         const foodToChange = findById(updatedFood, userFoodObject.id);
-        console.log(foodToChange);
         foodToChange.consumed++;
         setDayStorage(updatedFood);
         getDayStorage();
-        tdServings.textContent = userFoodObject.consumed;
+        tdServings.textContent = foodToChange.consumed;
+        tdCalorie.textContent = foodObject.calories * foodToChange.consumed;
+        tdProtein.textContent = (foodObject.protein * foodToChange.consumed).toFixed(1);
+        tdFat.textContent = (foodObject.fat * foodToChange.consumed).toFixed(1);
+        tdCarb.textContent = (foodObject.carbs * foodToChange.consumed).toFixed(1);
+    });
+    
+    
+    subButton.addEventListener('click', () => {
+        const foodToChange = findById(updatedFood, userFoodObject.id);
+        let numServings = foodToChange.consumed;
+        if (numServings < 1) return null;
+        else {
+            getDayStorage();
+            foodToChange.consumed--;
+            numServings--;
+            setDayStorage(updatedFood);
+            getDayStorage();
+            tdServings.textContent = foodToChange.consumed;
+            tdCalorie.textContent = foodObject.calories * foodToChange.consumed;
+            tdProtein.textContent = (foodObject.protein * foodToChange.consumed).toFixed(1);
+            tdFat.textContent = (foodObject.fat * foodToChange.consumed).toFixed(1);
+            tdCarb.textContent = (foodObject.carbs * foodToChange.consumed).toFixed(1);
+        }
             
     });
-      
-        // const subButton = document.createElement('button');
-        // subButton.textContent = '-';
-        // tableRow.append(subButton);
-        // subButton.addEventListener('click', () => {
-        //     if (numServings < 1) return null;
-        //     else {
-        //         getDayStorage();
-        //         const foodToChange = findById(updatedFood, userFoodObject.id);
-        //         console.log(foodToChange);
-        //         foodToChange.consumed--;
-        //         setDayStorage(updatedFood);
-        //         getDayStorage();
-        //         window.location.reload();
-        //     }
-            
-        // });
+
+    delButton.addEventListener('click', () => {
+        tableRow.remove();
+
+    });
 
     return tableRow;
 }

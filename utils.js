@@ -1,39 +1,52 @@
+import { getDayStorage } from './localStorage-utils.js';
+
+// const dayFoodData = getDayStorage();
+
 export function findById(array, id){
     for (let item of array){
         if (item.id === id) return item;
     }
-    return;
+    return null;
 }
 
 export function calculateTotalCalories(dayFoodData){
     let totalCalories = 0;
     for (let item of dayFoodData) {
-        totalCalories += item.calories;
+        totalCalories += item.calories * item.consumed; //update with right key name later
     }
-    return totalCalories;
+    return totalCalories.toFixed(1);
 }
 
 export function calculateTotalFat(dayFoodData){
     let totalFat = 0;
     for (let item of dayFoodData) {
-        totalFat += item.fat;
+        totalFat += item.fat * item.consumed; //update with right key name later
     }
-    return totalFat;
+    return totalFat.toFixed(1);
 }
 
 export function calculateTotalCarbs(dayFoodData){
     let totalCarbs = 0;
     for (let item of dayFoodData) {
-        totalCarbs += item.carbs;
+        totalCarbs += item.carbs * item.consumed; //update with right key name later
     }
-    return totalCarbs;
+    return totalCarbs.toFixed(1);
 }
 
 export function calculateTotalProtein(dayFoodData){
     let totalProtein = 0;
     for (let item of dayFoodData) {
-        totalProtein += item.protein;
+        totalProtein += item.protein * item.consumed; //update with right key name later
     }
-    return totalProtein;
+    return totalProtein.toFixed(1);
 }
 
+export function calculateAllMacros(dayFoodData){
+    let dataToReturn = [];
+    dataToReturn.push(calculateTotalCalories(dayFoodData));
+    dataToReturn.push(calculateTotalCarbs(dayFoodData));
+    dataToReturn.push(calculateTotalFat(dayFoodData));
+    dataToReturn.push(calculateTotalProtein(dayFoodData));
+    
+    return dataToReturn;
+}
