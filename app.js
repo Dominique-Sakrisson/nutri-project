@@ -18,4 +18,8 @@ form.addEventListener('submit', (e) => {
 var button = document.getElementById('submit');
 button.addEventListener("click", function () {
     document.location.href = './food-select/index.html';
+
+
+
 })
+
