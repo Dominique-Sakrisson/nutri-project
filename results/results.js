@@ -1,5 +1,8 @@
-import { calculateTotalCalories } from '../utils.js';
+import { calculateTotalCalories, calculateTotalCarbs, calculateTotalFat, calculateTotalProtein } from '../utils.js';
 import { foodData } from '../data.js';
+import { getDayStorage, USER } from '../localStorage-utils.js';
+
+const dayFoodData = getDayStorage();
 
 const topSection = document.querySelector('.top-section');
 const button = document.createElement('button');
@@ -8,8 +11,9 @@ topSection.append(button);
 
 button.addEventListener('click', (e) =>{
     e.preventDefault();
-    //console.log(calculateTotalCalories(foodData));
+    console.log(dayFoodData);
 });
+
 
 
 const ctx = document.getElementById('myChart').getContext('2d');
@@ -17,12 +21,12 @@ const ctx = document.getElementById('myChart').getContext('2d');
 myChart = new Chart(ctx, { 
     type: 'bar',
     data: {
-        labels: ['Calories VS. Goal', 'Carbs VS. Goal', 'Fats VS. Goal', 'Protein VS. Goal'],
+        labels: ['Calories VS. Goal', 'Carbs VS. Goal', 'Fat VS. Goal', 'Protein VS. Goal'],
        
         maintainAspectRatio: false,
         datasets: [{
             label: 'Current macro',
-            data: [6, 14, 1, 2],
+            data: [calculateTotalCalories(dayFoodData), calculateTotalCarbs(dayFoodData) * 4, calculateTotalFat(dayFoodData) * 4, calculateTotalProtein(dayFoodData) * 4],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.8)',
                 'rgba(54, 162, 235, 0.8)',
