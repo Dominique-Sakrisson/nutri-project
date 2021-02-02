@@ -1,3 +1,17 @@
+import { calculateTotalCalories } from '../utils.js';
+import { foodData } from '../data.js';
+
+const topSection = document.querySelector('.top-section');
+const button = document.createElement('button');
+button.textContent = 'press me!';
+topSection.append(button);
+
+button.addEventListener('click', (e) =>{
+    e.preventDefault();
+    console.log(calculateTotalCalories(foodData));
+});
+
+
 var ctx = document.getElementById('myChart').getContext('2d');
 
 var myChart = new Chart(ctx, {
