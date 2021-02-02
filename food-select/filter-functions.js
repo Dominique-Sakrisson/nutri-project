@@ -8,4 +8,4 @@ export const paleoFoods = foodData.filter((item) => {
 });
 export const glutenFreeFoods = foodData.filter((item) => {
     return item.isGlutenFree;
-});
+}); 

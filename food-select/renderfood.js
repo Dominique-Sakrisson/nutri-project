@@ -10,6 +10,7 @@ export function renderFood(food) {
     const foodFactsDiv = document.createElement('div');
     foodFactsDiv.classList.add('food-facts');
     foodFactsDiv.innerHTML = 
+
         `<span>${food.name}</span>
         <span>${food.serving}</span>
         <span>calories: ${food.calories}</span>
@@ -17,7 +18,9 @@ export function renderFood(food) {
         <span>carbohydrates: ${food.carbs}</span>`;
     
     li.append(foodImage, foodFactsDiv);
-
+    li.addEventListener('click', ()=>{
+        
+    });
     return li;
 
 }
