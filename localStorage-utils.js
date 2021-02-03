@@ -1,6 +1,4 @@
 import { findById } from './utils.js';
-import { foodData } from './data.js';
-const data = foodData;
 
 export const USER = 'USER';
 export const DAYUSERFOODS = 'DAYUSERFOODS';

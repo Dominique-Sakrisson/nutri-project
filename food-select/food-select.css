@@ -11,16 +11,17 @@
 .food-list-item{
     display: flex;
     margin: 8px;
+    transition: 200ms ease-in-out;
 }
 .food-list-item:hover{
     cursor: pointer;
-    transform: scale(1.2);
+    transform: scale(1.1);
     
 }
 .food-div{
     width: 80%;
     overflow: scroll;
-    height: 400px;
+    height: 500px;
 }
 .food-list{
     width: 500px;

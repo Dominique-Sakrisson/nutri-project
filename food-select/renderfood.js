@@ -1,4 +1,7 @@
-import { addFoodToStorage, getDayStorage, setDayStorage } from '../localStorage-utils.js';
+import { addFoodToStorage, getDayStorage, getUserStorage } from '../localStorage-utils.js';
+import { calculateTotalCalories } from '../utils.js';
+const userFood = getDayStorage();
+const userData = getUserStorage();
 
 export function renderFood(food) {
 
@@ -22,8 +25,32 @@ export function renderFood(food) {
     li.append(foodImage, foodFactsDiv);
 
     li.addEventListener('click', () => {
+        getDayStorage();
+        const updatedUserFood = getDayStorage();
         addFoodToStorage(food);
+        userActual.textContent = `Current Calories: ${calculateTotalCalories(updatedUserFood)} ` ;
     });
 
     return li;
 }
+
+const userStatsDiv = document.getElementById('user-info-container');
+const userName = document.createElement('span');
+const userCalGoal = document.createElement('span');
+const userActual = document.createElement('span');
+
+displayUserInfo(userData);
+export function displayUserInfo(user) {
+    // const userName = document.createElement('span');
+    userName.classList.add('user-name');
+    userName.textContent = `${user.firstName} ${user.lastName}`;
+
+    // const userCalGoal = document.createElement('span');
+    userCalGoal.textContent = `Calorie Goal: ${user.dailyCalories}`;
+
+    // const userActual = document.createElement('span');
+    userActual.textContent = `Current Calories: ${calculateTotalCalories(userFood)}`;
+
+    userStatsDiv.append(userName, userCalGoal, userActual);
+}
+
