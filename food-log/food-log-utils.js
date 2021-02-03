@@ -1,4 +1,5 @@
-import { getDayStorage, setDayStorage } from '../localStorage-utils.js';
+import { foodData } from '../data.js';
+import { getDayStorage, getUserStorage, setDayStorage } from '../localStorage-utils.js';
 import { calculateAllMacros, findById } from '../utils.js';
 
 export let dataTotals = [];
@@ -48,39 +49,45 @@ export function renderTableRows(userFoodObject, foodObject){
         getDayStorage();
         const userFoods = getDayStorage();
         dataTotals = calculateAllMacros(userFoods);
-        console.log(dataTotals);
         const foodToChange = findById(updatedFood, userFoodObject.id);
-        foodToChange.consumed++;
+        foodToChange.quantity++;
         setDayStorage(updatedFood);
         getDayStorage();
-        tdServings.textContent = foodToChange.consumed;
-        tdCalorie.textContent = foodObject.calories * foodToChange.consumed;
-        tdProtein.textContent = (foodObject.protein * foodToChange.consumed).toFixed(1);
-        tdFat.textContent = (foodObject.fat * foodToChange.consumed).toFixed(1);
-        tdCarb.textContent = (foodObject.carbs * foodToChange.consumed).toFixed(1);
+        tdServings.textContent = foodToChange.quantity;
+        tdCalorie.textContent = foodObject.calories * foodToChange.quantity;
+        tdProtein.textContent = (foodObject.protein * foodToChange.quantity).toFixed(1);
+        tdFat.textContent = (foodObject.fat * foodToChange.quantity).toFixed(1);
+        tdCarb.textContent = (foodObject.carbs * foodToChange.quantity).toFixed(1);
     });
     
     
     subButton.addEventListener('click', () => {
         const foodToChange = findById(updatedFood, userFoodObject.id);
-        let numServings = foodToChange.consumed;
+        let numServings = foodToChange.quantity;
         if (numServings < 1) return null;
         else {
             getDayStorage();
-            foodToChange.consumed--;
+            foodToChange.quantity--;
             numServings--;
             setDayStorage(updatedFood);
             getDayStorage();
-            tdServings.textContent = foodToChange.consumed;
-            tdCalorie.textContent = foodObject.calories * foodToChange.consumed;
-            tdProtein.textContent = (foodObject.protein * foodToChange.consumed).toFixed(1);
-            tdFat.textContent = (foodObject.fat * foodToChange.consumed).toFixed(1);
-            tdCarb.textContent = (foodObject.carbs * foodToChange.consumed).toFixed(1);
+            tdServings.textContent = foodToChange.quantity;
+            tdCalorie.textContent = foodObject.calories * foodToChange.quantity;
+            tdProtein.textContent = (foodObject.protein * foodToChange.quantity).toFixed(1);
+            tdFat.textContent = (foodObject.fat * foodToChange.quantity).toFixed(1);
+            tdCarb.textContent = (foodObject.carbs * foodToChange.quantity).toFixed(1);
         }
             
     });
 
     delButton.addEventListener('click', () => {
+        const userFoods = getDayStorage();
+        const foodToChange = findById(userFoods, userFoodObject.id);
+        const index = userFoods.indexOf(foodToChange);
+        console.log(index);
+        console.log(userFoods);
+        userFoods.splice(index, 1);
+        setDayStorage(userFoods);
         tableRow.remove();
 
     });

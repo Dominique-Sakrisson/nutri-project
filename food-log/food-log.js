@@ -1,60 +1,11 @@
 // import { foodData } from '../data.js';
-import { getDayStorage, setDayStorage } from '../localStorage-utils.js';
+import { getDayStorage, setDayStorage, setUserStorage } from '../localStorage-utils.js';
 import { calculateAllMacros, findById } from '../utils.js';
 import { renderTableRows, dataTotals } from './food-log-utils.js';
 
 
 const resultsButton = document.getElementById('results-button');
-
-
- const dayFoodData = getDayStorage();
-// const testData = [
-//     {
-//         id: 1,
-//         name: 'apple',
-//         img: 'apple.png',
-//         serving: '1 fruit',
-//         calories: 95,
-//         protein: .5,
-//         carbs: 25,
-//         fat: .3,
-//         category: 'fruit',
-//         isVegetarian: true,
-//         isPaleo: true,
-//         isGlutenFree: true,
-//         consumed: 2,
-//     },
-//     {
-//         id: 2,
-//         name: 'banana',
-//         img: 'banana.png',
-//         serving: '1 fruit',
-//         calories: 105,
-//         protein: 1.3,
-//         carbs: 27,
-//         fat: .4,
-//         category: 'fruit',
-//         isVegetarian: true,
-//         isPaleo: true,
-//         isGlutenFree: true,
-//         consumed: 1,
-//     },
-//     {
-//         id: 3,
-//         name: 'salmon',
-//         img: 'salmon.png',
-//         serving: '1oz',
-//         calories: 52,
-//         protein: 7.2,
-//         carbs: 0,
-//         fat: 2.3,
-//         category: 'fish',
-//         isVegetarian: false,
-//         isPaleo: true,
-//         isGlutenFree: true,
-//         consumed: 3,
-//     }
-// ];
+const clearButton = document.getElementById('clear-button');
 
 const userFoods = getDayStorage();
 setDayStorage(userFoods);
@@ -76,7 +27,6 @@ const tdTotalCals = document.createElement('td');
 const tdTotalProtein = document.createElement('td');
 const tdTotalFat = document.createElement('td');
 const tdTotalCarbs = document.createElement('td');
-console.log(dataTotals);
 tdTotalCals.textContent = dataTotals[0];
 tdTotalProtein.textContent = dataTotals[3];
 tdTotalFat.textContent = dataTotals[2];
@@ -92,4 +42,11 @@ resultsButton.addEventListener('click', () =>{
     const updatedFood = getDayStorage();
     setDayStorage(updatedFood);
     window.location = '../results';
+});
+
+clearButton.addEventListener('click', () => {
+
+    setDayStorage([]);
+    const userFoods = getDayStorage;
+    renderTableRows(userFoods);
 });
