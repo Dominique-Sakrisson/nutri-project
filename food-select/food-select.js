@@ -33,7 +33,7 @@ recallFoodList();
 const topSection = document.querySelector('.top-section');
 const span = document.createElement('span');
 for (let item of instructions){
-    if (item.name === 'homePage'){
+    if (item.name === 'foodPageMain'){
         span.textContent = item.description;
     }
 }

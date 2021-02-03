@@ -137,3 +137,9 @@ button:hover{
     background: green;
     color: white;
 }
+
+button:selected{
+    background-origin: transparent;
+    background: green;
+    color: white;
+}
