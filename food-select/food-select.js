@@ -1,4 +1,3 @@
-import { displayUserInfo } from '../display-user-info.js';
 import { getUserStorage } from '../localStorage-utils.js';
 import { renderFood } from './renderfood.js';
 import { glutenFreeFoods, paleoFoods, vegetarianFoods } from './filter-functions.js';
@@ -10,7 +9,7 @@ const paleoButton = document.getElementById('paleo-button');
 const vegetarianButton = document.getElementById('vegetarian-button');
 const glutenFreeButton = document.getElementById('gluten-free-button');
 
-displayUserInfo(user); //this is the user stats display
+
 
 let dietType = [];
 
@@ -29,7 +28,6 @@ for (let iterator of dietType) {
     ul.append(foodItem);
 }
 
-
 function eventHandler(e) {
     ul.textContent = '';
 
@@ -46,7 +44,6 @@ function eventHandler(e) {
         ul.append(foodItem);
     }
 }
-
 paleoButton.addEventListener('click', eventHandler);
 vegetarianButton.addEventListener('click', eventHandler);
 glutenFreeButton.addEventListener('click', eventHandler);
