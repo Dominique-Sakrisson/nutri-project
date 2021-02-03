@@ -50,3 +50,14 @@ function eventHandler(e) {
 paleoButton.addEventListener('click', eventHandler);
 vegetarianButton.addEventListener('click', eventHandler);
 glutenFreeButton.addEventListener('click', eventHandler);
+
+
+/*
+---working on this
+function generateSearchBar(){
+    const searchInput = document.createElementElement('input');
+    searchInput.setAttribute('name', 'search-input');
+
+
+}
+*/
