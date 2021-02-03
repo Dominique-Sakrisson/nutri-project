@@ -28,3 +28,11 @@
     position: relative;
     margin: 0 auto;
 }
+
+.search-div{
+    background-color: rgba(0,0,0, .4);
+    text-align: center;
+    border-radius: 45px;
+
+    padding: 10px;
+}
