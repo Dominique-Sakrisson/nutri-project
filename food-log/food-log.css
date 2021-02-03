@@ -6,7 +6,7 @@ th {
     font-size: 30px;
     font-weight: bold;
     width: fit-content;
-    color: #007965;
+    color: #c19277;
 }
 td {
     font-size: 20px;
@@ -19,7 +19,7 @@ td {
 button {
     min-width: 25px;
     min-height: 25px;
-    background-color: #007965;
+    background-color: #62959c;
     color: white;
     font-size: 20px;
     border-radius: 5px;

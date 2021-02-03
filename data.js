@@ -813,3 +813,20 @@ export const foodData = [
     },
     
 ];
+
+export const instructions = [{
+    name: 'homePage',
+    description: 'You\'re well on your way to managing a healthy and personalized diet plan. The first step is to tell Nutri a little about yourself. Nutri likes to know the name of their friends, their goal caloric intake and any dietary restrictions.',
+},
+{
+    name: 'foodPageMain',
+    description: 'Here is where you will tell Nutri what foods it was you\'ve ate today.'
+},
+{
+    name: 'food-log',
+    description: 'Congratulations on adding some foods to your list, here is a breakdown of the foods you\'ve eaten today! You can edit your list on this page.'
+},
+{
+    name: 'resultsPage',
+    description: 'Congratulations on filling out you diet log!'
+}];

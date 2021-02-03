@@ -1,8 +1,19 @@
 // import functions and grab DOM elements
-import { foodData } from './data.js';
-import { setGlobalDataStorage, setUserStorage } from './localStorage-utils.js';
+import { setUserStorage, setGlobalDataStorage } from './localStorage-utils.js';
+import { instructions, foodData } from './data.js';
+
+const topSection = document.querySelector('.top-section');
+const span = document.createElement('span');
+for (let item of instructions){
+    if (item.name === 'homePage'){
+        span.textContent = item.description;
+    }
+}
+topSection.classList.add('instructions');
+topSection.append(span);
 
 const form = document.querySelector('form');
+
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();

@@ -1,16 +1,28 @@
 import { calculateTotalCalories, calculateTotalCarbs, calculateTotalFat, calculateTotalProtein } from '../utils.js';
-import { foodData } from '../data.js';
+import { foodData, instructions } from '../data.js';
 import { getDayStorage, getUserStorage } from '../localStorage-utils.js';
+
 
 const dayFoodData = getDayStorage();
 const user = getUserStorage(); 
 
 const topSection = document.querySelector('.top-section');
+const span = document.createElement('span');
+for (let item of instructions){
+    if (item.name === 'resultsPage'){
+        span.textContent = item.description;
+    }
+}
+topSection.classList.add('instructions');
+topSection.append(span);
+
+console.log(instructions);
+//span.textContent = instructions.name
 
 
 console.log(user.dailyCalories);
 const ctx = document.getElementById('myChart').getContext('2d');
-//eslint-disable-next-line no-undef
+/* jshint ignore:start*/
 const myChart = new Chart(ctx, { 
     type: 'bar',
     data: {
@@ -68,3 +80,4 @@ const myChart = new Chart(ctx, {
         }
     }
 });
+/* jshint ignore:end */
