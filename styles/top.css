@@ -1,10 +1,64 @@
-body {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(12, 1fr);
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Titillium Web', sans-serif;
+    --shadow: 0px 10px 20px -12px rgba(0,0,0,0.45);
+    --header-height: 80px;
+    --shadow: 0px 10px 20px -12px rgba(0,0,0,0.45);
+    --gutter: 30px;
+    --footer-height: 25px;
 }
+
 header {
-    grid-column: 1 / 12;
-    grid-row: 1 / 2;
+    display: flex;
+    justify-content: flex-end;
+    background-color: var(--color3);
+    height: var(--header-height);
+    box-shadow: var(--shadow);
+}
+/* header{
     width: 100%;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+} */
+
+
+.main-logo {
+    animation: pulse 5s infinite ease-in-out;
+}
+
+header img {
+    height: 80px;
+}
+
+
+nav {
+    text-align: right;
+    background: #0082e6;
+    height: 80px;
+    width: 100%;
+}
+
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+nav ul li a{
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+a.active, a:hover{
+    background: #1b9bff;
+    transition: .5s;
+
 }
