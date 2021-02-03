@@ -118,3 +118,22 @@ footer {
 
   }
 
+  .instructions {
+    background-color:rgb(135,191,86);
+    height: var(--header-height);
+    box-shadow: var(--shadow);
+   
+  }
+
+  button {
+    padding: 10px;
+    border: 2px solid green;
+    color: green; 
+    border-radius: 10%;
+    background: transparent;
+}
+button:hover{
+    background-origin: transparent;
+    background: green;
+    color: white;
+}

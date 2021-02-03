@@ -1,6 +1,7 @@
 import { getUserStorage } from '../localStorage-utils.js';
 import { renderFood } from './renderfood.js';
 import { glutenFreeFoods, paleoFoods, vegetarianFoods } from './filter-functions.js';
+import { instructions } from '../data.js';
 
 const ul = document.querySelector('.food-list');
 const user = getUserStorage();
@@ -24,6 +25,17 @@ searchDiv.append(searchLabelInstr, searchForm, clearSearchButton);
 console.log(user);
 
 recallFoodList();
+
+
+const topSection = document.querySelector('.top-section');
+const span = document.createElement('span');
+for (let item of instructions){
+    if (item.name === 'homePage'){
+        span.textContent = item.description;
+    }
+}
+topSection.append(span);
+topSection.classList.add('instructions');
 
 let keyDownString = '';
 searchInput.addEventListener('keydown', (e) => {
