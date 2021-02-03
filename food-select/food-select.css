@@ -30,4 +30,16 @@
     position: relative;
     margin: 0 auto;
 }
+.food-form {
+    
+    position: absolute;
+    left: -100px;
+    transition: left 500ms linear 100ms;
 
+}
+.food-form:hover{
+    left: 5px;
+}
+.food-form input:active {
+    left: 5px
+}
