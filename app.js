@@ -1,6 +1,6 @@
 // import functions and grab DOM elements
-import { setUserStorage } from './localStorage-utils.js';
-import { instructions } from './data.js';
+import { setUserStorage, setGlobalDataStorage } from './localStorage-utils.js';
+import { instructions, foodData } from './data.js';
 
 const topSection = document.querySelector('.top-section');
 const span = document.createElement('span');
@@ -26,10 +26,11 @@ form.addEventListener('submit', (e) => {
     };
     setUserStorage(user);
     window.location = './food-select';
+    setGlobalDataStorage(foodData);
 });
 
-var button = document.getElementById('submit');
-button.addEventListener('click', function () {
-    document.location.href = './food-select/index.html';
-});
+// var button = document.getElementById('submit');
+// button.addEventListener('click', function () {
+//     document.location.href = './food-select/';
+// });
 

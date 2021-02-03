@@ -1,7 +1,9 @@
-import { getUserStorage } from '../localStorage-utils.js';
+import { getGlobalDataStorage, getUserStorage, setGlobalDataStorage } from '../localStorage-utils.js';
 import { renderFood } from './renderfood.js';
 import { glutenFreeFoods, paleoFoods, vegetarianFoods } from './filter-functions.js';
 import { instructions } from '../data.js';
+
+let foodData = getGlobalDataStorage();
 
 const ul = document.querySelector('.food-list');
 const user = getUserStorage();
@@ -146,4 +148,33 @@ vegetarianButton.addEventListener('click', eventHandler);
 glutenFreeButton.addEventListener('click', eventHandler);
 
 
+const formElement = document.getElementById('add-custom-form');
+
+formElement.addEventListener('submit', (e)=>{
+    e.preventDefault(e);
+    const data = new FormData(formElement);
+    const id = data.get('id');
+    const name = data.get('name');
+    const img = data.get('img');
+    const serving = data.get('serving');
+    const calories = data.get('calories');
+    const protein = data.get('protein');
+    const carbs = data.get('carbs');
+    const fat = data.get('fat');
+    const category = data.get('category');
+
+    const newFood = {
+        id: Number(id),
+        name: name,
+        img: img,
+        serving: serving,
+        calories: Number(calories),
+        protein: Number(protein),
+        carbs: Number(carbs),
+        fat: Number(fat),
+        category: category,
+    };
+    foodData.push(newFood);
+    setGlobalDataStorage(foodData);
+});
 
