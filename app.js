@@ -24,6 +24,7 @@ form.addEventListener('submit', (e) => {
         dailyCalories: formdata.get('calories'),
         dietChoice: formdata.get('diet-type'),
     };
+    localStorage.clear();
     setUserStorage(user);
     window.location = './food-select';
     setGlobalDataStorage(foodData);
