@@ -1,12 +1,11 @@
-import { foodData } from '../data.js';
-import { getDayStorage, getUserStorage, setDayStorage } from '../localStorage-utils.js';
-import { calculateAllMacros, findById } from '../utils.js';
+import { getDayStorage, setDayStorage } from '../localStorage-utils.js';
+import { 
+    calculateTotalCalories, calculateTotalCarbs, calculateTotalFat, calculateTotalProtein, findById 
+} from '../utils.js';
 
-export let dataTotals = [];
 
 export function renderTableRows(userFoodObject, foodObject){
     const tableRow = document.createElement('tr');
-    const updatedFood = getDayStorage();
 
     const addButton = document.createElement('button');
     addButton.textContent = '+';
@@ -19,6 +18,12 @@ export function renderTableRows(userFoodObject, foodObject){
     const tdServings = document.createElement('td');
     tdServings.textContent = userFoodObject.quantity;
     tableRow.append(tdServings);
+
+    const tdImage = document.createElement('td');
+    const img = document.createElement('img');
+    tdImage.innerHTML = `<img src="../assets/${userFoodObject.img}" width="50px"></img>`;
+    tdImage.append(img);
+    tableRow.append(tdImage);
 
     const tdFood = document.createElement('td');
     tdFood.textContent = foodObject.name;
@@ -46,51 +51,80 @@ export function renderTableRows(userFoodObject, foodObject){
 
     
     addButton.addEventListener('click', () => {
-        getDayStorage();
-        const userFoods = getDayStorage();
-        dataTotals = calculateAllMacros(userFoods);
-        const foodToChange = findById(updatedFood, userFoodObject.id);
+        let userFoods = getDayStorage();
+        const foodToChange = findById(userFoods, userFoodObject.id);
         foodToChange.quantity++;
-        setDayStorage(updatedFood);
-        getDayStorage();
+        setDayStorage(userFoods);
+        userFoods = getDayStorage();
         tdServings.textContent = foodToChange.quantity;
         tdCalorie.textContent = foodObject.calories * foodToChange.quantity;
         tdProtein.textContent = (foodObject.protein * foodToChange.quantity).toFixed(1);
         tdFat.textContent = (foodObject.fat * foodToChange.quantity).toFixed(1);
         tdCarb.textContent = (foodObject.carbs * foodToChange.quantity).toFixed(1);
+        tdTotalCals.textContent = calculateTotalCalories(userFoods);
+        tdTotalProtein.textContent = calculateTotalProtein(userFoods);
+        tdTotalFat.textContent = calculateTotalFat(userFoods); 
+        tdTotalCarbs.textContent = calculateTotalCarbs(userFoods);  
     });
     
     
     subButton.addEventListener('click', () => {
-        const foodToChange = findById(updatedFood, userFoodObject.id);
+        let userFoods = getDayStorage();
+        const foodToChange = findById(userFoods, userFoodObject.id);
         let numServings = foodToChange.quantity;
         if (numServings < 1) return null;
         else {
             getDayStorage();
             foodToChange.quantity--;
             numServings--;
-            setDayStorage(updatedFood);
+            setDayStorage(userFoods);
             getDayStorage();
             tdServings.textContent = foodToChange.quantity;
             tdCalorie.textContent = foodObject.calories * foodToChange.quantity;
             tdProtein.textContent = (foodObject.protein * foodToChange.quantity).toFixed(1);
             tdFat.textContent = (foodObject.fat * foodToChange.quantity).toFixed(1);
             tdCarb.textContent = (foodObject.carbs * foodToChange.quantity).toFixed(1);
+            tdTotalCals.textContent = calculateTotalCalories(userFoods);
+            tdTotalProtein.textContent = calculateTotalProtein(userFoods);
+            tdTotalFat.textContent = calculateTotalFat(userFoods); 
+            tdTotalCarbs.textContent = calculateTotalCarbs(userFoods); 
         }
             
     });
 
     delButton.addEventListener('click', () => {
-        const userFoods = getDayStorage();
+        let userFoods = getDayStorage();
         const foodToChange = findById(userFoods, userFoodObject.id);
         const index = userFoods.indexOf(foodToChange);
-        console.log(index);
-        console.log(userFoods);
         userFoods.splice(index, 1);
-        setDayStorage(userFoods);
         tableRow.remove();
-
+        tdTotalCals.textContent = calculateTotalCalories(userFoods);
+        tdTotalProtein.textContent = calculateTotalProtein(userFoods);
+        tdTotalFat.textContent = calculateTotalFat(userFoods); 
+        tdTotalCarbs.textContent = calculateTotalCarbs(userFoods); 
+        setDayStorage(userFoods);
     });
 
     return tableRow;
+}
+
+const tdTotalCals = document.createElement('td');
+const totalsRow = document.createElement('tr');
+const tdBlank1 = document.createElement('td');
+const tdBlank2 = document.createElement('td');
+const tdBlank3 = document.createElement('td');
+const tdBlank4 = document.createElement('td');
+const tdTotalProtein = document.createElement('td');
+const tdTotalFat = document.createElement('td');
+const tdTotalCarbs = document.createElement('td');
+export function renderTotalRows(){
+    const userFoods = getDayStorage();
+    tdBlank4.textContent = 'TOTALS';
+    tdTotalCals.textContent = calculateTotalCalories(userFoods);
+    tdTotalProtein.textContent = calculateTotalProtein(userFoods);
+    tdTotalFat.textContent = calculateTotalFat(userFoods); 
+    tdTotalCarbs.textContent = calculateTotalCarbs(userFoods); 
+
+    totalsRow.append(tdBlank1, tdBlank2, tdBlank3, tdBlank4, tdTotalCals, tdTotalProtein, tdTotalFat, tdTotalCarbs);
+    return totalsRow;
 }
