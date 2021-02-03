@@ -23,7 +23,6 @@ searchForm.append(searchLabel, searchInput);
 searchDiv.append(searchLabelInstr, searchForm, clearSearchButton);
 console.log(user);
 
-
 recallFoodList();
 
 let keyDownString = '';
@@ -88,10 +87,25 @@ ul.textContent = '';
 
 if (userDiet === 'paleo') {
     dietType = paleoFoods;
+    paleoFoods.sort(function(a, b) {
+        if (a.name < b.name) { return -1; }
+        if (a.name > b.name) { return 1; }
+        return 0;
+    });
 } else if (userDiet === 'vegetarian') {
     dietType = vegetarianFoods;
+    vegetarianFoods.sort(function(a, b) {
+        if (a.name < b.name) { return -1; }
+        if (a.name > b.name) { return 1; }
+        return 0;
+    });
 } else if (userDiet === 'gluten-free') {
     dietType = glutenFreeFoods;
+    glutenFreeFoods.sort(function(a, b) {
+        if (a.name < b.name) { return -1; }
+        if (a.name > b.name) { return 1; }
+        return 0;
+    });
 }
 
 for (let iterator of dietType) {
