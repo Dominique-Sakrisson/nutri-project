@@ -12,6 +12,7 @@ const paleoButton = document.getElementById('paleo-button');
 const vegetarianButton = document.getElementById('vegetarian-button');
 const glutenFreeButton = document.getElementById('gluten-free-button');
 const showAllButon = document.getElementById('show-all');
+const toFoodLogButton = document.getElementById('to-food-log');
 
 const searchDiv = document.querySelector('.search-div');
 const searchForm = document.createElement('form');
@@ -189,4 +190,8 @@ formElement.addEventListener('submit', (e) => {
     };
     foodData.push(newFood);
     setGlobalDataStorage(foodData);
+});
+
+toFoodLogButton.addEventListener('click', () => {
+    window.location = '../food-log/';
 });
