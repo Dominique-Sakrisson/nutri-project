@@ -5,6 +5,8 @@ import { glutenFreeFoods, paleoFoods, vegetarianFoods } from './filter-functions
 
 const ul = document.querySelector('.food-list');
 const user = getUserStorage();
+const userDiet = user.dietChoice;
+console.log(userDiet);
 const paleoButton = document.getElementById('paleo-button');
 const vegetarianButton = document.getElementById('vegetarian-button');
 const glutenFreeButton = document.getElementById('gluten-free-button');
@@ -12,6 +14,22 @@ const glutenFreeButton = document.getElementById('gluten-free-button');
 displayUserInfo(user); //this is the user stats display
 
 let dietType = [];
+
+ul.textContent = '';
+
+if (userDiet === 'paleo') {
+    dietType = paleoFoods;
+} else if (userDiet === 'vegetarian') {
+    dietType = vegetarianFoods;
+} else if (userDiet === 'gluten-free') {
+    dietType = glutenFreeFoods;
+}
+
+for (let iterator of dietType) {
+    const foodItem = renderFood(iterator);
+    ul.append(foodItem);
+}
+
 
 function eventHandler(e) {
     ul.textContent = '';

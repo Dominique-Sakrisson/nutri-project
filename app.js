@@ -10,16 +10,14 @@ form.addEventListener('submit', (e) => {
         firstName: formdata.get('fname'),
         lastName: formdata.get('lname'),
         dailyCalories: formdata.get('calories'),
-    };
+        dietChoice: formdata.get('diet-type'),
+    }
     setUserStorage(user);
     window.location = './food-select';
 });
 
 var button = document.getElementById('submit');
-button.addEventListener("click", function () {
+button.addEventListener('click', function () {
     document.location.href = './food-select/index.html';
-
-
-
-})
+});
 
