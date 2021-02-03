@@ -2,6 +2,9 @@ import { getDayStorage, setDayStorage } from '../localStorage-utils.js';
 import { findById } from '../utils.js';
 import { renderTableRows, renderTotalRows } from './food-log-utils.js';
 import { instructions } from '../data.js';
+import { displayUserInfo } from '../display-user-info.js';
+import { getUserStorage } from '../localStorage-utils.js';
+const userData = getUserStorage();
 
 const table = document.getElementById('log-table');
 const resultsButton = document.getElementById('results-button');
@@ -42,3 +45,5 @@ clearButton.addEventListener('click', () => {
     table.textContent = '';
     window.location = '../food-select';
 });
+
+displayUserInfo(userData);

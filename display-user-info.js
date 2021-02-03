@@ -18,15 +18,3 @@ export function displayUserInfo(user) {
 
     userStatsDiv.append(userName, userCalGoal, userActual);
 }
-
-
-
-
-
-// function calculateTotalCalories (dayFoodData) {
-//     let totalCalories = 0;
-//     for (let item of dayFoodData) {
-//         totalCalories += item.calories * item.quantity; //update with right key name later
-//     }
-//     return totalCalories.toFixed(1);
-// }
