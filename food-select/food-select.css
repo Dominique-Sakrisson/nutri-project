@@ -1,3 +1,10 @@
+body.border{
+    background: transparent;
+    border-radius: 10%;
+    border-image: ;
+}
+
+
 .food-image{
     height: 3rem;
 }
