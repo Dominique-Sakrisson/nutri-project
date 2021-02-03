@@ -3,6 +3,23 @@ import { findById } from './utils.js';
 export const USER = 'USER';
 export const DAYUSERFOODS = 'DAYUSERFOODS';
 export const WEEKUSERFOODS = 'WEEKUSERFOODS';
+export const GLOBALDATA = 'GLOBALDATA';
+
+export function setGlobalDataStorage(array){
+    const stringData = JSON.stringify(array);
+    localStorage.setItem(GLOBALDATA, stringData);
+}
+export function getGlobalDataStorage() {
+    const stringData = localStorage.getItem(GLOBALDATA);
+    let dataStorage = JSON.parse(stringData);
+
+    // if (!stringData) {
+    //     localStorage.setItem(GLOBALDATA, '[]');
+
+    //     dataStorage = [];
+    // }
+    return dataStorage;
+}
 
 export function setUserStorage(array) {
     const stringUser = JSON.stringify(array);

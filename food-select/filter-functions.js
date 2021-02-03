@@ -1,4 +1,8 @@
-import { foodData } from '../data.js';
+// import { foodData } from '../data.js';
+import { getGlobalDataStorage } from '../localStorage-utils.js';
+
+const foodData = getGlobalDataStorage();
+console.log(foodData);
 
 export const vegetarianFoods = foodData.filter((item) => {
     return item.isVegetarian;
