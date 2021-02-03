@@ -102,7 +102,6 @@ for (let iterator of dietType) {
 
 function eventHandler(e) {
     ul.textContent = '';
-
     if (e.target.value === 'paleo') {
         dietType = paleoFoods;
     } else if (e.target.value === 'vegetarian') {
