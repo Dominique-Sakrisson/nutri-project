@@ -2,6 +2,7 @@
 import { setUserStorage, setGlobalDataStorage } from './localStorage-utils.js';
 import { instructions, foodData } from './data.js';
 
+
 const topSection = document.querySelector('.top-section');
 const span = document.createElement('span');
 for (let item of instructions){
