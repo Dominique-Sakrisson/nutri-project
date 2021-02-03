@@ -1,11 +1,11 @@
 import { calculateTotalCalories, calculateTotalCarbs, calculateTotalFat, calculateTotalProtein } from '../utils.js';
 import { foodData } from '../data.js';
-import { getDayStorage, USER } from '../localStorage-utils.js';
+import { getDayStorage,  getUserStorage } from '../localStorage-utils.js';
 
 const dayFoodData = getDayStorage();
 
 console.log(dayFoodData);
-
+console.log(getUserStorage());
 
 console.log(calculateTotalCalories(dayFoodData));
 
