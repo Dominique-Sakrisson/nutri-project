@@ -138,8 +138,16 @@ button:hover{
     color: white;
 }
 
-button:selected{
+button:focus{
     background-origin: transparent;
     background: green;
     color: white;
+}
+
+button:active{
+    background-origin: transparent;
+    background: green;
+    color: white;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
