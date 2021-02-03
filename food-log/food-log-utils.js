@@ -16,7 +16,7 @@ export function renderTableRows(userFoodObject, foodObject){
     tableRow.append(subButton);
     
     const tdServings = document.createElement('td');
-    tdServings.textContent = userFoodObject.consumed;
+    tdServings.textContent = userFoodObject.quantity;
     tableRow.append(tdServings);
 
     const tdFood = document.createElement('td');
@@ -24,19 +24,19 @@ export function renderTableRows(userFoodObject, foodObject){
     tableRow.append(tdFood);
 
     const tdCalorie = document.createElement('td');
-    tdCalorie.textContent = foodObject.calories * userFoodObject.consumed;
+    tdCalorie.textContent = foodObject.calories * userFoodObject.quantity;
     tableRow.append(tdCalorie);
 
     const tdProtein = document.createElement('td');
-    tdProtein.textContent = (foodObject.protein * userFoodObject.consumed).toFixed(1);
+    tdProtein.textContent = (foodObject.protein * userFoodObject.quantity).toFixed(1);
     tableRow.append(tdProtein);
 
     const tdFat = document.createElement('td');
-    tdFat.textContent = (foodObject.fat * userFoodObject.consumed).toFixed(1);
+    tdFat.textContent = (foodObject.fat * userFoodObject.quantity).toFixed(1);
     tableRow.append(tdFat);
 
     const tdCarb = document.createElement('td');
-    tdCarb.textContent = (foodObject.carbs * userFoodObject.consumed).toFixed(1);
+    tdCarb.textContent = (foodObject.carbs * userFoodObject.quantity).toFixed(1);
     tableRow.append(tdCarb);
 
     const delButton = document.createElement('button');

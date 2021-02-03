@@ -4,6 +4,11 @@ import { getDayStorage, USER } from '../localStorage-utils.js';
 
 const dayFoodData = getDayStorage();
 
+console.log(dayFoodData);
+
+
+console.log(calculateTotalCalories(dayFoodData));
+
 const topSection = document.querySelector('.top-section');
 const button = document.createElement('button');
 button.textContent = 'press me!';
@@ -18,7 +23,7 @@ button.addEventListener('click', (e) =>{
 
 const ctx = document.getElementById('myChart').getContext('2d');
 //eslint-disable-next-line no-undef
-myChart = new Chart(ctx, { 
+const myChart = new Chart(ctx, { 
     type: 'bar',
     data: {
         labels: ['Calories VS. Goal', 'Carbs VS. Goal', 'Fat VS. Goal', 'Protein VS. Goal'],
