@@ -70,6 +70,7 @@ export function addFoodToStorage(food) {
             protein: food.protein,
             carbs: food.carbs,
             fat: food.fat,
+            img: food.img,
             quantity: 1,
         };
         

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/home.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a class="active" href="./index.html">Homepage</a></li>
+                <li><a href="./food-select/index.html">Food Select</a></li>
+                <li><a href="./food-log/index.html">Food Log</a></li>
+                <li><a href="./results/index.html">User Results</a></li>
+                <li><a href="./about/index.html">About</a></li>
+            </ul>
+        </nav>
+        <div class="gutter-right logo">
+            <img src="../assets/NTLogo2.png" />
+        </div>
+    </header>
+    <main>
+        <section class="main-section">
+            <h1>
+                Add Custom Foods
+            </h1><br>
+
+            <form id='add-custom-form'>
+                <label for="id">
+                    <input type="number" name="id" placeholder="Item ID">
+                </label><br>
+                <label for="name">
+                    <input type="text" name="name" placeholder="Name of Food">
+                </label><br>
+                <label for="img">
+                    <input type="text" name="img" placeholder="Image">
+                </label><br>
+                <label for="serving">
+                    <input type="text" name="serving" placeholder="Serving Size">
+                </label><br>
+                <label for="calories">
+                    <input type="number" name="calories" placeholder="Calories">
+                </label><br>
+                <label for="protein">
+                    <input type="number" name="protein" placeholder="Protein">
+                </label><br>
+                <label for="carbs">
+                    <input type="number" name="carbs" placeholder="Carbs">
+                </label><br>
+                <label for="fat">
+                    <input type="number" name="fat" placeholder="Fat">
+                </label><br>
+                <label for="category">
+                    <select name="category">
+                        <option>-category-</option>
+                        <option value="fruit">Fruit</option>
+                        <option value="vegetable">Vegetable</option>
+                        <option value="grain">Grain</option>
+                        <option value="dairy">Dairy</option>
+                        <option value="meat">Meat</option>
+                        <option value="snack">Snack</option>
+                    </select><br>
+                </label>
+                
+                <button type="submit" id="submit">Add Food to Database</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from
+            <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+        </div>
+    </footer>
+
+    <script type="module" src="custom.js"></script>
+</body>
+
+</html>
