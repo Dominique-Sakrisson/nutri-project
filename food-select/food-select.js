@@ -11,6 +11,7 @@ const userDiet = user.dietChoice;
 const paleoButton = document.getElementById('paleo-button');
 const vegetarianButton = document.getElementById('vegetarian-button');
 const glutenFreeButton = document.getElementById('gluten-free-button');
+const showAllButon  = document.getElementById('show-all');
 
 const searchDiv = document.querySelector('.search-div');
 const searchForm = document.createElement('form');
@@ -136,6 +137,8 @@ function eventHandler(e) {
         dietType = vegetarianFoods;
     } else if (e.target.value === 'gluten-free') {
         dietType = glutenFreeFoods;
+    } else if (e.target.value === 'show-all'){
+        dietType = foodData;
     }
 
     for (let iterator of dietType) {
@@ -146,7 +149,7 @@ function eventHandler(e) {
 paleoButton.addEventListener('click', eventHandler);
 vegetarianButton.addEventListener('click', eventHandler);
 glutenFreeButton.addEventListener('click', eventHandler);
-
+showAllButon.addEventListener('click', eventHandler)
 
 const formElement = document.getElementById('add-custom-form');
 
