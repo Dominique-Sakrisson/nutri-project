@@ -11,7 +11,8 @@ form.addEventListener('submit', (e) => {
         lastName: formdata.get('lname'),
         dailyCalories: formdata.get('calories'),
         dietChoice: formdata.get('diet-type'),
-    }
+        calorieGoal: formdata.get('calories')
+    };
     setUserStorage(user);
     window.location = './food-select';
 });
