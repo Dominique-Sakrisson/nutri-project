@@ -14,10 +14,13 @@
 }
 .food-list-item:hover{
     cursor: pointer;
+    transform: scale(1.2);
     
 }
 .food-div{
     width: 80%;
+    overflow: scroll;
+    height: 400px;
 }
 .food-list{
     width: 500px;
