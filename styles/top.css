@@ -1,0 +1,10 @@
+body {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+}
+header {
+    grid-column: 1 / 12;
+    grid-row: 1 / 2;
+    width: 100%;
+}
