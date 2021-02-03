@@ -6,15 +6,15 @@ const dayFoodData = getDayStorage();
 const user = getUserStorage();
 
 const topSection = document.querySelector('.top-section');
-const button = document.createElement('button');
-button.textContent = 'press me!';
-topSection.append(button);
+// const button = document.createElement('button');
+// button.textContent = 'press me!';
+// topSection.append(button);
+
 
 button.addEventListener('click', (e) => {
     e.preventDefault();
     console.log(dayFoodData);
 });
-
 
 console.log(user.dailyCalories);
 const ctx = document.getElementById('myChart').getContext('2d');
