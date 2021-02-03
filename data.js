@@ -830,3 +830,34 @@ export const instructions = [{
     name: 'resultsPage',
     description: 'Congratulations on filling out you diet log!'
 }];
+
+export const team = [{
+    name: 'Patrick Hrabos',
+    img: 'patrick.jpg',
+    img2: 'patrick2.jpg',
+    description: 'The badass son of a gun coding up our responsive reliable table datas',
+    linkedIn: '<a href=\'https://www.linkedin.com/in/patrick-hrabos/\'> Patrick\'s LinkedIn page!<a>',
+    github: '<a href=\'https://github.com/phrabos\'> Patrick\'s LinkedIn page!</a>',
+}, 
+{
+    name: 'Minh Ngo',
+    img: 'minh.jpg',
+    img2: 'minh2.jpg',
+    description: 'The badass son of a gun coding up our responsive reliable table datas',
+    linkedIn: '<a href=\'https://www.linkedin.com/in/minhnngo/\'> Minh\'s LinkedIn page!</a>',
+    github: '<a href=\'https://github.com/ngominh0224\'> Minh\'s LinkedIn page!</a>',   
+}, {
+    name: 'Jake Thrasher',
+    img: 'jake.jpg',
+    img2: 'jake2.jpg',
+    description: 'The badass son of a gun coding up our responsive reliable table datas',
+    linkedIn: '<a href=\'https://www.linkedin.com/in/m-jake-thrasher/\'> Jake\'s LinkedIn page!</a>',
+    github: '<a href=\'https://github.com/jakethrasher\'> Jake\'s LinkedIn page!</a>',
+}, {
+    name: 'Dom Sakrisson',
+    img: 'dom.jpg',
+    img2: 'dom.jpg',
+    description: 'The badass son of a gun coding up our responsive reliable table datas',
+    linkedIn: '<a href=\'https://www.linkedin.com/in/dominique-sakrisson/\'> Dom\'s LinkedIn page!</a>',
+    github: '<a href=\'https://github.com/Dominique-Sakrisson\'> Dom\'s LinkedIn page!</a>',
+}];
