@@ -137,6 +137,8 @@ function eventHandler(e) {
         dietType = vegetarianFoods;
     } else if (e.target.value === 'gluten-free') {
         dietType = glutenFreeFoods;
+    } else if (e.target.value === 'show-all'){
+        dietType = foodData;
     }
 
     for (let iterator of dietType) {
@@ -147,7 +149,7 @@ function eventHandler(e) {
 paleoButton.addEventListener('click', eventHandler);
 vegetarianButton.addEventListener('click', eventHandler);
 glutenFreeButton.addEventListener('click', eventHandler);
-showAllButon.addEventListener('click', )
+showAllButon.addEventListener('click', eventHandler)
 
 const formElement = document.getElementById('add-custom-form');
 
