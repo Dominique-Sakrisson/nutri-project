@@ -10,17 +10,31 @@ const vegetarianButton = document.getElementById('vegetarian-button');
 const glutenFreeButton = document.getElementById('gluten-free-button');
 
 
-
 let dietType = [];
 
 ul.textContent = '';
 
 if (userDiet === 'paleo') {
     dietType = paleoFoods;
+    paleoFoods.sort(function(a, b) {
+        if (a.name < b.name) { return -1; }
+        if (a.name > b.name) { return 1; }
+        return 0;
+    });
 } else if (userDiet === 'vegetarian') {
     dietType = vegetarianFoods;
+    vegetarianFoods.sort(function(a, b) {
+        if (a.name < b.name) { return -1; }
+        if (a.name > b.name) { return 1; }
+        return 0;
+    });
 } else if (userDiet === 'gluten-free') {
     dietType = glutenFreeFoods;
+    glutenFreeFoods.sort(function(a, b) {
+        if (a.name < b.name) { return -1; }
+        if (a.name > b.name) { return 1; }
+        return 0;
+    });
 }
 
 for (let iterator of dietType) {
