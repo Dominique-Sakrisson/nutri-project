@@ -47,6 +47,5 @@ resultsButton.addEventListener('click', () =>{
 clearButton.addEventListener('click', () => {
 
     setDayStorage([]);
-    const userFoods = getDayStorage;
-    renderTableRows(userFoods);
+    table.textContent = '';
 });
