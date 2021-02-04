@@ -40,9 +40,7 @@ export function renderFood(food) {
             userActual.classList.remove('red');
         }
         
-
-        // console.log(updatedUserFood);
-      
+        console.log(updateUserCalories());
         userActual.textContent = `Current Calories:${updateUserCalories(updatedUserFood)}`;
     });
     return li;

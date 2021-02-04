@@ -116,14 +116,6 @@ function recallFoodList() {
 
     for (let iterator of dietType) {
         const foodItem = renderFood(iterator);
-        foodItem.addEventListener('click', () =>{
-            if (calculateTotalCalories(user) >= user.dailyCalories) {
-                userActual.classList.add('red');
-                
-                // userActual.classList.remove('green');
-                
-            } 
-        });
         ul.append(foodItem);
     }
 }
