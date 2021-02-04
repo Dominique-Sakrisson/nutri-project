@@ -34,7 +34,7 @@
 
 .form-div {
     position: absolute;
-    left: -320px;
+    left: -300px;
     transition: left 750ms linear 100ms;
     background-color: transparent;
     display: flex;
@@ -57,7 +57,7 @@
     bottom: 30px;
 }
 .form-div:hover{
-    left: -125px;
+    left: 10px;
     /* margin-left: auto; */
 }
 .form-div input:active {
