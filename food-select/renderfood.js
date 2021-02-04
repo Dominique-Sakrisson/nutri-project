@@ -32,12 +32,17 @@ export function renderFood(food) {
     li.addEventListener('click', () => {
         const updatedUserFood = getDayStorage();
         addFoodToStorage(food);
-        // if (currentCalories >= goalCalories) {
-        //     userActual.classList.add('red');
-        //     // userActual.classList.remove('green');
-            
-        // } 
-        console.log(updateUserCalories());
+        if (currentCalories >= goalCalories) {
+            userActual.classList.add('red');
+            userActual.classList.remove('green');
+        } else {
+            userActual.classList.add('green');
+            userActual.classList.remove('red');
+        }
+        
+
+        // console.log(updatedUserFood);
+      
         userActual.textContent = `Current Calories:${updateUserCalories(updatedUserFood)}`;
     });
     return li;

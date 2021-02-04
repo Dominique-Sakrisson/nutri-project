@@ -67,7 +67,9 @@ a.active, a:hover{
     margin-right:8px;
     font-size: 1.5rem;
     line-height: 1.5rem;
-    //color: green;
+
+    color: green;
+    
 }
 .red{
     color: red;
