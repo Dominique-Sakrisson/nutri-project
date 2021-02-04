@@ -26,7 +26,6 @@ clearSearchButton.textContent = 'clear search';
 searchInput.pattern = '[a-zA-Z.]{1,5}';
 searchForm.append(searchLabel, searchInput);
 searchDiv.append(searchLabelInstr, searchForm, clearSearchButton);
-console.log(user);
 
 recallFoodList();
 let dietType = [];

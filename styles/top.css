@@ -4,7 +4,7 @@
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
-    font-family: 'Titillium Web', sans-serif;
+    font-family: Roboto;
     --shadow: 0px 10px 20px -12px rgba(0,0,0,0.45);
     --header-height: 80px;
     --shadow: 0px 10px 20px -12px rgba(0,0,0,0.45);
@@ -61,4 +61,17 @@ a.active, a:hover{
     background: #1b9bff;
     transition: .5s;
 
+}
+#user-info-container{
+    margin-top: 8px;
+    margin-right:8px;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    color: green;
+}
+.red{
+    color: red;
+}
+.green{
+    color: green;
 }
