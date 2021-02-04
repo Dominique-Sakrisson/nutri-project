@@ -20,15 +20,8 @@ body {
     
 }
 
-#user-info-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: right;
-}
-
-
 main {
+    clear: right;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -180,9 +173,7 @@ button:active{
     font-size: 1.3rem;
     color: green;
 }
-.user-info-container{
-    font-size: 1.4rem;
-}
+
 input{
     height: 1.8rem;
     font-size: 1rem;

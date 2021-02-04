@@ -66,7 +66,7 @@ export function displayUserInfo(user) {
     userCalGoal.textContent = `Calorie Goal: ${user.dailyCalories}`;
 
     userActual.textContent = `Current Calories: ${calculateTotalCalories(userFood)}`;
-    userDietChoice.textContent = `Your diet choice: ${getUserDietChoice()}`;
+    userDietChoice.textContent = `Diet Type: ${getUserDietChoice()}`;
     userStatsDiv.append(userName, userCalGoal, userActual, userDietChoice);
 }
 const currentCalories = Number(calculateTotalCalories(userFood));
