@@ -1,7 +1,10 @@
 import { calculateTotalCalories, calculateTotalCarbs, calculateTotalFat, calculateTotalProtein } from '../utils.js';
 import { foodData, instructions } from '../data.js';
-import { getDayStorage, getUserStorage, getWeekStorage } from '../localStorage-utils.js';
+
 import { displayUserInfo } from '../food-select/renderfood.js';
+
+import { getDayStorage, getUserStorage, getWeekStorage, setUserStorage } from '../localStorage-utils.js';
+
 
 const dayFoodData = getDayStorage();
 const weekFoodData = getWeekStorage();
@@ -9,17 +12,21 @@ const user = getUserStorage();
 const topSection = document.querySelector('.top-section');
 const span = document.createElement('span');
 
+const modalText = document.getElementById('modal-text');
+
+// Get the modal
+const modal = document.getElementById('myModal');
+
+// Get the <span> element that closes the modal
+const modalSpan = document.getElementsByClassName('close')[0];
 
 displayUserInfo(user);
 
 for (let item of instructions){
     if (item.name === 'resultsPage'){
-        span.textContent = item.description;
+        modalText.textContent = item.description;
     }
 }
-
-topSection.classList.add('instructions');
-topSection.append(span);
 
 const weekArray = [];
 
@@ -259,7 +266,7 @@ const myChart4 = new Chart(ctx4, {
         { 
             // calorie goal, calorie goal from carbs, calorie goal from fat, calorie goal from protein
             label: 'Goal Macro grams',
-            data: [(user.dailyCalories * .3) * 7 , (user.dailyCalories * .20) * 7, (user.dailyCalories * .25) * 7
+            data: [(user.dailyCalories * .3) * 7, (user.dailyCalories * .20) * 7, (user.dailyCalories * .25) * 7
             ],
         
             backgroundColor: [
@@ -289,3 +296,30 @@ const myChart4 = new Chart(ctx4, {
     }
 });
 /* jshint ignore:end */
+
+// When the user clicks on the button, open the modal
+window.addEventListener('load', () =>{
+    if (user.resultsVisited){
+        return;
+    } else {
+        modal.style.display = 'block';
+
+    }
+    user.resultsVisited = true;
+    setUserStorage(user);
+});
+// btn.onclick = function() {
+//     modal.style.display = 'block';
+// };
+
+// When the user clicks on <span> (x), close the modal
+modalSpan.onclick = function() {
+    modal.style.display = 'none';
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(e) {
+    if (e.target === modal) {
+        modal.style.display = 'none';
+    }
+};

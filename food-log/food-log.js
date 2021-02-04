@@ -1,4 +1,4 @@
-import { getDayStorage, getWeekStorage, setDayStorage, setWeekStorage } from '../localStorage-utils.js';
+import { getDayStorage, getWeekStorage, setDayStorage, setUserStorage, setWeekStorage } from '../localStorage-utils.js';
 import { findById } from '../utils.js';
 import { renderTableRows, renderTotalRows } from './food-log-utils.js';
 import { instructions } from '../data.js';
@@ -13,15 +13,13 @@ const clearButton = document.getElementById('clear-button');
 const userFoods = getDayStorage();
 setDayStorage(userFoods);
 
-const topSection = document.querySelector('.top-section');
-const span = document.createElement('span');
+const modalText = document.getElementById('modal-text');
+
 for (let item of instructions){
     if (item.name === 'food-log'){
-        span.textContent = item.description;
+        modalText.textContent = item.description;
     }
 }
-topSection.classList.add('instructions');
-topSection.append(span);
 
 for (let food of userFoods){
     const foodObject = findById(userFoods, food.id);
@@ -48,4 +46,34 @@ clearButton.addEventListener('click', () => {
     window.location = '../food-select';
 });
 
-// displayUserInfo(userData);
+displayUserInfo(userData);
+
+//modal
+// Get the modal
+const modal = document.getElementById('myModal');
+// Get the <span> element that closes the modal
+const modalSpan = document.getElementsByClassName('close')[0];
+// When the user clicks on the button, open the modal
+window.addEventListener('load', () =>{
+    if (userData.logVisited){
+        return;
+    } else {
+        modal.style.display = 'block';
+
+    }
+    userData.logVisited = true;
+    setUserStorage(userData);
+});
+
+
+// When the user clicks on <span> (x), close the modal
+modalSpan.onclick = function() {
+    modal.style.display = 'none';
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(e) {
+    if (e.target === modal) {
+        modal.style.display = 'none';
+    }
+};
