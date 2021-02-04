@@ -1,17 +1,23 @@
 // import functions and grab DOM elements
-import { setUserStorage, setGlobalDataStorage } from './localStorage-utils.js';
+import { setUserStorage, setGlobalDataStorage, getUserStorage } from './localStorage-utils.js';
 import { instructions, foodData } from './data.js';
 
+const user = getUserStorage();
+const modalText = document.getElementById('modal-text');
 
-const topSection = document.querySelector('.top-section');
-const span = document.createElement('span');
+// Get the modal
+const modal = document.getElementById('myModal');
+
+// Get the <span> element that closes the modal
+const modalSpan = document.getElementsByClassName('close')[0];
+
 for (let item of instructions){
     if (item.name === 'homePage'){
-        span.textContent = item.description;
+        modalText.textContent = item.description;
     }
 }
-topSection.classList.add('instructions');
-topSection.append(span);
+// topSection.classList.add('instructions');
+// topSection.append(span);
 
 const form = document.querySelector('form');
 
@@ -31,8 +37,32 @@ form.addEventListener('submit', (e) => {
     setGlobalDataStorage(foodData);
 });
 
-// var button = document.getElementById('submit');
-// button.addEventListener('click', function () {
-//     document.location.href = './food-select/';
-// });
+// When the user clicks on the button, open the modal
+window.addEventListener('load', () => {
+    if (user){
+        return;
+    } else {modal.style.display = 'block';}
+});
+
+window.addEventListener('unload', () =>{
+    if (user.homeVisited){
+        return;
+    } else {
+        modal.style.display = 'block';
+
+    }
+    user.homeVisited = true;
+});
+
+// When the user clicks on <span> (x), close the modal
+modalSpan.onclick = function() {
+    modal.style.display = 'none';
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(e) {
+    if (e.target === modal) {
+        modal.style.display = 'none';
+    }
+};
 

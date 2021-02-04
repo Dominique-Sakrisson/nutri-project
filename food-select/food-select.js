@@ -1,4 +1,4 @@
-import { getGlobalDataStorage, getUserStorage, setGlobalDataStorage } from '../localStorage-utils.js';
+import { getGlobalDataStorage, getUserStorage, setGlobalDataStorage, setUserStorage } from '../localStorage-utils.js';
 import { renderFood } from './renderfood.js';
 import { glutenFreeFoods, paleoFoods, vegetarianFoods } from './filter-functions.js';
 import { instructions } from '../data.js';
@@ -15,29 +15,28 @@ const toFoodLogButton = document.getElementById('to-food-log');
 
 const searchDiv = document.querySelector('.search-div');
 const searchForm = document.createElement('form');
-const searchLabelInstr = document.createElement('label');
+const searchLabelInstr = document.createElement('div');
 searchLabelInstr.textContent = 'Enter the first letter to filter search, clear search to search another letter';
 const searchLabel = document.createElement('label');
-searchLabel.textContent = 'Search for a food';
 const searchInput = document.createElement('input');
+searchInput.placeholder = 'Search for a Food';
 const clearSearchButton = document.createElement('button');
 clearSearchButton.textContent = 'clear search';
 searchInput.pattern = '[a-zA-Z.]{1,5}';
-searchForm.append(searchLabel, searchInput);
-searchDiv.append(searchLabelInstr, searchForm, clearSearchButton);
+searchForm.append(searchLabelInstr, searchLabel, searchInput, clearSearchButton);
+searchDiv.append(searchForm);
 
 recallFoodList();
 let dietType = [];
 
-const topSection = document.querySelector('.top-section');
-const span = document.createElement('span');
+const modalText = document.getElementById('modal-text');
+
 for (let item of instructions) {
     if (item.name === 'foodPageMain') {
-        span.textContent = item.description;
+        modalText.textContent = item.description;
     }
 }
-topSection.append(span);
-topSection.classList.add('instructions');
+
 
 let keyDownString = '';
 searchInput.addEventListener('keydown', (e) => {
@@ -193,3 +192,35 @@ formElement.addEventListener('submit', (e) => {
 toFoodLogButton.addEventListener('click', () => {
     window.location = '../food-log/';
 });
+
+//modal
+// Get the modal
+const modal = document.getElementById('myModal');
+// Get the <span> element that closes the modal
+const modalSpan = document.getElementsByClassName('close')[0];
+// When the user clicks on the button, open the modal
+window.addEventListener('load', () =>{
+    if (user.foodsVisited){
+        return;
+    } else {
+        modal.style.display = 'block';
+
+    }
+    user.foodsVisited = true;
+    setUserStorage(user);
+});
+// btn.onclick = function() {
+//     modal.style.display = 'block';
+// };
+
+// When the user clicks on <span> (x), close the modal
+modalSpan.onclick = function() {
+    modal.style.display = 'none';
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(e) {
+    if (e.target === modal) {
+        modal.style.display = 'none';
+    }
+};
