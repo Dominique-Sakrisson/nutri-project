@@ -2,7 +2,8 @@ import { getDayStorage, getWeekStorage, setDayStorage, setWeekStorage } from '..
 import { findById } from '../utils.js';
 import { renderTableRows, renderTotalRows } from './food-log-utils.js';
 import { instructions } from '../data.js';
-import { displayUserInfo } from '../display-user-info.js';
+import {displayUserInfo} from '../food-select/renderfood.js';
+
 import { getUserStorage } from '../localStorage-utils.js';
 const userData = getUserStorage();
 const weekFoods = getWeekStorage();
@@ -49,4 +50,4 @@ clearButton.addEventListener('click', () => {
     window.location = '../food-select';
 });
 
-// displayUserInfo(userData);
+//displayUserInfo(userData);

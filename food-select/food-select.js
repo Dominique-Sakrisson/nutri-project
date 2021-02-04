@@ -13,6 +13,8 @@ const vegetarianButton = document.getElementById('vegetarian-button');
 const glutenFreeButton = document.getElementById('gluten-free-button');
 const showAllButon = document.getElementById('show-all');
 const toFoodLogButton = document.getElementById('to-food-log');
+paleoButton.classList.add('out');
+paleoButton.classList.add('slide-in');
 
 const userActual = document.getElementById('user-cal-span');
 const searchDiv = document.querySelector('.search-div');

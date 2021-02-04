@@ -120,6 +120,7 @@ const tdBlank4 = document.createElement('td');
 const tdTotalProtein = document.createElement('td');
 const tdTotalFat = document.createElement('td');
 const tdTotalCarbs = document.createElement('td');
+
 export function renderTotalRows(){
     const userFoods = getDayStorage();
     tdBlank4.textContent = 'TOTALS';

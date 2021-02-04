@@ -1,14 +1,13 @@
 import { calculateTotalCalories, calculateTotalCarbs, calculateTotalFat, calculateTotalProtein } from '../utils.js';
 import { foodData, instructions } from '../data.js';
 import { getDayStorage, getUserStorage, getWeekStorage } from '../localStorage-utils.js';
-import { displayUserInfo } from '../display-user-info.js'
+import { displayUserInfo } from '../food-select/renderfood.js';
 
 const dayFoodData = getDayStorage();
 const weekFoodData = getWeekStorage();
 const user = getUserStorage(); 
 const topSection = document.querySelector('.top-section');
 const span = document.createElement('span');
-
 
 displayUserInfo(user);
 
@@ -169,7 +168,6 @@ const myChart2 = new Chart(ctx2, {
     }
 });
 /* jshint ignore:end */
-
 
 const ctx3 = document.getElementById('myChart3').getContext('2d');
 /* jshint ignore:start*/

@@ -1,7 +1,7 @@
 import { getDayStorage } from './localStorage-utils.js';
 import { calculateTotalCalories } from './utils.js';
 const userFood = getDayStorage();
-
+/*
 export function displayUserInfo(user) {
     const userStatsDiv = document.getElementById('user-info-container');
 
@@ -16,5 +16,6 @@ export function displayUserInfo(user) {
     const userActual = document.createElement('span');
     userActual.textContent = `Current Calories: ${calculateTotalCalories(userFood)}`;
 
-    userStatsDiv.append(userName, userCalGoal, userActual);
+  //  userStatsDiv.append(userName, userCalGoal, userActual);
 }
+*/

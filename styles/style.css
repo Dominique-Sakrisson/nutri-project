@@ -178,5 +178,11 @@ button:active{
 input{
     height: 1.8rem;
     font-size: 1rem;
+    transition: border 400ms linear;
+    transition: box-shadow 400ms;
 }
 
+input:focus{
+    border: 3px white solid;
+    box-shadow : 0 10px 50px 0 rgba(0, 128, 0, 0.8);
+}
