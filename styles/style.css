@@ -1,12 +1,12 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 body {
     --header-height: 80px;
     --shadow: 0px 10px 20px -12px rgba(0,0,0,0.45);
     --gutter: 30px;
     --footer-height: 25px;
     
-    font-family: 'Titillium Web', sans-serif;
-
+    /* font-family: 'Titillium Web', sans-serif; */
+    /* font-family: Roboto; */
 }
 
 #user-info-container{
@@ -114,18 +114,22 @@ footer {
   }
 
   .instructions {
-    background-color:rgb(135,191,86);
+    background-color:rgba(0, 128, 0, 0.3);
     height: var(--header-height);
     box-shadow: var(--shadow);
    
   }
 
   button {
+    font-family: Roboto;
     padding: 10px;
     border: 2px solid green;
     color: green; 
     border-radius: 10%;
     background: transparent;
+    transition-property: background-color;
+    transition-duration: 450ms; 
+
 }
 button:hover{
     background-origin: transparent;
@@ -145,4 +149,14 @@ button:active{
     color: white;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
+}
+
+.between-charts{
+    width: 100%;
+    text-align: center;
+    font-size: 1.3rem;
+    color: green;
+}
+.user-info-container{
+    font-size: 1.5rem;
 }

@@ -26,6 +26,10 @@ export function setUserStorage(array) {
     localStorage.setItem(USER, stringUser);
 }
 
+export function getUserDietChoice(){
+    const userStats = getUserStorage();
+    return (userStats.dietChoice);
+}
 export function getUserStorage() {
     const stringUser = localStorage.getItem(USER);
     const user = JSON.parse(stringUser);
