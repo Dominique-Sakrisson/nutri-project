@@ -125,10 +125,23 @@ footer {
   }
 
   .instructions {
-    background-color:rgba(0, 128, 0, 0.7);
+    border-radius: 15px;
+    background-color:rgba(0, 128, 0, 0.8);
     height: var(--header-height);
     box-shadow: var(--shadow);
     font-size: 1.3rem;
+
+    padding: 4px;
+    box-shadow: 2px 2px 4px;
+    margin-bottom: 8px;
+
+    position: relative;
+    border-radius: 10px;
+    text-align: center;
+    font-family: Roboto;
+    color: white;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
+
   }
 
   button {
@@ -140,7 +153,6 @@ footer {
     background: transparent;
     transition-property: background-color;
     transition-duration: 450ms; 
-
 }
 button:hover{
     background-origin: transparent;
@@ -169,6 +181,10 @@ button:active{
     color: green;
 }
 .user-info-container{
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+}
+input{
+    height: 1.8rem;
+    font-size: 1rem;
 }
 

@@ -39,3 +39,15 @@ a.active, a:hover{
     transition: .5s;
 
 } */
+
+form {
+    background: white;
+    padding: 30px;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+input[type=text] {
+    border: none;
+    border-bottom: 1px solid red;
+  }

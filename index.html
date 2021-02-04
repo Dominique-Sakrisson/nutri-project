@@ -6,62 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
-     <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/home.css">
-    <title>Document</title> 
+    <title>Document</title>
     <link rel="stylesheet" href="./styles/top.css">
 </head>
 
 <body>
     <div class='container'>
-    <header>
-        <nav>
-            <ul class="nav-links">
-                <li><a class="active" href="./index.html">Homepage</a></li>
-                <li><a href="./food-select/index.html">Food Select</a></li>
-                <li><a href="./food-log/index.html">Food Log</a></li>
-                <li><a href="./results/index.html">User Results</a></li>
-                <li><a href="./about/index.html">About</a></li>
-                
-            </ul>
-        </nav>
-        <!-- <div class="gutter-right logo"> -->
+        <header>
+            <nav>
+                <ul class="nav-links">
+                    <li><a class="active" href="./index.html">Homepage</a></li>
+                    <li><a href="./food-select/index.html">Food Select</a></li>
+                    <li><a href="./food-log/index.html">Food Log</a></li>
+                    <li><a href="./results/index.html">User Results</a></li>
+                    <li><a href="./about/index.html">About</a></li>
+
+                </ul>
+            </nav>
+            <!-- <div class="gutter-right logo"> -->
             <img src="./assets/NTLogo2.png" />
-        <!-- </div> -->
-    </header>
-    <main>
-        <section class="main-section middle">
-            <div class="top-section"></div>
-            <h1>
-                Main Page
-            </h1><br>
+            <!-- </div> -->
+        </header>
+        <main>
+            <section class="main-section middle">
+                <div class="top-section"></div>
+                <br>
 
-            <form>
-                <label for="fname">First name:</label><br>
-                <input type="text" id="fname" name="fname"><br><br>
-                <label for="lname">Last name:</label><br>
-                <input type="text" id="lname" name="lname"><br><br>
-                <label for="calories">Daily Calories Goal:</label><br>
-                <input type="text" id="calories" name="calories"></br><br>
-                <label for="diet-type">Preferred Diet-Type</label><br>
-                <select name="diet-type" id="diet-type">
-                    <option value="no-diet">None</option>
-                    <option value="paleo">Paleo</option>
-                    <option value="vegetarian">Vegetarian</option>
-                    <option value="gluten-free">Gluten-Free</option>
-                </select><br><br>
-                <button type="submit" id="submit">Submit Here</button>
-            </form>
-        </section>
-    </main>
-    <footer>
-        <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from
-            <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-        </div>
-        <div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+                <form>
+                    <label>First name:</label><br>
+                    <input type="text" id="fname" name="fname"><br><br>
+                    <label>Last name:</label><br>
+                    <input type="text" id="lname" name="lname"><br><br>
+                    <label>Daily Calories Goal:</label><br>
+                    <input type="text" id="calories" name="calories"></br><br>
+                    <label>Preferred Diet-Type</label><br>
+                    <select name="diet-type" id="diet-type">
+                        <option value="no-diet">None</option>
+                        <option value="paleo">Paleo</option>
+                        <option value="vegetarian">Vegetarian</option>
+                        <option value="gluten-free">Gluten-Free</option>
+                    </select><br><br>
+                    <button type="submit" id="submit">Submit Here</button>
+                </form>
+                <br>
+                <a href="https://www.fda.gov/media/112972/download">Need help finding your calorie goal for the day?</a>
+            </section>
+        </main>
+        <footer>
+            <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a>
+                from
+                <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+            </div>
+            <div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel
+                    perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 
-    </footer>
+        </footer>
     </div>
 
     <script type="module" src="app.js"></script>
