@@ -60,16 +60,16 @@ const myChart = new Chart(ctx, {
             label: 'Current macro',
             data: [calculateTotalCalories(dayFoodData), calculateTotalCarbs(dayFoodData) * 4, calculateTotalFat(dayFoodData) * 9, calculateTotalProtein(dayFoodData) * 4],
             backgroundColor: [
-                'rgba(0, 128, 0, 0.5)',
-                'rgba(0, 128, 0, 0.5)',
-                'rgba(0, 128, 0, 0.5)',
-                'rgba(0, 128, 0, 0.5)',
+                'rgba(237,209,148,1)', //brown color
+                'rgba(136,192,87, 1)', //green color
+                'rgba(204,92,86,1)', //red color
+                'rgba(151,119,168,1)', // purple color
             ],
             borderColor: [
-                'rgba(0, 128, 0, 1)',
-                'rgba(0, 128, 0, 1)',
-                'rgba(0, 128, 0, 1)',
-                'rgba(0, 128, 0, 1)',
+                'rgba(237,209,148,1)', //brown color
+                'rgba(136,192,87, 1)', //green color
+                'rgba(204,92,86,1)', //red color
+                'rgba(151,119,168,1)', // purple color
             ],
             borderWidth: 1
         }, 
@@ -80,16 +80,16 @@ const myChart = new Chart(ctx, {
             ],
         
             backgroundColor: [
-                'rgba(0, 128, 0, 1)',
-                'rgba(0, 128, 0, 1)',
-                'rgba(0, 128, 0, 1)',
-                'rgba(0, 128, 0, 1)',
+                'rgba(237,209,148,.6)', //brown color
+                'rgba(136,192,87, .6)', //green color
+                'rgba(204,92,86,.6)', //red color
+                'rgba(151,119,168,)', // purple color
             ],
             borderColor: [
-                'rgba(0, 128, 0, 1)',
-                'rgba(0, 128, 0, 1)',
-                'rgba(0, 128, 0, 1)',
-                'rgba(0, 128, 0, 1)',
+                'rgba(237,209,148,.6)', //brown color
+                'rgba(136,192,87, .6)', //green color
+                'rgba(204,92,86,.6)', //red color
+                'rgba(151,119,168,)', // purple color
             ],
             borderWidth: 1
         }]
@@ -121,16 +121,16 @@ const myChart2 = new Chart(ctx2, {
             label: 'Current Grams of Macro',
             data: [calculateTotalCarbs(dayFoodData) * 4, calculateTotalFat(dayFoodData) * 9, calculateTotalProtein(dayFoodData) * 4],
             backgroundColor: [
-                'rgba(0, 128, 0, 0.5)',
-                'rgba(0, 128, 0, 0.5)',
-                'rgba(0, 128, 0, 0.5)',
-                'rgba(0, 128, 0, 0.5)',
+               
+                'rgba(136,192,87, 1)', //green color
+                'rgba(204,92,86,1)', //red color
+                'rgba(151,119,168,1)', // purple color
             ],
             borderColor: [
-                'rgba(0, 128, 0, 1)',
-                'rgba(0, 128, 0, 1)',
-                'rgba(0, 128, 0, 1)',
-                'rgba(0, 128, 0, 1)',
+                
+                'rgba(136,192,87, 1)', //green color
+                'rgba(204,92,86,1)', //red color
+                'rgba(151,119,168,1)', // purple color
             ],
             borderWidth: 1
         }, 
@@ -141,16 +141,16 @@ const myChart2 = new Chart(ctx2, {
             ],
         
             backgroundColor: [
-                'rgba(0, 128, 0, 1)',
-                'rgba(0, 128, 0, 1)',
-                'rgba(0, 128, 0, 1)',
-                'rgba(0, 128, 0, 1)',
+               
+                'rgba(136,192,87, .6)', //green color
+                'rgba(204,92,86,.6)', //red color
+                'rgba(151,119,168,)', // purple color
             ],
             borderColor: [
-                'rgba(0, 128, 0, 1)',
-                'rgba(0, 128, 0, 1)',
-                'rgba(0, 128, 0, 1)',
-                'rgba(0, 128, 0, 1)',
+                
+                'rgba(136,192,87, .6)', //green color
+                'rgba(204,92,86,.6)', //red color
+                'rgba(151,119,168,)', // purple color
             ],
             borderWidth: 1
         }]
@@ -170,51 +170,49 @@ const myChart2 = new Chart(ctx2, {
 });
 /* jshint ignore:end */
 
-
-/* jshint ignore:end */
 
 const ctx3 = document.getElementById('myChart3').getContext('2d');
 /* jshint ignore:start*/
 const myChart3 = new Chart(ctx3, { 
     type: 'bar',
     data: {
-        labels: ['Carbs(g\'s) VS. Goal(g\'s)', 'Fat(g\'s) VS. Goal(g\'s)', 'Protein(g\'s) VS. Goal(g\'s)'],
+        labels: ['Calories VS. Goal', 'Carbs VS. Goal', 'Fat VS. Goal', 'Protein VS. Goal'],
        
         maintainAspectRatio: false,
         datasets: [{
-            label: 'Current Grams of Macro',
-            data: [calculateTotalCarbs(dayFoodData) * 4, calculateTotalFat(dayFoodData) * 9, calculateTotalProtein(dayFoodData) * 4],
+            label: 'Current macro',
+            data: [calculateTotalCalories(weekArray), calculateTotalCarbs(weekArray) * 4, calculateTotalFat(weekArray) * 9, calculateTotalProtein(weekArray) * 4],
             backgroundColor: [
-                'rgba(255, 99, 132, 0.8)',
-                'rgba(54, 162, 235, 0.8)',
-                'rgba(255, 206, 86, 0.8)',
-                'rgba(75, 192, 192, 0.8)',
+                'rgba(237,209,148,1)', //brown color
+                'rgba(136,192,87, 1)', //green color
+                'rgba(204,92,86,1)', //red color
+                'rgba(151,119,168,1)', // purple color
             ],
             borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
+                'rgba(237,209,148,1)', //brown color
+                'rgba(136,192,87, 1)', //green color
+                'rgba(204,92,86,1)', //red color
+                'rgba(151,119,168,1)', // purple color
             ],
             borderWidth: 1
         }, 
         { 
             // calorie goal, calorie goal from carbs, calorie goal from fat, calorie goal from protein
-            label: 'Goal Macro grams',
-            data: [user.dailyCalories * .3, user.dailyCalories * .20, user.dailyCalories * .25
+            label: 'Goal Macro',
+            data: [user.dailyCalories * 7, (user.dailyCalories * .5) * 7, (user.dailyCalories * .25) * 7, (user.dailyCalories * .25) * 7
             ],
         
             backgroundColor: [
-                'rgba(255, 99, 132, 0.4)',
-                'rgba(54, 162, 235, 0.4)',
-                'rgba(255, 206, 86, 0.4)',
-                'rgba(75, 192, 192, 0.4)',
+                'rgba(237,209,148,.6)', //brown color
+                'rgba(136,192,87, .6)', //green color
+                'rgba(204,92,86,.6)', //red color
+                'rgba(151,119,168,)', // purple color
             ],
             borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
+                'rgba(237,209,148,.6)', //brown color
+                'rgba(136,192,87, .6)', //green color
+                'rgba(204,92,86,.6)', //red color
+                'rgba(151,119,168,)', // purple color
             ],
             borderWidth: 1
         }]
@@ -232,9 +230,10 @@ const myChart3 = new Chart(ctx3, {
         }
     }
 });
+
 /* jshint ignore:end */
 
-const ctx4 = document.getElementById('myChart3').getContext('2d');
+const ctx4 = document.getElementById('myChart4').getContext('2d');
 /* jshint ignore:start*/
 const myChart4 = new Chart(ctx4, { 
     type: 'bar',
@@ -244,38 +243,34 @@ const myChart4 = new Chart(ctx4, {
         maintainAspectRatio: false,
         datasets: [{
             label: 'Current Grams of Macro',
-            data: [calculateTotalCarbs(dayFoodData) * 4, calculateTotalFat(dayFoodData) * 9, calculateTotalProtein(dayFoodData) * 4],
+            data: [(calculateTotalCarbs(weekArray) * 4), (calculateTotalFat(weekArray) * 9), (calculateTotalProtein(weekArray) * 4)],
             backgroundColor: [
-                'rgba(0, 128, 0, 0.5)',
-                'rgba(0, 128, 0, 0.5)',
-                'rgba(0, 128, 0, 0.5)',
-                'rgba(0, 128, 0, 0.5)',
+                'rgba(136,192,87, 1)', //green color
+                'rgba(204,92,86,1)', //red color
+                'rgba(151,119,168,1)', // purple color
             ],
             borderColor: [
-                'rgba(0, 128, 0, 1)',
-                'rgba(0, 128, 0, 1)',
-                'rgba(0, 128, 0, 1)',
-                'rgba(0, 128, 0, 1)',
+                'rgba(136,192,87, 1)', //green color
+                'rgba(204,92,86,1)', //red color
+                'rgba(151,119,168,1)', // purple color
             ],
             borderWidth: 1
         }, 
         { 
             // calorie goal, calorie goal from carbs, calorie goal from fat, calorie goal from protein
             label: 'Goal Macro grams',
-            data: [user.dailyCalories * .3, user.dailyCalories * .20, user.dailyCalories * .25
+            data: [(user.dailyCalories * .3) * 7 , (user.dailyCalories * .20) * 7, (user.dailyCalories * .25) * 7
             ],
         
             backgroundColor: [
-                'rgba(0, 128, 0, 1)',
-                'rgba(0, 128, 0, 1)',
-                'rgba(0, 128, 0, 1)',
-                'rgba(0, 128, 0, 1)',
+                'rgba(136,192,87, .6)', //green color
+                'rgba(204,92,86,.6)', //red color
+                'rgba(151,119,168,)', // purple color
             ],
             borderColor: [
-                'rgba(0, 128, 0, 1)',
-                'rgba(0, 128, 0, 1)',
-                'rgba(0, 128, 0, 1)',
-                'rgba(0, 128, 0, 1)',
+                'rgba(136,192,87, .6)', //green color
+                'rgba(204,92,86,.6)', //red color
+                'rgba(151,119,168,)', // purple color
             ],
             borderWidth: 1
         }]
