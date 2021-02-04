@@ -15,13 +15,13 @@ setDayStorage(userFoods);
 
 const modalText = document.getElementById('modal-text');
 
-for (let item of instructions){
-    if (item.name === 'food-log'){
+for (let item of instructions) {
+    if (item.name === 'food-log') {
         modalText.textContent = item.description;
     }
 }
 
-for (let food of userFoods){
+for (let food of userFoods) {
     const foodObject = findById(userFoods, food.id);
     let fullTableRow = renderTableRows(food, foodObject);
     table.append(fullTableRow);
@@ -32,7 +32,7 @@ const totalsRow = renderTotalRows();
 table.append(totalsRow);
 
 
-resultsButton.addEventListener('click', () =>{
+resultsButton.addEventListener('click', () => {
     const updatedFood = getDayStorage();
     setDayStorage(updatedFood);
     weekFoods.unshift(updatedFood);
@@ -54,8 +54,8 @@ const modal = document.getElementById('myModal');
 // Get the <span> element that closes the modal
 const modalSpan = document.getElementsByClassName('close')[0];
 // When the user clicks on the button, open the modal
-window.addEventListener('load', () =>{
-    if (userData.logVisited){
+window.addEventListener('load', () => {
+    if (userData.logVisited) {
         return;
     } else {
         modal.style.display = 'block';
@@ -67,12 +67,12 @@ window.addEventListener('load', () =>{
 
 
 // When the user clicks on <span> (x), close the modal
-modalSpan.onclick = function() {
+modalSpan.onclick = function () {
     modal.style.display = 'none';
 };
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(e) {
+window.onclick = function (e) {
     if (e.target === modal) {
         modal.style.display = 'none';
     }
