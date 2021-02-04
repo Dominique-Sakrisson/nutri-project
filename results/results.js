@@ -1,10 +1,11 @@
 import { calculateTotalCalories, calculateTotalCarbs, calculateTotalFat, calculateTotalProtein } from '../utils.js';
 import { foodData, instructions } from '../data.js';
 import { getDayStorage, getUserStorage } from '../localStorage-utils.js';
-
+import { displayUserInfo } from '../display-user-info.js'
 
 const dayFoodData = getDayStorage();
 const user = getUserStorage(); 
+displayUserInfo(user);
 
 const topSection = document.querySelector('.top-section');
 const span = document.createElement('span');
