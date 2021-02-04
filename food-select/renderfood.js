@@ -1,4 +1,4 @@
-import { addFoodToStorage, getDayStorage, getUserStorage } from '../localStorage-utils.js';
+import { addFoodToStorage, getDayStorage, getUserStorage, getUserDietChoice } from '../localStorage-utils.js';
 import { calculateTotalCalories } from '../utils.js';
 const userFood = getDayStorage();
 const userData = getUserStorage();
@@ -40,6 +40,7 @@ const userStatsDiv = document.getElementById('user-info-container');
 const userName = document.createElement('span');
 const userCalGoal = document.createElement('span');
 const userActual = document.createElement('span');
+const userDietChoice = document.createElement('span');
 
 displayUserInfo(userData);
 export function displayUserInfo(user) {
@@ -49,8 +50,8 @@ export function displayUserInfo(user) {
     userCalGoal.textContent = `Calorie Goal: ${user.dailyCalories}`;
 
     userActual.textContent = `Current Calories: ${calculateTotalCalories(userFood)}`;
-
-    userStatsDiv.append(userName, userCalGoal, userActual);
+    userDietChoice.textContent = `Your diet choice: ${getUserDietChoice()}`;
+    userStatsDiv.append(userName, userCalGoal, userActual, userDietChoice);
 }
 const currentCalories = Number(calculateTotalCalories(userFood));
 const goalCalories = Number(userData.dailyCalories);
