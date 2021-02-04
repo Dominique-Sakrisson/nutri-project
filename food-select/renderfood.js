@@ -3,6 +3,13 @@ import { calculateTotalCalories } from '../utils.js';
 const userFood = getDayStorage();
 const userData = getUserStorage();
 
+const userStatsDiv = document.getElementById('user-info-container');
+const userName = document.createElement('span');
+const userCalGoal = document.createElement('span');
+const userActual = document.createElement('span');
+userActual.setAttribute('id', 'user-cal-span');
+const userDietChoice = document.createElement('span');
+
 export function renderFood(food) {
 
     const li = document.createElement('li');
@@ -15,7 +22,6 @@ export function renderFood(food) {
     const foodFactsDiv = document.createElement('div');
     foodFactsDiv.classList.add('food-facts');
     foodFactsDiv.innerHTML =
-
         `<span>${food.name}</span>
         <span>${food.serving}</span>
         <span>calories: ${food.calories}</span>
@@ -23,33 +29,20 @@ export function renderFood(food) {
         <span>carbohydrates: ${food.carbs}</span>`;
 
     li.append(foodImage, foodFactsDiv);
-
     li.addEventListener('click', () => {
-
         const updatedUserFood = getDayStorage();
-
         addFoodToStorage(food);
-        if (currentCalories >= goalCalories) {
-            userActual.classList.add('red');
-            userActual.classList.remove('green');
-            location.reload();
-        } else {
-            userActual.classList.add('green');
-            userActual.classList.remove('red');
-            location.reload();
-           
-        }
-        
-
-        // console.log(updatedUserFood);
+        // if (currentCalories >= goalCalories) {
+        //     userActual.classList.add('red');
+        //     // userActual.classList.remove('green');
+            
+        // } 
         console.log(updateUserCalories());
         userActual.textContent = `Current Calories:${updateUserCalories(updatedUserFood)}`;
-
-
     });
-
     return li;
 }
+
 export function updateUserCalories() {
     const updatedData = getDayStorage();
     const totalCals = calculateTotalCalories(updatedData);
@@ -58,11 +51,6 @@ export function updateUserCalories() {
     return totalCals;
 }
 
-const userStatsDiv = document.getElementById('user-info-container');
-const userName = document.createElement('span');
-const userCalGoal = document.createElement('span');
-const userActual = document.createElement('span');
-const userDietChoice = document.createElement('span');
 
 displayUserInfo(userData);
 
@@ -79,10 +67,10 @@ export function displayUserInfo(user) {
 const currentCalories = Number(calculateTotalCalories(userFood));
 const goalCalories = Number(userData.dailyCalories);
 
-if (currentCalories >= goalCalories) {
-    userActual.classList.toggle('red');
-} else {
-    userActual.classList.toggle('green');
-}
+// if (currentCalories >= goalCalories) {
+//     userActual.classList.toggle('red');
+// } else {
+//     userActual.classList.toggle('green');
+// }
 
 

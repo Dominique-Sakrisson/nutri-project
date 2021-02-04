@@ -1,4 +1,4 @@
-
+@import url('https://css.gg/push-chevron-right-o.css');
 
 .food-image{
     height: 3rem;
@@ -31,16 +31,42 @@
     position: relative;
     margin: 0 auto;
 }
-.food-form {
-    
-    position: absolute;
-    left: -100px;
-    transition: left 500ms linear 100ms;
 
+.form-div {
+    position: absolute;
+    left: -320px;
+    transition: left 750ms linear 100ms;
+    background-color: transparent;
+    display: flex;
+    justify-content: end;
+    padding-right: 20px 10px 20px 0;
+    margin-top: 20px;
+    z-index: 1;
 }
-.food-form:hover{
-    left: 5px;
+.form-div select{
+    margin: 5px;
 }
-.food-form input:active {
+.form-div input{
+    padding: 10px;
+    margin: 5px;
+}
+.hover-header{
+    position: relative;
+    background-color: transparent;
+    left: 165px;
+    bottom: 30px;
+}
+.form-div:hover{
+    left: -125px;
+}
+.form-div input:active {
     left: 5px
+}
+
+.arrow{
+    margin-left: 10px;
+    width: 50px;
+    font-size: 2rem;
+
+    
 }
