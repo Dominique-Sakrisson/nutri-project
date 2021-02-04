@@ -46,4 +46,4 @@ clearButton.addEventListener('click', () => {
     window.location = '../food-select';
 });
 
-displayUserInfo(userData);
+// displayUserInfo(userData);

@@ -1,8 +1,8 @@
+import { updateUserCalories } from '../food-select/renderfood.js';
 import { getDayStorage, setDayStorage } from '../localStorage-utils.js';
 import { 
     calculateTotalCalories, calculateTotalCarbs, calculateTotalFat, calculateTotalProtein, findById 
 } from '../utils.js';
-
 
 export function renderTableRows(userFoodObject, foodObject){
     const tableRow = document.createElement('tr');
@@ -49,13 +49,13 @@ export function renderTableRows(userFoodObject, foodObject){
     const delButton = document.createElement('button');
     delButton.textContent = 'remove';
     tableRow.append(delButton);
-
     
     addButton.addEventListener('click', () => {
         let userFoods = getDayStorage();
         const foodToChange = findById(userFoods, userFoodObject.id);
         foodToChange.quantity++;
         setDayStorage(userFoods);
+        updateUserCalories();
         userFoods = getDayStorage();
         tdServings.textContent = foodToChange.quantity;
         tdCalorie.textContent = foodObject.calories * foodToChange.quantity;
@@ -80,6 +80,7 @@ export function renderTableRows(userFoodObject, foodObject){
             numServings--;
             setDayStorage(userFoods);
             getDayStorage();
+            updateUserCalories();
             tdServings.textContent = foodToChange.quantity;
             tdCalorie.textContent = foodObject.calories * foodToChange.quantity;
             tdProtein.textContent = (foodObject.protein * foodToChange.quantity).toFixed(1);
@@ -104,6 +105,7 @@ export function renderTableRows(userFoodObject, foodObject){
         tdTotalFat.textContent = calculateTotalFat(userFoods); 
         tdTotalCarbs.textContent = calculateTotalCarbs(userFoods); 
         setDayStorage(userFoods);
+        updateUserCalories();
     });
 
     return tableRow;
