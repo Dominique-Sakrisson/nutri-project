@@ -17,6 +17,7 @@ export function renderFood(food) {
 
     const foodImage = document.createElement('img');
     foodImage.src = `../assets/${food.img}`;
+    foodImage.onerror = ()=>foodImage.src = '../assets/groceries.png';
     foodImage.classList.add('food-image');
 
     const foodFactsDiv = document.createElement('div');
