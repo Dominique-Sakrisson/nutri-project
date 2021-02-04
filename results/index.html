@@ -16,64 +16,66 @@
 
 <body>
     <div class="container">
-    <header>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="../index.html">Homepage</a></li>
-                <li><a href="../food-select/index.html">Food Select</a></li>
-                <li><a href="../food-log/index.html">Food Log</a></li>
-                <li><a class="active" href="#">User Results</a></li>
-                <li><a href="../about/index.html">About</a></li>
-            </ul>
-        </nav>
-        <div class="gutter-right logo">
-            <img src="../assets/NTLogo2.png" />
-        </div>
-    </header>
-    <div id="user-info-container"></div>
-    
-    <main >
-        <div id="myModal" class="modal">
-            <!-- Modal content -->
-            <div class="modal-content">
-              <span class="close">&times;</span>
-              <p id='modal-text'>Some text in the Modal..</p>
+        <header>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Homepage</a></li>
+                    <li><a href="../food-select/index.html">Food Select</a></li>
+                    <li><a href="../food-log/index.html">Food Log</a></li>
+                    <li><a class="active" href="#">User Results</a></li>
+                    <li><a href="../about/index.html">About</a></li>
+                </ul>
+            </nav>
+            <div class="gutter-right logo">
+                <img src="../assets/NTLogo2.png" />
             </div>
-        </div>
+        </header>
+        <div id="user-info-container"></div>
 
-        </section>
-        <section class="main-section results-main">
-            <h1>Results Page</h1>
-            <h1>Progress Towards you daily goal report</h1>
+        <main>
+            <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p id='modal-text'>Some text in the Modal..</p>
+                </div>
+            </div>
 
-            <div class="between-charts">
-                <hr>
-                The chart below is outlining how close you are to reaching your calorie goal, and a breakdown of how much calories you've eaten in each macro.
-            </div>
-            <canvas id="myChart"></canvas>
+            </section>
+            <section class="main-section results-main">
+                <h1>Results Page</h1>
+                <h1>Progress towards your daily goal report</h1>
 
-            <div class="between-charts">
-                <hr>
-                The chart below is outlining how close you are to each Macro goal weighed out in grams
+                <div class="between-charts">
+                    <hr>
+                    The chart below is outlining how close you are to reaching your calorie goal, and a breakdown of how
+                    much calories you've eaten in each macro.
+                </div>
+                <canvas id="myChart"></canvas>
+
+                <div class="between-charts">
+                    <hr>
+                    The chart below is outlining how close you are to each Macro goal weighed out in grams
+                </div>
+                <canvas id="myChart2"></canvas>
+                <div class="between-charts">
+                    <hr>
+                    The chart below is outlining how you did this week in calories
+                </div>
+                <canvas id="myChart3"></canvas>
+                <div class="between-charts">
+                    <hr>
+                    The chart below is outlining how you did this week in grams
+                </div>
+                <canvas id="myChart4"></canvas>
+            </section>
+        </main>
+        <footer>
+            <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a>
+                from
+                <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
             </div>
-            <canvas id="myChart2"></canvas>
-            <div class="between-charts">
-                <hr>
-                The chart below is outlining how you did this week in calories
-            </div>
-            <canvas id="myChart3"></canvas>
-            <div class="between-charts">
-                <hr>
-                The chart below is outlining how you did this week in grams
-            </div>
-            <canvas id="myChart4"></canvas>
-        </section>
-    </main>
-    <footer>
-        <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from
-            <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-        </div>
-    </footer>
+        </footer>
     </div>
 
     <script type="module" src="./results.js"></script>
