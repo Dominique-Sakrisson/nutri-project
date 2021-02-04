@@ -27,7 +27,7 @@
     height: 500px;
 }
 .food-list{
-    width: 500px;
+    width: 92%;
     position: relative;
     margin: 0 auto;
 }
@@ -38,10 +38,10 @@
     transition: left 750ms linear 100ms;
     background-color: transparent;
     display: flex;
-    justify-content: end;
-    padding-right: 20px 10px 20px 0;
+    /* justify-content: end; */
+    /* padding-right: 20px 10px 20px 0; */
     margin-top: 20px;
-    z-index: 1;
+    /* z-index: 1; */
 }
 .form-div select{
     margin: 5px;
@@ -58,9 +58,10 @@
 }
 .form-div:hover{
     left: -125px;
+    /* margin-left: auto; */
 }
 .form-div input:active {
-    left: 5px
+    /* left: 5px */
 }
 
 .arrow{
