@@ -25,10 +25,12 @@ export function renderFood(food) {
     li.append(foodImage, foodFactsDiv);
 
     li.addEventListener('click', () => {
-        getDayStorage();
+      
         const updatedUserFood = getDayStorage();
         addFoodToStorage(food);
-        userActual.textContent = `Current Calories: ${calculateTotalCalories(updatedUserFood)} ` ;
+        userActual.textContent = `Current Calories: ${calculateTotalCalories(updatedUserFood)} `;
+
+
     });
 
     return li;
@@ -50,4 +52,12 @@ export function displayUserInfo(user) {
 
     userStatsDiv.append(userName, userCalGoal, userActual);
 }
+const currentCalories = Number(calculateTotalCalories(userFood));
+const goalCalories = Number(userData.dailyCalories);
+if (currentCalories >= goalCalories) {
+    userActual.classList.add('red');
+} else {
+    userActual.classList.add('green');
+}
+
 
