@@ -64,10 +64,15 @@ a.active, a:hover{
 
 }
 #user-info-container{
+    float: right;
     margin-top: 8px;
     margin-right:8px;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     line-height: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: right;
 }
 .red{
     color: red;
