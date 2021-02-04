@@ -2,7 +2,6 @@ import { getGlobalDataStorage, getUserStorage, setGlobalDataStorage } from '../l
 import { renderFood } from './renderfood.js';
 import { glutenFreeFoods, paleoFoods, vegetarianFoods } from './filter-functions.js';
 import { instructions } from '../data.js';
-import { calculateTotalCalories } from '../utils.js';
 let foodData = getGlobalDataStorage();
 
 const ul = document.querySelector('.food-list');
@@ -16,7 +15,6 @@ const toFoodLogButton = document.getElementById('to-food-log');
 paleoButton.classList.add('out');
 paleoButton.classList.add('slide-in');
 
-const userActual = document.getElementById('user-cal-span');
 const searchDiv = document.querySelector('.search-div');
 const searchForm = document.createElement('form');
 const searchLabelInstr = document.createElement('label');
@@ -46,7 +44,7 @@ topSection.classList.add('instructions');
 let keyDownString = '';
 searchInput.addEventListener('keydown', (e) => {
     let logs = e.key;
-    
+
     keyDownString += logs;
     if (logs === 'Backspace' && logs) {
         keyDownString = '';
@@ -62,7 +60,7 @@ searchInput.addEventListener('keydown', (e) => {
             ul.append(foodItem);
         }
     }
-   
+
     if (userDiet === 'paleo') {
         dietType = paleoFoods;
     } else if (userDiet === 'vegetarian') {
@@ -197,3 +195,13 @@ formElement.addEventListener('submit', (e) => {
 toFoodLogButton.addEventListener('click', () => {
     window.location = '../food-log/';
 });
+
+
+const sidebar = document.querySelector('.sidebar');
+const sidebutton = document.querySelector('.toggle-btn');
+sidebutton.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+    console.log(sidebutton);
+});
+
+

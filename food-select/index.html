@@ -16,70 +16,71 @@
 
 <body>
     <div class="container">
-    <header>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="../index.html">Homepage</a></li>
-                <li><a class="active" href="#">Food Select</a></li>
-                <li><a href="../food-log/index.html">Food Log</a></li>
-                <li><a href="../results/index.html">User Results</a></li>
-                <li><a href="../about/index.html">About</a></li>
-            </ul>
-        </nav>
-        <div class="gutter-right logo">
-            <img src="../assets/NTLogo2.png" />
-        </div>
+        <header>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Homepage</a></li>
+                    <li><a class="active" href="#">Food Select</a></li>
+                    <li><a href="../food-log/index.html">Food Log</a></li>
+                    <li><a href="../results/index.html">User Results</a></li>
+                    <li><a href="../about/index.html">About</a></li>
+                </ul>
+            </nav>
+            <div class="gutter-right logo">
+                <img src="../assets/NTLogo2.png" />
+            </div>
 
-    </header>
-    <div id="user-info-container"></div>
-    <main>
-        <section class="top-section"></section>
+        </header>
+        <div id="user-info-container"></div>
+        <main>
+            <section class="top-section"></section>
 
 
-        <div class="move-down btn-style">
-            <button value="paleo" id="paleo-button">Paleo</button>
-            <button value="vegetarian" id="vegetarian-button">Vegetarian</button>
-            <button value="gluten-free" id="gluten-free-button">Gluten Free</button>
-            <button value="show-all" id="show-all">Show All Foods</button>
-        </div>
-
-      
-        
-            
+            <div class="move-down btn-style">
+                <button value="paleo" id="paleo-button">Paleo</button>
+                <button value="vegetarian" id="vegetarian-button">Vegetarian</button>
+                <button value="gluten-free" id="gluten-free-button">Gluten Free</button>
+                <button value="show-all" id="show-all">Show All Foods</button>
+            </div>
             <div class="search-div"></div>
-            <div class="form-div">          
 
-                <form class='food-form' id='add-custom-form'>
-                    <div>Add Custom Foods</div>
-                    <label for="id">
-                        <input type="number" name="id" placeholder="Item ID" min="0">
-                    </label><br>
-                    <label for="name">
-                        <input type="text" name="name" placeholder="Name of Food">
-                    </label><br>
-                    <label for="img">
-                        <input type="text" name="img" placeholder="Image">
-                    </label><br>
-                    <label for="serving">
-                        <input type="text" name="serving" placeholder="Serving Size">
-                    </label><br>
-                    <label for="calories">
-                        <input type="number" name="calories" placeholder="Calories" min="0";>
-                    </label><br>
-                    <label for="protein">
-                        <input type="number" name="protein" placeholder="Protein" min="0">
-                    </label><br>
-                    <label for="carbs">
-                        <input type="number" name="carbs" placeholder="Carbs" min="0">
-                    </label><br>
-                    <label for="fat">
-                        <input type="number" name="fat" placeholder="Fat" min="0">
-                    </label><br>
-                    
-                    <button type="submit" id="submit">Add Food to Database</button>
-                
-                </form>
-                <span class="arrow"><i class="gg-push-chevron-right-o arrow"></i></span>
+            <div id="sidebar">
+
+                <div class="form-div sidebar">
+                    <div class="toggle-btn">
+                        <span>Add Custom Food</span>
+                    </div>
+                    <form class='food-form' id='add-custom-form'>
+                        <div class='formHeader'>Add Custom Foods</div>
+                        <label for="id">
+                            <input type="number" name="id" placeholder="Item ID" min="0">
+                        </label><br>
+                        <label for="name">
+                            <input type="text" name="name" placeholder="Name of Food">
+                        </label><br>
+                        <label for="img">
+                            <input type="text" name="img" placeholder="Image">
+                        </label><br>
+                        <label for="serving">
+                            <input type="text" name="serving" placeholder="Serving Size">
+                        </label><br>
+                        <label for="calories">
+                            <input type="number" name="calories" placeholder="Calories" min="0" ;>
+                        </label><br>
+                        <label for="protein">
+                            <input type="number" name="protein" placeholder="Protein" min="0">
+                        </label><br>
+                        <label for="carbs">
+                            <input type="number" name="carbs" placeholder="Carbs" min="0">
+                        </label><br>
+                        <label for="fat">
+                            <input type="number" name="fat" placeholder="Fat" min="0">
+                        </label><br>
+
+                        <button type="submit" id="submit">Add Food to Database</button>
+
+                    </form>
+                </div>
             </div>
             <button id='to-food-log'>Go To Food Log</button>
             <div class="food-div">
@@ -96,13 +97,14 @@
                     </li> -->
                 </ul>
             </div>
-        </section>
-    </main>
-    <footer>
-        <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from
-            <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-        </div>
-    </footer>
+            </section>
+        </main>
+        <footer>
+            <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a>
+                from
+                <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+            </div>
+        </footer>
     </div>
 
     <script type="module" src="./food-select.js"></script>

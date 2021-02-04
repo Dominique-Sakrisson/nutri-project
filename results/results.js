@@ -1,5 +1,5 @@
 import { calculateTotalCalories, calculateTotalCarbs, calculateTotalFat, calculateTotalProtein } from '../utils.js';
-import { foodData, instructions } from '../data.js';
+import { instructions } from '../data.js';
 import { getDayStorage, getUserStorage, getWeekStorage } from '../localStorage-utils.js';
 import { displayUserInfo } from '../food-select/renderfood.js';
 
@@ -48,7 +48,7 @@ if (weekFoodData.length < 7){
 console.log(calculateTotalCalories(weekArray) + 'is your weekly calories');
 
 const ctx = document.getElementById('myChart').getContext('2d');
-/* jshint ignore:start*/
+/* es lint ignore:start*/
 const myChart = new Chart(ctx, { 
     type: 'bar',
     data: {
@@ -106,7 +106,7 @@ const myChart = new Chart(ctx, {
         }
     }
 });
-/* jshint ignore:end */
+/* eshint ignore:end */
 
 const ctx2 = document.getElementById('myChart2').getContext('2d');
 /* jshint ignore:start*/
