@@ -38,7 +38,7 @@ table.append(totalsRow);
 resultsButton.addEventListener('click', () =>{
     const updatedFood = getDayStorage();
     setDayStorage(updatedFood);
-    weekFoods.push(updatedFood);
+    weekFoods.unshift(updatedFood);
     setWeekStorage(weekFoods);
     window.location = '../results';
 });
