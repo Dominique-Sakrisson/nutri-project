@@ -41,7 +41,7 @@ for (let item of instructions) {
 let keyDownString = '';
 searchInput.addEventListener('keydown', (e) => {
     let logs = e.key;
-    
+
     keyDownString += logs;
     if (logs === 'Backspace' && logs) {
         keyDownString = '';
@@ -57,7 +57,7 @@ searchInput.addEventListener('keydown', (e) => {
             ul.append(foodItem);
         }
     }
-   
+
     if (userDiet === 'paleo') {
         dietType = paleoFoods;
     } else if (userDiet === 'vegetarian') {
@@ -82,7 +82,7 @@ function recallFoodList() {
 
     if (userDiet === 'paleo') {
         dietType = paleoFoods;
-        paleoFoods.sort(function(a, b) {
+        paleoFoods.sort(function (a, b) {
             if (a.name < b.name) { return -1; }
             if (a.name > b.name) { return 1; }
             return 0;
@@ -90,21 +90,21 @@ function recallFoodList() {
     } else if (userDiet === 'vegetarian') {
         dietType = vegetarianFoods;
         dietType = vegetarianFoods;
-        vegetarianFoods.sort(function(a, b) {
+        vegetarianFoods.sort(function (a, b) {
             if (a.name < b.name) { return -1; }
             if (a.name > b.name) { return 1; }
             return 0;
         });
     } else if (userDiet === 'gluten-free') {
         dietType = glutenFreeFoods;
-        glutenFreeFoods.sort(function(a, b) {
+        glutenFreeFoods.sort(function (a, b) {
             if (a.name < b.name) { return -1; }
             if (a.name > b.name) { return 1; }
             return 0;
         });
     } else if (userDiet === 'no-diet') {
         dietType = foodData;
-        foodData.sort(function(a, b) {
+        foodData.sort(function (a, b) {
             if (a.name < b.name) { return -1; }
             if (a.name > b.name) { return 1; }
             return 0;
@@ -121,28 +121,28 @@ function eventHandler(e) {
     ul.textContent = '';
     if (e.target.value === 'paleo') {
         dietType = paleoFoods;
-        paleoFoods.sort(function(a, b) {
+        paleoFoods.sort(function (a, b) {
             if (a.name < b.name) { return -1; }
             if (a.name > b.name) { return 1; }
             return 0;
         });
     } else if (e.target.value === 'vegetarian') {
         dietType = vegetarianFoods;
-        vegetarianFoods.sort(function(a, b) {
+        vegetarianFoods.sort(function (a, b) {
             if (a.name < b.name) { return -1; }
             if (a.name > b.name) { return 1; }
             return 0;
         });
     } else if (e.target.value === 'gluten-free') {
         dietType = glutenFreeFoods;
-        glutenFreeFoods.sort(function(a, b) {
+        glutenFreeFoods.sort(function (a, b) {
             if (a.name < b.name) { return -1; }
             if (a.name > b.name) { return 1; }
             return 0;
         });
     } else if (e.target.value === 'show-all') {
         dietType = foodData;
-        foodData.sort(function(a, b) {
+        foodData.sort(function (a, b) {
             if (a.name < b.name) { return -1; }
             if (a.name > b.name) { return 1; }
             return 0;
@@ -224,3 +224,10 @@ window.onclick = function(e) {
         modal.style.display = 'none';
     }
 };
+
+const sidebar = document.querySelector('.sidebar');
+const sidebutton = document.querySelector('.toggle-btn');
+sidebutton.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+    console.log(sidebutton);
+})
