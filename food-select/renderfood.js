@@ -32,12 +32,9 @@ export function renderFood(food) {
         if (currentCalories >= goalCalories) {
             userActual.classList.add('red');
             userActual.classList.remove('green');
-            location.reload();
         } else {
             userActual.classList.add('green');
             userActual.classList.remove('red');
-            location.reload();
-           
         }
         
 
