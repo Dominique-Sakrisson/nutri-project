@@ -1,10 +1,11 @@
-import { getDayStorage, setDayStorage } from '../localStorage-utils.js';
+import { getDayStorage, getWeekStorage, setDayStorage, setWeekStorage } from '../localStorage-utils.js';
 import { findById } from '../utils.js';
 import { renderTableRows, renderTotalRows } from './food-log-utils.js';
 import { instructions } from '../data.js';
 import { displayUserInfo } from '../display-user-info.js';
 import { getUserStorage } from '../localStorage-utils.js';
 const userData = getUserStorage();
+const weekFoods = getWeekStorage();
 
 const table = document.getElementById('log-table');
 const resultsButton = document.getElementById('results-button');
@@ -37,6 +38,8 @@ table.append(totalsRow);
 resultsButton.addEventListener('click', () =>{
     const updatedFood = getDayStorage();
     setDayStorage(updatedFood);
+    weekFoods.push(updatedFood);
+    setWeekStorage(weekFoods);
     window.location = '../results';
 });
 

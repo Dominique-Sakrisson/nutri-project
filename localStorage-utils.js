@@ -64,10 +64,12 @@ export function setWeekStorage(array) {
 
 export function getWeekStorage() {
     const stringWeek = localStorage.getItem(WEEKUSERFOODS);
-    const weekStorage = JSON.parse(stringWeek);
+    let weekStorage = JSON.parse(stringWeek);
 
     if (!stringWeek) {
         localStorage.setItem(WEEKUSERFOODS, '[]');
+
+        weekStorage = [];
     }
     return weekStorage;
 }
