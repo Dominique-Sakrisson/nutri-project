@@ -216,12 +216,12 @@ window.addEventListener('load', () => {
 // };
 
 // When the user clicks on <span> (x), close the modal
-modalSpan.onclick = function () {
+modalSpan.onclick = function() {
     modal.style.display = 'none';
 };
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function (e) {
+window.onclick = function(e) {
     if (e.target === modal) {
         modal.style.display = 'none';
     }
@@ -232,10 +232,8 @@ const sidebutton = document.querySelector('.toggle-btn');
 sidebutton.addEventListener('click', () => {
     sidebar.classList.toggle('active');
     console.log(sidebutton);
-<<<<<<< HEAD
 });
 
 
-=======
-})
->>>>>>> cf5a3abacc01038cea27b8c462ba1c506280eefb
+
+
