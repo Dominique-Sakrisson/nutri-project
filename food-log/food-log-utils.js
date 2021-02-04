@@ -21,8 +21,9 @@ export function renderTableRows(userFoodObject, foodObject){
 
     const tdImage = document.createElement('td');
     const img = document.createElement('img');
-    tdImage.innerHTML = `<img src="../assets/${userFoodObject.img}" onerror="../assets/orange.png" width="50px"></img>`;
-    img.onerror = ()=>img.src = '../assets/orange.png';
+    img.src = `../assets/${userFoodObject.img}`;
+    img.classList.add('foods');
+    img.onerror = ()=>img.src = '../assets/groceries.png';
     tdImage.append(img);
     tableRow.append(tdImage);
 
