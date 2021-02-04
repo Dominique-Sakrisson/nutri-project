@@ -46,6 +46,9 @@ clearButton.addEventListener('click', () => {
     window.location = '../food-select';
 });
 
+<<<<<<< HEAD
+//displayUserInfo(userData);
+=======
 displayUserInfo(userData);
 
 //modal
@@ -77,3 +80,4 @@ window.onclick = function(e) {
         modal.style.display = 'none';
     }
 };
+>>>>>>> cf5a3abacc01038cea27b8c462ba1c506280eefb

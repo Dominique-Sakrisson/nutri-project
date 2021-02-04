@@ -1,6 +1,11 @@
 import { calculateTotalCalories, calculateTotalCarbs, calculateTotalFat, calculateTotalProtein } from '../utils.js';
+<<<<<<< HEAD
+import { instructions } from '../data.js';
+import { getDayStorage, getUserStorage, getWeekStorage } from '../localStorage-utils.js';
+=======
 import { foodData, instructions } from '../data.js';
 
+>>>>>>> cf5a3abacc01038cea27b8c462ba1c506280eefb
 import { displayUserInfo } from '../food-select/renderfood.js';
 
 import { getDayStorage, getUserStorage, getWeekStorage, setUserStorage } from '../localStorage-utils.js';
@@ -12,6 +17,8 @@ const user = getUserStorage();
 const topSection = document.querySelector('.top-section');
 const span = document.createElement('span');
 
+<<<<<<< HEAD
+=======
 const modalText = document.getElementById('modal-text');
 
 // Get the modal
@@ -20,6 +27,7 @@ const modal = document.getElementById('myModal');
 // Get the <span> element that closes the modal
 const modalSpan = document.getElementsByClassName('close')[0];
 
+>>>>>>> cf5a3abacc01038cea27b8c462ba1c506280eefb
 displayUserInfo(user);
 
 for (let item of instructions){
@@ -56,7 +64,7 @@ if (weekFoodData.length < 7){
 console.log(calculateTotalCalories(weekArray) + 'is your weekly calories');
 
 const ctx = document.getElementById('myChart').getContext('2d');
-/* jshint ignore:start*/
+/* es lint ignore:start*/
 const myChart = new Chart(ctx, { 
     type: 'bar',
     data: {
@@ -114,7 +122,7 @@ const myChart = new Chart(ctx, {
         }
     }
 });
-/* jshint ignore:end */
+/* eshint ignore:end */
 
 const ctx2 = document.getElementById('myChart2').getContext('2d');
 /* jshint ignore:start*/
@@ -176,7 +184,6 @@ const myChart2 = new Chart(ctx2, {
     }
 });
 /* jshint ignore:end */
-
 
 const ctx3 = document.getElementById('myChart3').getContext('2d');
 /* jshint ignore:start*/

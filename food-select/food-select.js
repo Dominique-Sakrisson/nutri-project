@@ -12,6 +12,8 @@ const vegetarianButton = document.getElementById('vegetarian-button');
 const glutenFreeButton = document.getElementById('gluten-free-button');
 const showAllButon = document.getElementById('show-all');
 const toFoodLogButton = document.getElementById('to-food-log');
+paleoButton.classList.add('out');
+paleoButton.classList.add('slide-in');
 
 const searchDiv = document.querySelector('.search-div');
 const searchForm = document.createElement('form');
@@ -82,7 +84,7 @@ function recallFoodList() {
 
     if (userDiet === 'paleo') {
         dietType = paleoFoods;
-        paleoFoods.sort(function (a, b) {
+        paleoFoods.sort(function(a, b) {
             if (a.name < b.name) { return -1; }
             if (a.name > b.name) { return 1; }
             return 0;
@@ -90,21 +92,21 @@ function recallFoodList() {
     } else if (userDiet === 'vegetarian') {
         dietType = vegetarianFoods;
         dietType = vegetarianFoods;
-        vegetarianFoods.sort(function (a, b) {
+        vegetarianFoods.sort(function(a, b) {
             if (a.name < b.name) { return -1; }
             if (a.name > b.name) { return 1; }
             return 0;
         });
     } else if (userDiet === 'gluten-free') {
         dietType = glutenFreeFoods;
-        glutenFreeFoods.sort(function (a, b) {
+        glutenFreeFoods.sort(function(a, b) {
             if (a.name < b.name) { return -1; }
             if (a.name > b.name) { return 1; }
             return 0;
         });
     } else if (userDiet === 'no-diet') {
         dietType = foodData;
-        foodData.sort(function (a, b) {
+        foodData.sort(function(a, b) {
             if (a.name < b.name) { return -1; }
             if (a.name > b.name) { return 1; }
             return 0;
@@ -121,28 +123,28 @@ function eventHandler(e) {
     ul.textContent = '';
     if (e.target.value === 'paleo') {
         dietType = paleoFoods;
-        paleoFoods.sort(function (a, b) {
+        paleoFoods.sort(function(a, b) {
             if (a.name < b.name) { return -1; }
             if (a.name > b.name) { return 1; }
             return 0;
         });
     } else if (e.target.value === 'vegetarian') {
         dietType = vegetarianFoods;
-        vegetarianFoods.sort(function (a, b) {
+        vegetarianFoods.sort(function(a, b) {
             if (a.name < b.name) { return -1; }
             if (a.name > b.name) { return 1; }
             return 0;
         });
     } else if (e.target.value === 'gluten-free') {
         dietType = glutenFreeFoods;
-        glutenFreeFoods.sort(function (a, b) {
+        glutenFreeFoods.sort(function(a, b) {
             if (a.name < b.name) { return -1; }
             if (a.name > b.name) { return 1; }
             return 0;
         });
     } else if (e.target.value === 'show-all') {
         dietType = foodData;
-        foodData.sort(function (a, b) {
+        foodData.sort(function(a, b) {
             if (a.name < b.name) { return -1; }
             if (a.name > b.name) { return 1; }
             return 0;
@@ -230,4 +232,10 @@ const sidebutton = document.querySelector('.toggle-btn');
 sidebutton.addEventListener('click', () => {
     sidebar.classList.toggle('active');
     console.log(sidebutton);
+<<<<<<< HEAD
+});
+
+
+=======
 })
+>>>>>>> cf5a3abacc01038cea27b8c462ba1c506280eefb
