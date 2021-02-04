@@ -2,7 +2,6 @@ import { getGlobalDataStorage, getUserStorage, setGlobalDataStorage } from '../l
 import { renderFood } from './renderfood.js';
 import { glutenFreeFoods, paleoFoods, vegetarianFoods } from './filter-functions.js';
 import { instructions } from '../data.js';
-import { calculateTotalCalories } from '../utils.js';
 let foodData = getGlobalDataStorage();
 
 const ul = document.querySelector('.food-list');
@@ -14,7 +13,6 @@ const glutenFreeButton = document.getElementById('gluten-free-button');
 const showAllButon = document.getElementById('show-all');
 const toFoodLogButton = document.getElementById('to-food-log');
 
-const userActual = document.getElementById('user-cal-span');
 const searchDiv = document.querySelector('.search-div');
 const searchForm = document.createElement('form');
 const searchLabelInstr = document.createElement('label');
