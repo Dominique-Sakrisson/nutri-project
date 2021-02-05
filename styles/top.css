@@ -20,21 +20,18 @@ header {
     box-shadow: var(--shadow);
     border-radius: 25px;
 }
-/* header{
-    width: 100%;
-    text-decoration: none;
-    list-style: none;
-    box-sizing: border-box;
-} */
-
 
 .main-logo {
-    animation: pulse 5s infinite ease-in-out;
 }
 
+
 header img {
-    height: 80px;
     width: 80px;
+    height: 80px;
+    animation: pulse 2s infinite ease-in-out;
+}
+header img:hover{
+    animation-play-state: paused;
 }
 
 
@@ -49,6 +46,8 @@ nav ul li{
     display: inline-block;
     line-height: 80px;
     margin: 0 5px;
+    width: 140px;
+    text-align: center;
 }
 
 nav ul li a{
@@ -81,3 +80,28 @@ a.active, a:hover{
 .green{
     color: green;
 }
+
+
+/* @keyframes pulse {
+    20% {
+      transform: rotate3d(-10, -10, -10, 50deg) scale(1.2);
+    }
+
+    40% {
+        transform: rotate3d(10, 10, -10, 50deg) scale(1);
+    }
+
+    60% {
+        transform: rotate3d(-10, 10, 10, 50deg) scale(1.2);
+      }
+
+    80% {
+        transform: rotate3d(10, 10, 10, 50deg) scale(1);
+    }
+
+  } */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(.8); } 
+} 

@@ -1,38 +1,5 @@
 @import url('https://css.gg/push-chevron-right-o.css');
 
-.food-image{
-    height: 5rem;
-}
-.food-facts{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    font-size: 1rem;
-}
-.food-list-item{
-    font-family: Roboto;
-    font-weight: 500;
-    display: flex;
-    margin: 8px;
-    transition: 200ms ease-in-out;
-}
-.food-list-item:hover{
-    cursor: pointer;
-    transform: scale(1.1);
-    
-}
-.food-div{
-    width: 55%;
-    overflow: scroll;
-    height: 100vh;
-}
-.food-list{
-    width: 92%;
-    position: relative;
-    margin: 0 auto;
-}
-
 .form-div {
     position: absolute;
     left: -300px;
@@ -51,6 +18,28 @@
     margin: 5px;
 }
 
+.search-form-div{
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.search-form-div p {
+    font-family: Roboto;
+}
+
+.search-form-div input{
+    width: 8%;
+    text-align: center;
+    transition: width 1200ms;
+}
+
+.search-form-div:hover input{
+    width: 300px;
+}
+.search-form-div input:hover{
+    width: 300px;
+}
+
 .hover-header{
     position: relative;
     background-color: transparent;
@@ -58,35 +47,32 @@
     bottom: 30px;
 }
 
-.form-div:active{
-    left: 10px;
-}
-
-
-.arrow{
-    margin-left: 10px;
-    width: 50px;
-    font-size: 2rem;
-}
 
 .sidebar {
     position: absolute;
+    top: 100px;
     width: 300px;
     height: 50%;
-    left: -300px;
+    left: -250px;
     transition: left .8s;
 }
 
 .active {
-    left: 10px;
+    left: 5px;
 }
 
-#sidebar .toggle-btn {
-    position: absolute;
-    top: 20px;
-    left: 310px;
+.toggle-btn{
+    position: relative;
+    height: 30px;
+    right: 10px;
+    transition: right 1000ms;
 }
-
+.toggle-btn span:hover{
+    background-color:  green;
+    color: seashell;
+    cursor: pointer;
+    
+}
 .toggle-btn span {
     border: 2px solid green;
     color: green;
@@ -95,6 +81,11 @@
     margin-top: 4px;
     font-family: Roboto;
     text-align: center;
+    width: 150px;
+    background-color: seashell;
+}
+.shift-left{
+    right: 215px;
 }
 
 .formHeader {
@@ -106,18 +97,25 @@
     text-align: center;
     height: 450px;
 }
+
 .search-div {
+    padding-top: 10px;
     background-color: rgba(255,255,255,0.6);
     border-radius: 15px;
 }
 
 .wide{
-    width: 58%;
+    width: 40%;
 }
  
 button{
     font-size: 14px;
     height: 60px;
-    margin-top: 5px;
+ 
 } 
 
+.move-down{
+    display: flex;
+    justify-content: center;
+    
+}
