@@ -24,7 +24,6 @@ for (let item of instructions) {
 
 for (let food of userFoods) {
     const foodObject = findById(userFoods, food.id);
-    console.log(foodObject);
     let fullTableRow = renderTableRows(food, foodObject);
     table.append(fullTableRow);
 }
@@ -36,7 +35,7 @@ table.append(totalsRow);
 
 resultsButton.addEventListener('click', () => {
     const updatedFood = getDayStorage();
-    setDayStorage(updatedFood);
+    // setDayStorage(updatedFood);
     weekFoods.unshift(updatedFood);
     setWeekStorage(weekFoods);
     window.location = '../results';
@@ -61,7 +60,6 @@ window.addEventListener('load', () => {
         return;
     } else {
         modal.style.display = 'block';
-
     }
     userData.logVisited = true;
     setUserStorage(userData);
@@ -69,13 +67,13 @@ window.addEventListener('load', () => {
 
 
 // When the user clicks on <span> (x), close the modal
-modalSpan.onclick = function() {
+modalSpan.addEventListener('click', () => {
     modal.style.display = 'none';
-};
+});
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(e) {
-    if (e.target === modal) {
+window.addEventListener('click', (e)=>{
+    if (e.target === modal){
         modal.style.display = 'none';
     }
-};
+});

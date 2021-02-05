@@ -132,26 +132,23 @@ const formElement = document.getElementById('add-custom-form');
 formElement.addEventListener('submit', (e) => {
     e.preventDefault(e);
     const data = new FormData(formElement);
-    const id = data.get('id');
     const name = data.get('name');
-    const img = data.get('img');
     const serving = data.get('serving');
     const calories = data.get('calories');
     const protein = data.get('protein');
     const carbs = data.get('carbs');
     const fat = data.get('fat');
-    const category = data.get('category');
 
     const newFood = {
-        id: Number(id),
+        id: Math.floor((Math.random() * 899) + 100),
         name: name,
-        img: img,
+        img: 'groceries.png',
         serving: serving,
         calories: Number(calories),
         protein: Number(protein),
         carbs: Number(carbs),
         fat: Number(fat),
-        category: category,
+
     };
     foodData.push(newFood);
     setGlobalDataStorage(foodData);
@@ -172,26 +169,22 @@ window.addEventListener('load', () => {
         return;
     } else {
         modal.style.display = 'block';
-
     }
     user.foodsVisited = true;
     setUserStorage(user);
 });
-// btn.onclick = function() {
-//     modal.style.display = 'block';
-// };
 
 // When the user clicks on <span> (x), close the modal
-modalSpan.onclick = function() {
+modalSpan.addEventListener('click', () => {
     modal.style.display = 'none';
-};
+});
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(e) {
-    if (e.target === modal) {
+window.addEventListener('click', (e)=>{
+    if (e.target === modal){
         modal.style.display = 'none';
     }
-};
+});
 
 const sidebar = document.querySelector('.sidebar');
 const sidebutton = document.querySelector('.toggle-btn');

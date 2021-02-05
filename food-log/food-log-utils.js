@@ -68,14 +68,11 @@ export function renderTableRows(userFoodObject, foodObject){
     subButton.addEventListener('click', () => {
         let userFoods = getDayStorage();
         const foodToChange = findById(userFoods, userFoodObject.id);
-        let numServings = foodToChange.quantity;
-        if (numServings < 1) return null;
+        
+        if (foodToChange.quantity < 1) return null;
         else {
-            getDayStorage();
             foodToChange.quantity--;
-            numServings--;
             setDayStorage(userFoods);
-            getDayStorage();
             updateUserCalories();
             updateTableContent(tdServings, tdCalorie, tdProtein, tdFat, tdCarb, foodToChange, foodObject);
             calcAllTotals(userFoods); 
