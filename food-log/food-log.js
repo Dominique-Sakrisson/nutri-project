@@ -28,7 +28,6 @@ for (let food of userFoods) {
     table.append(fullTableRow);
 }
 
-
 const totalsRow = renderTotalRows();
 table.append(totalsRow);
 
@@ -64,7 +63,6 @@ window.addEventListener('load', () => {
     userData.logVisited = true;
     setUserStorage(userData);
 });
-
 
 // When the user clicks on <span> (x), close the modal
 modalSpan.addEventListener('click', () => {

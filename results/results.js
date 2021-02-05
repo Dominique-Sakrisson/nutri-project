@@ -1,14 +1,7 @@
 import { calculateTotalCalories, calculateTotalCarbs, calculateTotalFat, calculateTotalProtein } from '../utils.js';
-
-
-
 import { instructions } from '../data.js';
-
-
 import { displayUserInfo } from '../food-select/food-utils.js';
-
 import { getDayStorage, getUserStorage, getWeekStorage, setUserStorage } from '../localStorage-utils.js';
-
 
 const dayFoodData = getDayStorage();
 const weekFoodData = getWeekStorage();

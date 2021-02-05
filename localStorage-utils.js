@@ -70,7 +70,6 @@ export function getWeekStorage() {
 
 export function addFoodToStorage(food) {
     const storage = getDayStorage();
-
     const selectedFood = findById(storage, food.id);
 
     if (selectedFood) {

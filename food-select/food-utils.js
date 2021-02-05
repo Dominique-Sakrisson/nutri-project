@@ -49,7 +49,6 @@ export function updateUserCalories() {
     return totalCals;
 }
 
-
 export function displayUserInfo(user) {
     userName.classList.add('user-name');
     userName.textContent = `${user.firstName} ${user.lastName}`;
