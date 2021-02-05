@@ -24,6 +24,7 @@ for (let item of instructions) {
 
 for (let food of userFoods) {
     const foodObject = findById(userFoods, food.id);
+    console.log(foodObject);
     let fullTableRow = renderTableRows(food, foodObject);
     table.append(fullTableRow);
 }

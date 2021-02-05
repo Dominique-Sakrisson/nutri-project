@@ -16,8 +16,6 @@ for (let item of instructions){
         modalText.textContent = item.description;
     }
 }
-// topSection.classList.add('instructions');
-// topSection.append(span);
 
 const form = document.querySelector('form');
 
