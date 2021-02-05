@@ -12,3 +12,11 @@ export const paleoFoods = foodData.filter((item) => {
 export const glutenFreeFoods = foodData.filter((item) => {
     return item.isGlutenFree;
 }); 
+
+export function sortDiet(diet){
+    diet.sort(function(a, b) {
+        if (a.name < b.name) { return -1; }
+        if (a.name > b.name) { return 1; }
+        return 0;
+    });
+}

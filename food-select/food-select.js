@@ -1,6 +1,6 @@
 import { getGlobalDataStorage, getUserStorage, setGlobalDataStorage, setUserStorage } from '../localStorage-utils.js';
 import { renderFood } from './renderfood.js';
-import { glutenFreeFoods, paleoFoods, vegetarianFoods } from './filter-functions.js';
+import { glutenFreeFoods, paleoFoods, vegetarianFoods, sortDiet } from './food-select-utils.js';
 import { instructions } from '../data.js';
 let foodData = getGlobalDataStorage();
 
@@ -111,16 +111,6 @@ function recallFoodList() {
         const foodItem = renderFood(iterator);
         ul.append(foodItem);
     }
-}
-
-
-
-function sortDiet(diet){
-    diet.sort(function(a, b) {
-        if (a.name < b.name) { return -1; }
-        if (a.name > b.name) { return 1; }
-        return 0;
-    });
 }
 
 function eventHandler(e) {
