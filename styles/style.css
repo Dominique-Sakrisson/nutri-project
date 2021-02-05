@@ -178,8 +178,16 @@ button:active{
 input{
     height: 1.8rem;
     font-size: 1rem;
+    transition: border 400ms linear;
+    transition: box-shadow 400ms;
 }
 
+<<<<<<< HEAD
+input:focus{
+    border: 3px white solid;
+    box-shadow : 0 10px 50px 0 rgba(0, 128, 0, 0.8);
+}
+=======
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -217,3 +225,4 @@ input{
     text-decoration: none;
     cursor: pointer;
   }
+>>>>>>> cf5a3abacc01038cea27b8c462ba1c506280eefb

@@ -80,3 +80,6 @@ a.active, a:hover{
 .green{
     color: green;
 }
+span{
+    width: 60%;
+}
