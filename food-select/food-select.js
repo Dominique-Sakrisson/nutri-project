@@ -22,15 +22,15 @@ searchLabelInstr.textContent = 'Enter the first letter to filter search, clear s
 const searchLabel = document.createElement('label');
 const searchInput = document.createElement('input');
 searchInput.placeholder = 'Search for a Food';
+searchInput.pattern = '[a-zA-Z.]{1,5}';
 const clearSearchButton = document.createElement('button');
 clearSearchButton.textContent = 'clear search';
-searchInput.pattern = '[a-zA-Z.]{1,5}';
 searchForm.append(searchLabelInstr, searchLabel, searchInput, clearSearchButton);
 searchForm.classList.add('search');
 searchDiv.append(searchForm);
 
-recallFoodList();
 let dietType = [];
+recallFoodList();
 
 const modalText = document.getElementById('modal-text');
 
@@ -40,19 +40,26 @@ for (let item of instructions) {
     }
 }
 
-
 let keyDownString = '';
 searchInput.addEventListener('keydown', (e) => {
     let logs = e.key;
-
-    keyDownString += logs;
-    if (logs === 'Backspace' && logs) {
-        keyDownString = '';
-        recallFoodList();
+    let slicedString = '';
+    
+    if(logs !== 'Backspace'){
+        keyDownString += logs;
+    } else {
+        slicedString = keyDownString.slice(0, -1);
+        console.log(slicedString);
+        keyDownString = slicedString;
+        if(keyDownString.length === 0){
+            recallFoodList();
+        }
     }
 
     ul.textContent = '';
+    
     for (let iterator of dietType) {
+        
         let itName = iterator.name.toString();
         let subIterator = itName.substr(0, 1);
         if (subIterator === keyDownString.substring(0, 1)) {
@@ -60,7 +67,7 @@ searchInput.addEventListener('keydown', (e) => {
             ul.append(foodItem);
         }
     }
-
+    
     if (userDiet === 'paleo') {
         dietType = paleoFoods;
     } else if (userDiet === 'vegetarian') {
@@ -68,7 +75,12 @@ searchInput.addEventListener('keydown', (e) => {
     } else if (userDiet === 'gluten-free') {
         dietType = glutenFreeFoods;
     }
+    if (keyDownString.length === 0){
+        recallFoodList();
+    }
+    
 });
+
 
 clearSearchButton.addEventListener('click', () => {
     keyDownString = '';
@@ -78,7 +90,7 @@ clearSearchButton.addEventListener('click', () => {
 
 
 function recallFoodList() {
-    let dietType = [];
+    //let dietType = [];
 
 
     ul.textContent = '';
@@ -217,7 +229,7 @@ window.addEventListener('load', () => {
 // };
 
 // When the user clicks on <span> (x), close the modal
-modalSpan.onclick = function() {
+modalSpan.onclick = function () {
     modal.style.display = 'none';
 };
 
@@ -230,9 +242,6 @@ window.onclick = function(e) {
 
 const sidebar = document.querySelector('.sidebar');
 const sidebutton = document.querySelector('.toggle-btn');
-
 sidebutton.addEventListener('click', () => {
     sidebar.classList.toggle('active');
-    console.log(sidebutton);
 });
-
