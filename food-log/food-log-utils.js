@@ -4,8 +4,6 @@ import {
     calculateTotalCalories, calculateTotalCarbs, calculateTotalFat, calculateTotalProtein, findById 
 } from '../utils.js';
 
-
-
 export function renderTableRows(userFoodObject, foodObject){
     const tableRow = document.createElement('tr');
     
@@ -77,8 +75,7 @@ export function renderTableRows(userFoodObject, foodObject){
             updateUserCalories();
             updateTableContent(tdServings, tdCalorie, tdProtein, tdFat, tdCarb, foodToChange, foodObject);
             calcAllTotals(userFoods); 
-        }
-            
+        }          
     });
 
     delButton.addEventListener('click', () => {
@@ -91,7 +88,6 @@ export function renderTableRows(userFoodObject, foodObject){
         setDayStorage(userFoods);
         updateUserCalories();
     });
-
     return tableRow;
 }
 

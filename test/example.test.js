@@ -1,5 +1,5 @@
 // IMPORT MODULES under test here:
-// import { example } from '../example.js';
+
 import { getDayStorage, getUserStorage, setDayStorage, setUserStorage } from '../localStorage-utils.js';
 import { calculateAllMacros, calculateTotalCalories, calculateTotalCarbs, calculateTotalFat, calculateTotalProtein, findById } from '../utils.js';
 
@@ -184,9 +184,6 @@ test('when an object of user data is passed in the object should be set to local
     const expected = JSON.stringify(testUser);
     const stringUser = localStorage.getItem('USER');
     
-    //Act 
-    // Call the function you're testing and set the result to a const
-
     //Expect
     // Make assertions about what is expected versus the actual result
     expect.deepEqual(stringUser, expected);
@@ -197,10 +194,6 @@ test('when getUserStorage is called it should get the user from local storage an
     const stringUser = JSON.stringify(testUser);
     localStorage.setItem('USER', stringUser);
     const user = getUserStorage();
-    // const expected = JSON.stringify(testUser);
-    
-    //Act 
-    // Call the function you're testing and set the result to a const
 
     //Expect
     // Make assertions about what is expected versus the actual result
@@ -212,9 +205,6 @@ test('when an array of food object is passed in the array should be set to local
     setDayStorage(testData);
     const expected = JSON.stringify(testData);
     const stringDay = localStorage.getItem('DAYUSERFOODS');
-    
-    //Act 
-    // Call the function you're testing and set the result to a const
 
     //Expect
     // Make assertions about what is expected versus the actual result
@@ -226,25 +216,9 @@ test('when getDayStorage is called it should get the user foods from local stora
     const stringDay = JSON.stringify(testData);
     localStorage.setItem('DAYUSERFOODS', stringDay);
     const userFoods = getDayStorage();
-    // const expected = JSON.stringify(testUser);
     
-    //Act 
-    // Call the function you're testing and set the result to a const
 
     //Expect
     // Make assertions about what is expected versus the actual result
     expect.deepEqual(userFoods, testData);
 });
-// test('when an array of foods objects and an id is passed in the object mathching the id should return', (expect) => {
-//     //Arrange
-//     // Set up your arguments and expectations
-//     const expected = '<tr><button>+</button><button>-</button><td>1</td><td><img src="../assets/apple.png" width="50px"><img></td><td>apple</td><td>95</td><td>0.5</td><td>0.3</td><td>25.0</td><button>remove</button></tr>';
-    
-//     //Act 
-//     // Call the function you're testing and set the result to a const
-//     const actual = renderTableRows(testData[0], testData[0]);
-
-//     //Expect
-//     // Make assertions about what is expected versus the actual result
-//     expect.equal(actual.outerHTML, expected);
-// });

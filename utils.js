@@ -9,7 +9,7 @@ export function findById(array, id){
 export function calculateTotalCalories(dayFoodData){
     let totalCalories = 0;
     for (let item of dayFoodData) {
-        totalCalories += item.calories * item.quantity; //update with right key name later
+        totalCalories += item.calories * item.quantity;
     }
     return totalCalories.toFixed(1);
 }
@@ -17,7 +17,7 @@ export function calculateTotalCalories(dayFoodData){
 export function calculateTotalFat(dayFoodData){
     let totalFat = 0;
     for (let item of dayFoodData) {
-        totalFat += item.fat * item.quantity; //update with right key name later
+        totalFat += item.fat * item.quantity;
     }
     return totalFat.toFixed(1);
 }
@@ -25,7 +25,7 @@ export function calculateTotalFat(dayFoodData){
 export function calculateTotalCarbs(dayFoodData){
     let totalCarbs = 0;
     for (let item of dayFoodData) {
-        totalCarbs += item.carbs * item.quantity; //update with right key name later
+        totalCarbs += item.carbs * item.quantity;
     }
     return totalCarbs.toFixed(1);
 }
@@ -33,7 +33,7 @@ export function calculateTotalCarbs(dayFoodData){
 export function calculateTotalProtein(dayFoodData){
     let totalProtein = 0;
     for (let item of dayFoodData) {
-        totalProtein += item.protein * item.quantity; //update with right key name later
+        totalProtein += item.protein * item.quantity;
     }
     return totalProtein.toFixed(1);
 }
