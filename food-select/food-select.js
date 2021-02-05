@@ -26,6 +26,7 @@ const clearSearchButton = document.createElement('button');
 clearSearchButton.textContent = 'clear search';
 searchInput.pattern = '[a-zA-Z.]{1,5}';
 searchForm.append(searchLabelInstr, searchLabel, searchInput, clearSearchButton);
+searchForm.classList.add('search');
 searchDiv.append(searchForm);
 
 recallFoodList();
