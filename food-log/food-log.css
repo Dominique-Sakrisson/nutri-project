@@ -20,6 +20,15 @@ td {
 button {
     min-width: 35px;
     min-height: 25px;
+    max-width: 50px;
+    font-size: 20px;
+    border-radius: 5px;
+    margin-right: 2px;
+}
+.remove-button {
+    min-width: 35px;
+    min-height: 25px;
+    max-width: 50px;
     font-size: 20px;
     border-radius: 5px;
     margin-right: 2px;
@@ -27,12 +36,15 @@ button {
 #clear-button {
     margin-top: 5px;
     min-height: 50px;
+    max-width: fit-content;
     font-weight: bold;
     padding: 5px;
 }
 #results-button {
     margin-top: 5px;
     min-height: 50px;
+    max-width: fit-content;
+
     font-weight: bold;
     padding: 5px;
     display: inline-block;
