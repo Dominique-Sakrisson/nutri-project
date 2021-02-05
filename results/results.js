@@ -2,7 +2,7 @@ import { calculateTotalCalories, calculateTotalCarbs, calculateTotalFat, calcula
 
 
 
-import { foodData, instructions } from '../data.js';
+import { instructions } from '../data.js';
 
 
 import { displayUserInfo } from '../food-select/renderfood.js';
@@ -13,8 +13,6 @@ import { getDayStorage, getUserStorage, getWeekStorage, setUserStorage } from '.
 const dayFoodData = getDayStorage();
 const weekFoodData = getWeekStorage();
 const user = getUserStorage(); 
-const topSection = document.querySelector('.top-section');
-const span = document.createElement('span');
 
 const modalText = document.getElementById('modal-text');
 
@@ -37,31 +35,24 @@ const weekArray = [];
 if (weekFoodData.length < 7){
     for (let i = 0; i <= weekFoodData.length - 1; i++){
         const ourItems = weekFoodData[i];
-        console.log(ourItems + 'our item');
         for (let item of ourItems){
             weekArray.push(item);
-            console.log(weekArray);
         }
 
     }
 } else {
     for (let i = 0; i <= 6; i++){
         const ourItems = weekFoodData[i];
-        console.log(ourItems + 'our item');
         for (let item of ourItems){
             weekArray.push(item);
-            console.log(weekArray.length);
-            console.log(weekArray);
-
         }
 
     }
 }
-console.log(calculateTotalCalories(weekArray) + 'is your weekly calories');
 
 const ctx = document.getElementById('myChart').getContext('2d');
 /* es lint ignore:start*/
-const myChart = new Chart(ctx, { 
+const myChart = new Chart(ctx, { // eslint-disable-line
     type: 'bar',
     data: {
         labels: ['Calories VS. Goal', 'Carbs VS. Goal', 'Fat VS. Goal', 'Protein VS. Goal'],
@@ -122,7 +113,7 @@ const myChart = new Chart(ctx, {
 
 const ctx2 = document.getElementById('myChart2').getContext('2d');
 /* jshint ignore:start*/
-const myChart2 = new Chart(ctx2, { 
+const myChart2 = new Chart(ctx2, { // eslint-disable-line
     type: 'bar',
     data: {
         labels: ['Carbs(g\'s) VS. Goal(g\'s)', 'Fat(g\'s) VS. Goal(g\'s)', 'Protein(g\'s) VS. Goal(g\'s)'],
@@ -183,7 +174,7 @@ const myChart2 = new Chart(ctx2, {
 
 const ctx3 = document.getElementById('myChart3').getContext('2d');
 /* jshint ignore:start*/
-const myChart3 = new Chart(ctx3, { 
+const myChart3 = new Chart(ctx3, { // eslint-disable-line
     type: 'bar',
     data: {
         labels: ['Calories VS. Goal', 'Carbs VS. Goal', 'Fat VS. Goal', 'Protein VS. Goal'],
@@ -245,7 +236,7 @@ const myChart3 = new Chart(ctx3, {
 
 const ctx4 = document.getElementById('myChart4').getContext('2d');
 /* jshint ignore:start*/
-const myChart4 = new Chart(ctx4, { 
+const myChart4 = new Chart(ctx4, { // eslint-disable-line
     type: 'bar',
     data: {
         labels: ['Carbs(g\'s) VS. Goal(g\'s)', 'Fat(g\'s) VS. Goal(g\'s)', 'Protein(g\'s) VS. Goal(g\'s)'],
