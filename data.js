@@ -816,26 +816,26 @@ export const foodData = [
 
 export const instructions = [{
     name: 'homePage',
-    description: 'You\'re well on your way to managing a healthy and personalized diet plan. The first step is to tell Nutri a little about yourself. Nutri likes to know the name of their friends, their goal caloric intake and any dietary restrictions.',
+    description: 'Welcome to NutriZone! You\'re well on your way to managing a healthy and personalized diet plan. The first step is to tell us a little bit about yourself. NutriZone likes to know the name of their friends, their goal caloric intake and any dietary restrictions.',
 },
 {
     name: 'foodPageMain',
-    description: 'Here is where you will tell Nutri what foods it was you\'ve ate today.'
+    description: 'Select the foods from the list below to add them to your daily food log. If you don\'t see your food in the list, you can click to add a custom food.'
 },
 {
     name: 'food-log',
-    description: 'Congratulations on adding some foods to your list, here is a breakdown of the foods you\'ve eaten today! You can edit your list on this page.'
+    description: 'Here is a breakdown of the foods you\'ve added to your log today! You can edit your log on this page, or go back to add more foods. When you are finished adding foods for the day, click to end the day\'s log and see your results.'
 },
 {
     name: 'resultsPage',
-    description: 'Congratulations on filling out you diet log!'
+    description: 'Congratulations on filling out you diet log for the day! Here you can see your actual calories consumed compared to your goal.'
 }];
 
 export const team = [{
     name: 'Patrick Hrabos',
     img: 'patrick.png',
     img2: 'patrick2.jpeg',
-    description: 'The badass son of a gun coding up our responsive reliable table datas',
+    description: 'Patrick follows a vegan diet and his favorite fruit is pineapple. He is passionate about health and wellness and solving complex problems with technology. Developing the NutriZone app combined these ',
     linkedIn: '<a href=\'https://www.linkedin.com/in/patrick-hrabos/\'><img src="../assets/linkedin.png"  class="meeds"/></a>',
     github: '<a href=\'https://www.github.com/phrabos\'><img src="../assets/github.png"  class="meeds"/></a>',
 }, 
