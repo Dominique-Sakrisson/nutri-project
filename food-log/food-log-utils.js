@@ -50,7 +50,8 @@ export function renderTableRows(userFoodObject, foodObject){
     tableRow.append(tdCarb);
     
     const delButton = document.createElement('button');
-    delButton.textContent = 'remove';
+    delButton.classList.add('remove-button');
+    delButton.textContent = `X`;
     tableRow.append(delButton);
     
     addButton.addEventListener('click', () => {
