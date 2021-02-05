@@ -138,15 +138,17 @@ footer {
 
   }
 
-  button {
+button {
     font-family: Roboto;
     padding: 10px;
     border: 2px solid green;
     color: green; 
-    border-radius: 10%;
-    background: transparent;
+    border-radius: 15px;
+    background: rgba(256,256,256,.8);
     transition-property: background-color;
     transition-duration: 450ms; 
+    margin: 5px;
+    width: 120px;
 }
 button:hover{
     background-origin: transparent;
