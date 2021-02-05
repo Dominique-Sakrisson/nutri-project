@@ -4,24 +4,20 @@ body {
     --shadow: 0px 10px 20px -12px rgba(0,0,0,0.45);
     --gutter: 30px;
     --footer-height: 25px;
-    
-    /* font-family: 'Titillium Web', sans-serif; */
-    /* font-family: Roboto; */
     background-image: url('../assets/food-background2.png');
     background-size: cover;
 }
 
 .container {
     background-color: rgba(256,256,256,.8);
-   
 }
+
 .results-main{
     background-color: white;
     
 }
 
 main {
-    /* height: 100vh; */
     clear: right;
     display: flex;
     flex-direction: column;
@@ -43,15 +39,8 @@ section {
     margin-top: var(--gutter);
     margin-bottom: var(--gutter);
     border: solid 2px var(--color1);
+    
 }
-/* 
-header {
-    display: flex;
-    justify-content: flex-end;
-    background-color: var(--color3);
-    height: var(--header-height);
-    box-shadow: var(--shadow);
-} */
 
 footer {
     display: flex;
@@ -59,26 +48,6 @@ footer {
     background-color: var(--color3);
     box-shadow: var(--shadow);
 }
-
-/* 
-h2 {
-    font-size: 1.8rem;
-    font-weight: bold;
-}
-
-.gutter-right {
-    margin-right: 20px;
-}
-
-.main-logo {
-    animation: pulse 5s infinite ease-in-out;
-}
-
-header img {
-    height: var(--header-height);
-}
- */
-
 
 content {
     width: 80%;
