@@ -12,12 +12,6 @@ export function setGlobalDataStorage(array){
 export function getGlobalDataStorage() {
     const stringData = localStorage.getItem(GLOBALDATA);
     let dataStorage = JSON.parse(stringData);
-
-    // if (!stringData) {
-    //     localStorage.setItem(GLOBALDATA, '[]');
-
-    //     dataStorage = [];
-    // }
     return dataStorage;
 }
 
@@ -84,7 +78,6 @@ export function addFoodToStorage(food) {
         selectedFood.quantity++;
         
     } else {
-        // console.log(selectedFood.id);
         const newSelection =
         {
             id: food.id,
