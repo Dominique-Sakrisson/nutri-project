@@ -26,12 +26,12 @@ button {
     margin-right: 2px;
 }
 .remove-button {
-    min-width: 35px;
+    min-width: 25px;
     min-height: 25px;
-    max-width: 50px;
+    /* max-width: 25px;
+    max-height: 25px; */
     font-size: 20px;
-    border-radius: 5px;
-    margin-right: 2px;
+
 }
 #clear-button {
     margin-top: 5px;
