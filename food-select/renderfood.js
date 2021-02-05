@@ -41,7 +41,6 @@ export function renderFood(food) {
             userActual.classList.remove('red');
         }
         
-        console.log(updateUserCalories());
         userActual.textContent = `Current Calories:${updateUserCalories(updatedUserFood)}`;
     });
     return li;
@@ -57,7 +56,6 @@ export function updateUserCalories() {
 
 
 displayUserInfo(userData);
-
 export function displayUserInfo(user) {
     userName.classList.add('user-name');
     userName.textContent = `${user.firstName} ${user.lastName}`;
@@ -70,11 +68,4 @@ export function displayUserInfo(user) {
 }
 const currentCalories = Number(calculateTotalCalories(userFood));
 const goalCalories = Number(userData.dailyCalories);
-
-// if (currentCalories >= goalCalories) {
-//     userActual.classList.toggle('red');
-// } else {
-//     userActual.classList.toggle('green');
-// }
-
 
