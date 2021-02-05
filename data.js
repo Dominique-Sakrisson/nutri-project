@@ -850,7 +850,7 @@ export const team = [{
     name: 'Jake Thrasher',
     img: 'jake.png',
     img2: 'jake2.jpeg',
-    description: 'The badass son of a gun coding up our responsive reliable table datas',
+    description: 'Jake\'s ideal diet consists of locally sourced, minimally processed foods, with a high variety of prebiotic fibers and micronutrients. When he\'s not developing software, he enjoys making music and dabbling in mycology.',
     linkedIn: '<a href=\'https://www.linkedin.com/in/m-jake-thrasher/\'><img src="../assets/linkedin.png"  class="meeds"/></a>',
     github: '<a href=\'https://www.github.com/jakethrasher\'><img src="../assets/github.png"  class="meeds"/></a>',
 }, {
