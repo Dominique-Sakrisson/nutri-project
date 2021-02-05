@@ -18,6 +18,28 @@
     margin: 5px;
 }
 
+.search-form-div{
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.search-form-div p {
+    font-family: Roboto;
+}
+
+.search-form-div input{
+    width: 8%;
+    text-align: center;
+    transition: width 1200ms;
+}
+
+.search-form-div:hover input{
+    width: 300px;
+}
+.search-form-div input:hover{
+    width: 300px;
+}
+
 .hover-header{
     position: relative;
     background-color: transparent;
@@ -25,12 +47,10 @@
     bottom: 30px;
 }
 
-/* .form-div:active{
-    left: 10px;
-} */
 
 .sidebar {
     position: absolute;
+    top: 100px;
     width: 300px;
     height: 50%;
     left: -250px;
@@ -38,15 +58,21 @@
 }
 
 .active {
-    left: 10px;
+    left: 5px;
 }
 
-#sidebar .toggle-btn {
-    position: absolute;
-    top: 20px;
-    left: 310px;
+.toggle-btn{
+    position: relative;
+    height: 30px;
+    right: 10px;
+    transition: right 1000ms;
 }
-
+.toggle-btn span:hover{
+    background-color:  green;
+    color: seashell;
+    cursor: pointer;
+    
+}
 .toggle-btn span {
     border: 2px solid green;
     color: green;
@@ -55,6 +81,11 @@
     margin-top: 4px;
     font-family: Roboto;
     text-align: center;
+    width: 150px;
+    background-color: seashell;
+}
+.shift-left{
+    right: 215px;
 }
 
 .formHeader {
@@ -66,6 +97,7 @@
     text-align: center;
     height: 450px;
 }
+
 .search-div {
     padding-top: 10px;
     background-color: rgba(255,255,255,0.6);
@@ -73,7 +105,7 @@
 }
 
 .wide{
-    width: 58%;
+    width: 40%;
 }
  
 button{

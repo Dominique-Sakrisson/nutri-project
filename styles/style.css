@@ -106,6 +106,7 @@ button:hover{
     background-origin: transparent;
     background: green;
     color: white;
+    cursor: pointer;
 }
 
 button:focus{

@@ -2,33 +2,36 @@ import { getGlobalDataStorage, getUserStorage, setGlobalDataStorage, setUserStor
 import { renderFood } from './renderfood.js';
 import { glutenFreeFoods, paleoFoods, vegetarianFoods, sortDiet } from './food-select-utils.js';
 import { instructions } from '../data.js';
+//reference our necessary data from local storage
 let foodData = getGlobalDataStorage();
-
-const ul = document.querySelector('.food-list');
 const user = getUserStorage();
 const userDiet = user.dietChoice;
+//reference our need elements from the HTML
+const ul = document.querySelector('.food-list');
+const searchDiv = document.querySelector('.search-div');
 const paleoButton = document.getElementById('paleo-button');
 const vegetarianButton = document.getElementById('vegetarian-button');
 const glutenFreeButton = document.getElementById('gluten-free-button');
 const showAllButon = document.getElementById('show-all');
 const toFoodLogButton = document.getElementById('to-food-log');
-paleoButton.classList.add('out');
-paleoButton.classList.add('slide-in');
-
-const searchDiv = document.querySelector('.search-div');
+const formElement = document.getElementById('add-custom-form');
+//dynamically create some elements for our html
+const searchFormDiv = document.createElement('div');
 const searchForm = document.createElement('form');
-const searchLabelInstr = document.createElement('div');
-searchLabelInstr.textContent = 'Enter the first letter to filter search, clear search to search another letter';
-//const searchLabel = document.createElement('label');
+const searchLabelInstr = document.createElement('p');
 const searchInput = document.createElement('input');
+//const clearSearchButton = document.createElement('button');
+//set their state
 searchInput.placeholder = 'Search for a Food';
-searchInput.pattern = '[a-zA-Z.]{1,5}';
-const clearSearchButton = document.createElement('button');
-clearSearchButton.textContent = 'clear search';
-clearSearchButton.classList.add('clear-search');
-searchForm.append(searchLabelInstr,  searchInput, clearSearchButton);
-searchForm.classList.add('search');
-searchDiv.append(searchForm);
+searchInput.classList.add('search-bar');
+searchLabelInstr.textContent = 'Enter the first letter to filter search, clear search to search another letter';
+searchForm.append(searchLabelInstr, searchInput);
+//clearSearchButton.textContent = 'clear search';
+//clearSearchButton.classList.add('clear-search');
+searchFormDiv.append(searchForm/*, searchLabelInstr, searchInput, clearSearchButton*/);
+//searchForm.classList.add('search');
+searchDiv.append(searchFormDiv);
+searchFormDiv.classList.add('search-form-div');
 
 let dietType = [];
 recallFoodList();
@@ -70,11 +73,11 @@ searchInput.addEventListener('keydown', (e) => {
 
 });
 
-clearSearchButton.addEventListener('click', () => {
-    keyDownString = '';
-    searchInput.value = '';
-    recallFoodList();
-});
+// clearSearchButton.addEventListener('click', () => {
+//     keyDownString = '';
+//     searchInput.value = '';
+//     recallFoodList();
+// });
 
 
 function recallFoodList() {
@@ -127,7 +130,6 @@ vegetarianButton.addEventListener('click', eventHandler);
 glutenFreeButton.addEventListener('click', eventHandler);
 showAllButon.addEventListener('click', eventHandler);
 
-const formElement = document.getElementById('add-custom-form');
 
 formElement.addEventListener('submit', (e) => {
     e.preventDefault(e);
@@ -155,6 +157,12 @@ formElement.addEventListener('submit', (e) => {
     };
     foodData.push(newFood);
     setGlobalDataStorage(foodData);
+    // dietType = foodData;
+    // sortDiet(foodData);
+    // for (let iterator of dietType) {
+    //     const foodItem = renderFood(iterator);
+    //     ul.append(foodItem);
+    // }
 });
 
 toFoodLogButton.addEventListener('click', () => {
@@ -197,4 +205,5 @@ const sidebar = document.querySelector('.sidebar');
 const sidebutton = document.querySelector('.toggle-btn');
 sidebutton.addEventListener('click', () => {
     sidebar.classList.toggle('active');
+    sidebutton.classList.toggle('shift-left');
 });
