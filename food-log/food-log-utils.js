@@ -61,11 +61,6 @@ export function renderTableRows(userFoodObject, foodObject){
         updateUserCalories();
         userFoods = getDayStorage();
         updateTableContent(tdServings, tdCalorie, tdProtein, tdFat, tdCarb, foodToChange, foodObject);
-        // tdServings.textContent = foodToChange.quantity;
-        // tdCalorie.textContent = foodObject.calories * foodToChange.quantity;
-        // tdProtein.textContent = (foodObject.protein * foodToChange.quantity).toFixed(1);
-        // tdFat.textContent = (foodObject.fat * foodToChange.quantity).toFixed(1);
-        // tdCarb.textContent = (foodObject.carbs * foodToChange.quantity).toFixed(1);
         calcAllTotals(userFoods);  
     });
     
