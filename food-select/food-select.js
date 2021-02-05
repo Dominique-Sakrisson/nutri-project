@@ -26,6 +26,7 @@ searchInput.pattern = '[a-zA-Z.]{1,5}';
 const clearSearchButton = document.createElement('button');
 clearSearchButton.textContent = 'clear search';
 searchForm.append(searchLabelInstr, searchLabel, searchInput, clearSearchButton);
+searchForm.classList.add('search');
 searchDiv.append(searchForm);
 
 let dietType = [];
