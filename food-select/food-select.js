@@ -232,8 +232,12 @@ const sidebutton = document.querySelector('.toggle-btn');
 sidebutton.addEventListener('click', () => {
     sidebar.classList.toggle('active');
     console.log(sidebutton);
+<<<<<<< HEAD
 });
 
 
 
 
+=======
+})
+>>>>>>> 7188ae0393222cc40026eaa0af6108f8640a83d8
