@@ -19,14 +19,14 @@ const searchDiv = document.querySelector('.search-div');
 const searchForm = document.createElement('form');
 const searchLabelInstr = document.createElement('div');
 searchLabelInstr.textContent = 'Enter the first letter to filter search, clear search to search another letter';
-const searchLabel = document.createElement('label');
+//const searchLabel = document.createElement('label');
 const searchInput = document.createElement('input');
 searchInput.placeholder = 'Search for a Food';
 searchInput.pattern = '[a-zA-Z.]{1,5}';
 const clearSearchButton = document.createElement('button');
 clearSearchButton.textContent = 'clear search';
 clearSearchButton.classList.add('clear-search');
-searchForm.append(searchLabelInstr, searchLabel, searchInput, clearSearchButton);
+searchForm.append(searchLabelInstr,  searchInput, clearSearchButton);
 searchForm.classList.add('search');
 searchDiv.append(searchForm);
 
