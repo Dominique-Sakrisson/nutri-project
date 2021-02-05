@@ -24,6 +24,7 @@ const searchInput = document.createElement('input');
 searchInput.placeholder = 'Search for a Food';
 searchInput.pattern = '[a-zA-Z.]{1,5}';
 const clearSearchButton = document.createElement('button');
+clearSearchButton.classList.add('clear-search');
 clearSearchButton.textContent = 'clear search';
 searchForm.append(searchLabelInstr, searchLabel, searchInput, clearSearchButton);
 searchForm.classList.add('search');

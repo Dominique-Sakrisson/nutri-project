@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="../styles/home.css">
     <link rel="stylesheet" href="./food-select.css">
     <link rel="stylesheet" href="../styles/top.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <title>Document</title>
 </head>
 
@@ -42,16 +46,17 @@
             </div>
         </div>
         
-            <div class="move-down btn-style">
-                <button value="paleo" id="paleo-button">Paleo</button>
+        
+        <div class="search-div">
+            <div class="move-down btn-style animate__animated animate__backInDown">
+                <button  value="paleo" id="paleo-button">Paleo</button>
                 <button value="vegetarian" id="vegetarian-button">Vegetarian</button>
                 <button value="gluten-free" id="gluten-free-button">Gluten Free</button>
                 <button value="show-all" id="show-all">Show All Foods</button>
             </div>
-
-            <div class="search-div"></div>
-
-            <div id="sidebar">
+        </div>
+        
+        <div id="sidebar">
 
                 <div class="form-div sidebar">
                     <!-- <button class="toggle-button">Add Food</button> -->
@@ -90,19 +95,9 @@
                     </form>
                 </div>
             </div>
-            <button id='to-food-log'>Go To Food Log</button>
+            <button class='wide' id='to-food-log'>Go To Food Log</button>
             <div class="food-div">
                 <ul class="food-list">
-                    <!-- <li class="food-list-item">
-                        <img class="food-image" src="../assets/apple.png" alt="apple">
-                        <div class="food-facts">
-                            <span>apple</span>
-                            <span>serving-size: 1</span>
-                            <span>calories: 95</span>
-                            <span>protein: 95</span>
-                            <span>carbohydrates: 25</span>
-                        </div>
-                    </li> -->
                 </ul>
             </div>
             </section>
