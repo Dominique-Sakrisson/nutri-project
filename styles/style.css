@@ -190,3 +190,15 @@ input:focus{
   .the-main{
       height: 100vh;
   }
+
+  .welcome{
+      font-size: 1.5rem;
+      text-align: center;
+      margin: 20px, auto 20px auto;
+  }
+  .welcome:hover{
+      color: green;
+  }
+.form-section{
+    margin: auto;
+}
