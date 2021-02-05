@@ -126,32 +126,16 @@ function eventHandler(e) {
     ul.textContent = '';
     if (e.target.value === 'paleo') {
         dietType = paleoFoods;
-        paleoFoods.sort(function(a, b) {
-            if (a.name < b.name) { return -1; }
-            if (a.name > b.name) { return 1; }
-            return 0;
-        });
+        sortDiet(paleoFoods);
     } else if (e.target.value === 'vegetarian') {
         dietType = vegetarianFoods;
-        vegetarianFoods.sort(function(a, b) {
-            if (a.name < b.name) { return -1; }
-            if (a.name > b.name) { return 1; }
-            return 0;
-        });
+        sortDiet(vegetarianFoods);
     } else if (e.target.value === 'gluten-free') {
         dietType = glutenFreeFoods;
-        glutenFreeFoods.sort(function(a, b) {
-            if (a.name < b.name) { return -1; }
-            if (a.name > b.name) { return 1; }
-            return 0;
-        });
+        sortDiet(glutenFreeFoods);
     } else if (e.target.value === 'show-all') {
         dietType = foodData;
-        foodData.sort(function(a, b) {
-            if (a.name < b.name) { return -1; }
-            if (a.name > b.name) { return 1; }
-            return 0;
-        });
+        sortDiet(foodData);
     }
     for (let iterator of dietType) {
         const foodItem = renderFood(iterator);
