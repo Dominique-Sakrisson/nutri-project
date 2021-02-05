@@ -68,9 +68,9 @@ const myChart = new Chart(ctx, { // eslint-disable-line
                 'rgba(151,119,168,1)', // purple color
             ],
             borderColor: [
-                'rgba(237,209,148,1)', //brown color
+                'rgba(237,209,148, 1)', //brown color
                 'rgba(136,192,87, 1)', //green color
-                'rgba(204,92,86,1)', //red color
+                'rgba(204,92,86, 1)', //red color
                 'rgba(151,119,168,1)', // purple color
             ],
             borderWidth: 1
@@ -85,13 +85,13 @@ const myChart = new Chart(ctx, { // eslint-disable-line
                 'rgba(237,209,148,.6)', //brown color
                 'rgba(136,192,87, .6)', //green color
                 'rgba(204,92,86,.6)', //red color
-                'rgba(151,119,168,)', // purple color
+                'rgba(151,119,168, .6 )', // purple color
             ],
             borderColor: [
                 'rgba(237,209,148,.6)', //brown color
                 'rgba(136,192,87, .6)', //green color
                 'rgba(204,92,86,.6)', //red color
-                'rgba(151,119,168,)', // purple color
+                'rgba(151,119,168, .6)', // purple color
             ],
             borderWidth: 1
         }]
@@ -146,13 +146,13 @@ const myChart2 = new Chart(ctx2, { // eslint-disable-line
                
                 'rgba(136,192,87, .6)', //green color
                 'rgba(204,92,86,.6)', //red color
-                'rgba(151,119,168,)', // purple color
+                'rgba(151,119,168, .6)', // purple color
             ],
             borderColor: [
                 
                 'rgba(136,192,87, .6)', //green color
                 'rgba(204,92,86,.6)', //red color
-                'rgba(151,119,168,)', // purple color
+                'rgba(151,119,168, .6)', // purple color
             ],
             borderWidth: 1
         }]
@@ -207,13 +207,13 @@ const myChart3 = new Chart(ctx3, { // eslint-disable-line
                 'rgba(237,209,148,.6)', //brown color
                 'rgba(136,192,87, .6)', //green color
                 'rgba(204,92,86,.6)', //red color
-                'rgba(151,119,168,)', // purple color
+                'rgba(151,119,168, .6)', // purple color
             ],
             borderColor: [
                 'rgba(237,209,148,.6)', //brown color
                 'rgba(136,192,87, .6)', //green color
                 'rgba(204,92,86,.6)', //red color
-                'rgba(151,119,168,)', // purple color
+                'rgba(151,119,168, .6)', // purple color
             ],
             borderWidth: 1
         }]
@@ -266,12 +266,12 @@ const myChart4 = new Chart(ctx4, { // eslint-disable-line
             backgroundColor: [
                 'rgba(136,192,87, .6)', //green color
                 'rgba(204,92,86,.6)', //red color
-                'rgba(151,119,168,)', // purple color
+                'rgba(151,119,168, .6)', // purple color
             ],
             borderColor: [
                 'rgba(136,192,87, .6)', //green color
                 'rgba(204,92,86,.6)', //red color
-                'rgba(151,119,168,)', // purple color
+                'rgba(151,119,168, .6)', // purple color
             ],
             borderWidth: 1
         }]
