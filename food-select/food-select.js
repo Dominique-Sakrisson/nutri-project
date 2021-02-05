@@ -24,8 +24,8 @@ const searchInput = document.createElement('input');
 searchInput.placeholder = 'Search for a Food';
 searchInput.pattern = '[a-zA-Z.]{1,5}';
 const clearSearchButton = document.createElement('button');
-clearSearchButton.classList.add('clear-search');
 clearSearchButton.textContent = 'clear search';
+clearSearchButton.classList.add('clear-search');
 searchForm.append(searchLabelInstr, searchLabel, searchInput, clearSearchButton);
 searchForm.classList.add('search');
 searchDiv.append(searchForm);
@@ -45,22 +45,21 @@ let keyDownString = '';
 searchInput.addEventListener('keydown', (e) => {
     let logs = e.key;
     let slicedString = '';
-    
-    if(logs !== 'Backspace'){
+
+    if (logs !== 'Backspace') {
         keyDownString += logs;
     } else {
         slicedString = keyDownString.slice(0, -1);
-        console.log(slicedString);
         keyDownString = slicedString;
-        if(keyDownString.length === 0){
+        if (keyDownString.length === 0) {
             recallFoodList();
         }
     }
 
     ul.textContent = '';
-    
+
     for (let iterator of dietType) {
-        
+
         let itName = iterator.name.toString();
         let subIterator = itName.substr(0, 1);
         if (subIterator === keyDownString.substring(0, 1)) {
@@ -68,7 +67,7 @@ searchInput.addEventListener('keydown', (e) => {
             ul.append(foodItem);
         }
     }
-    
+
     if (userDiet === 'paleo') {
         dietType = paleoFoods;
     } else if (userDiet === 'vegetarian') {
@@ -76,10 +75,10 @@ searchInput.addEventListener('keydown', (e) => {
     } else if (userDiet === 'gluten-free') {
         dietType = glutenFreeFoods;
     }
-    if (keyDownString.length === 0){
+    if (keyDownString.length === 0) {
         recallFoodList();
     }
-    
+
 });
 
 
@@ -230,7 +229,7 @@ window.addEventListener('load', () => {
 // };
 
 // When the user clicks on <span> (x), close the modal
-modalSpan.onclick = function () {
+modalSpan.onclick = function() {
     modal.style.display = 'none';
 };
 

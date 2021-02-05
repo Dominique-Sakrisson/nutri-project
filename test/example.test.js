@@ -1,6 +1,5 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
-
 import { renderTableRows } from '../food-log/food-log-utils.js';
 import { getDayStorage, getUserStorage, setDayStorage, setUserStorage } from '../localStorage-utils.js';
 import { calculateAllMacros, calculateTotalCalories, calculateTotalCarbs, calculateTotalFat, calculateTotalProtein, findById } from '../utils.js';
