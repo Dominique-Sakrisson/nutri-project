@@ -51,15 +51,11 @@ searchInput.addEventListener('keydown', (e) => {
     } else {
         slicedString = keyDownString.slice(0, -1);
         keyDownString = slicedString;
-        if (keyDownString.length === 0) {
-            recallFoodList();
-        }
     }
 
     ul.textContent = '';
 
     for (let iterator of dietType) {
-
         let itName = iterator.name.toString();
         let subIterator = itName.substr(0, 1);
         if (subIterator === keyDownString.substring(0, 1)) {
@@ -68,19 +64,11 @@ searchInput.addEventListener('keydown', (e) => {
         }
     }
 
-    if (userDiet === 'paleo') {
-        dietType = paleoFoods;
-    } else if (userDiet === 'vegetarian') {
-        dietType = vegetarianFoods;
-    } else if (userDiet === 'gluten-free') {
-        dietType = glutenFreeFoods;
-    }
     if (keyDownString.length === 0) {
         recallFoodList();
     }
 
 });
-
 
 clearSearchButton.addEventListener('click', () => {
     keyDownString = '';
