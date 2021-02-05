@@ -857,7 +857,7 @@ export const team = [{
     name: 'Dom Sakrisson',
     img: 'dom.png',
     img2: 'dom2.jpeg',
-    description: 'Dom is someone interested in technology, health and he thinks data analysis is pretty cool too. Being apart of Nutrizone was a great experience. He seemed to enjoy developing Nutrizone thinking as a developer and a potential end user.',
+    description: 'Dom is a software developer from Portland, OR. Health and technology are two big interests he has. Being apart of Nutrizone was a great experience. It was a pleasure developing Nutrizone thinking as a developer and a potential end user with this team.',
     linkedIn: '<a href="https://www.linkedin.com/in/dominique-sakrisson/"><img src="../assets/linkedin.png" class="meeds" /></a>',
     github: '<a href="https://www.github.com/Dominique-Sakrisson"><img src="../assets/github.png"  class="meeds" /></a>',
 }];
