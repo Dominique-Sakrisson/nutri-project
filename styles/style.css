@@ -68,24 +68,7 @@ footer {
     box-shadow: var(--shadow);
 }
   
-  @keyframes pulse {
-    20% {
-      transform: rotate3d(-10, -10, -10, 50deg) scale(1.2);
-    }
-
-    40% {
-        transform: rotate3d(10, 10, -10, 50deg) scale(1);
-    }
-
-    60% {
-        transform: rotate3d(-10, 10, 10, 50deg) scale(1.2);
-      }
-
-    80% {
-        transform: rotate3d(10, 10, 10, 50deg) scale(1);
-    }
-
-  }
+  
 
   .instructions {
     border-radius: 15px;
@@ -123,6 +106,7 @@ button:hover{
     background-origin: transparent;
     background: green;
     color: white;
+    cursor: pointer;
 }
 
 button:focus{
@@ -139,12 +123,6 @@ button:active{
     transform: translateY(4px);
 }
 
-.between-charts{
-    width: 100%;
-    text-align: center;
-    font-size: 1.3rem;
-    color: green;
-}
 
 input{
     height: 1.8rem;

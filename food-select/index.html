@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/home.css">
-    <link rel="stylesheet" href="./food-select.css">
+    <link rel="stylesheet" href="../styles/food-select.css">
     <link rel="stylesheet" href="../styles/top.css">
+    <link rel="stylesheet" href="../styles/food-row.css">
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
@@ -54,15 +55,13 @@
                 <button value="gluten-free" id="gluten-free-button">Gluten Free</button>
                 <button value="show-all" id="show-all">Show All Foods</button>
             </div>
+            
         </div>
         
         <div id="sidebar">
 
                 <div class="form-div sidebar">
                     <!-- <button class="toggle-button">Add Food</button> -->
-                    <div class="toggle-btn">
-                        <span>Add Custom Food</span>
-                    </div>
                     <form class='food-form' id='add-custom-form'>
                         <div class='formHeader'>Add Custom Foods</div>
                         <label for="name">
@@ -83,10 +82,13 @@
                         <label for="fat">
                             <input type="number" name="fat" placeholder="Fat" min="0" step="0.1">
                         </label><br>
-
+                        
                         <button type="submit" id="submit">Add Food to Database</button>
-
+                        
                     </form>
+                    <div class="toggle-btn">
+                        <span>Add Custom Food</span>
+                    </div>
                 </div>
             </div>
             <button class='wide' id='to-food-log'>Go To Food Log</button>
@@ -94,7 +96,7 @@
                 <ul class="food-list">
                 </ul>
             </div>
-            </section>
+        </section>
         </main>
         <footer>
             <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a>

@@ -1,0 +1,32 @@
+.food-image{
+    height: 5rem;
+}
+.food-facts{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1rem;
+}
+.food-list-item{
+    font-family: Roboto;
+    font-weight: 500;
+    display: flex;
+    margin: 8px;
+    transition: 200ms ease-in-out;
+}
+.food-list-item:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    
+}
+.food-div{
+    width: 55%;
+    overflow: scroll;
+    height: 100vh;
+}
+.food-list{
+    width: 92%;
+    position: relative;
+    margin: 0 auto;
+}
