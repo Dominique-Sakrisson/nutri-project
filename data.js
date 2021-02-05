@@ -835,7 +835,7 @@ export const team = [{
     name: 'Patrick Hrabos',
     img: 'patrick.png',
     img2: 'patrick2.jpeg',
-    description: 'Patrick follows a vegan diet and his favorite fruit is pineapple. He is passionate about health and wellness and solving complex problems with technology. Developing the NutriZone app combined these ',
+    description: 'Patrick follows a vegan diet and his favorite fruit is pineapple. He is passionate about health and wellness and solving complex problems with technology. Developing the NutriZone app was a unique opportunity to merge those two passions.',
     linkedIn: '<a href=\'https://www.linkedin.com/in/patrick-hrabos/\'><img src="../assets/linkedin.png"  class="meeds"/></a>',
     github: '<a href=\'https://www.github.com/phrabos\'><img src="../assets/github.png"  class="meeds"/></a>',
 }, 
