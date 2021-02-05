@@ -21,13 +21,13 @@ body {
 }
 
 main {
+    height: 100vh;
     clear: right;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-bottom: calc(var(--footer-height));
-    height: 100%;
 }
 
 section {
