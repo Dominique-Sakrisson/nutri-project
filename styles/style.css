@@ -21,7 +21,7 @@ body {
 }
 
 main {
-    height: 100vh;
+    /* height: 100vh; */
     clear: right;
     display: flex;
     flex-direction: column;
@@ -228,4 +228,7 @@ input:focus{
 
   #to-food-log {
       margin-top: 5px;
+  }
+  .the-main{
+      height: 100vh;
   }
