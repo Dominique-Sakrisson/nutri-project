@@ -3,6 +3,7 @@ import { findById } from '../utils.js';
 import { renderTableRows, renderTotalRows } from './food-log-utils.js';
 import { instructions } from '../data.js';
 import { getUserStorage } from '../localStorage-utils.js';
+import { displayUserInfo } from '../food-select/renderfood.js';
 const userData = getUserStorage();
 const weekFoods = getWeekStorage();
 

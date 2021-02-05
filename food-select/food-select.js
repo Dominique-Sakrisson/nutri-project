@@ -232,10 +232,4 @@ const sidebutton = document.querySelector('.toggle-btn');
 sidebutton.addEventListener('click', () => {
     sidebar.classList.toggle('active');
     console.log(sidebutton);
-<<<<<<< HEAD
-});
-
-
-=======
 })
->>>>>>> cf5a3abacc01038cea27b8c462ba1c506280eefb
