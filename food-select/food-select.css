@@ -39,27 +39,27 @@
     transition: left 750ms linear 100ms;
     background-color: transparent;
     display: flex;
-    /* justify-content: end; */
-    /* padding-right: 20px 10px 20px 0; */
     margin-top: 20px;
-    /* z-index: 1; */
 }
+
 .form-div select{
     margin: 5px;
 }
+
 .form-div input{
     padding: 10px;
     margin: 5px;
 }
+
 .hover-header{
     position: relative;
     background-color: transparent;
     left: 165px;
     bottom: 30px;
 }
+
 .form-div:active{
     left: 10px;
-    /* margin-left: auto; */
 }
 
 
@@ -67,8 +67,6 @@
     margin-left: 10px;
     width: 50px;
     font-size: 2rem;
-
-    
 }
 
 .sidebar {
@@ -108,8 +106,18 @@
     text-align: center;
     height: 450px;
 }
-.search {
+.search-div {
     background-color: rgba(255,255,255,0.6);
-    
-    /* opacity: .7; */
+    border-radius: 15px;
 }
+
+.wide{
+    width: 58%;
+}
+ 
+button{
+    font-size: 14px;
+    height: 60px;
+    margin-top: 5px;
+} 
+
