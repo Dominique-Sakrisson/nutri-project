@@ -50,14 +50,14 @@ export function updateUserCalories() {
 }
 
 
-displayUserInfo(userData);
 export function displayUserInfo(user) {
     userName.classList.add('user-name');
     userName.textContent = `${user.firstName} ${user.lastName}`;
-
+    
     userCalGoal.textContent = `Calorie Goal: ${user.dailyCalories}`;
-
+    
     userActual.textContent = `Current Calories: ${calculateTotalCalories(userFood)}`;
     userDietChoice.textContent = `Diet Type: ${getUserDietChoice()}`;
     userStatsDiv.append(userName, userCalGoal, userActual, userDietChoice);
 }
+displayUserInfo(userData);
