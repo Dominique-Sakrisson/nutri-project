@@ -1,4 +1,4 @@
-import { updateUserCalories } from '../food-select/renderfood.js';
+import { updateUserCalories } from '../food-select/food-utils.js';
 import { getDayStorage, setDayStorage } from '../localStorage-utils.js';
 import { 
     calculateTotalCalories, calculateTotalCarbs, calculateTotalFat, calculateTotalProtein, findById 
