@@ -20,16 +20,15 @@ const searchFormDiv = document.createElement('div');
 const searchForm = document.createElement('form');
 const searchLabelInstr = document.createElement('p');
 const searchInput = document.createElement('input');
-//const clearSearchButton = document.createElement('button');
+
 //set their state
 searchInput.placeholder = 'Search for a Food';
 searchInput.classList.add('search-bar');
 searchLabelInstr.textContent = 'Enter the first letter to filter search, clear search to search another letter';
 searchForm.append(searchLabelInstr, searchInput);
-//clearSearchButton.textContent = 'clear search';
-//clearSearchButton.classList.add('clear-search');
+
 searchFormDiv.append(searchForm/*, searchLabelInstr, searchInput, clearSearchButton*/);
-//searchForm.classList.add('search');
+
 searchDiv.append(searchFormDiv);
 searchFormDiv.classList.add('search-form-div');
 
@@ -66,19 +65,11 @@ searchInput.addEventListener('keydown', (e) => {
             ul.append(foodItem);
         }
     }
-
     if (keyDownString.length === 0) {
         recallFoodList();
     }
 
 });
-
-// clearSearchButton.addEventListener('click', () => {
-//     keyDownString = '';
-//     searchInput.value = '';
-//     recallFoodList();
-// });
-
 
 function recallFoodList() {
     
@@ -130,7 +121,6 @@ vegetarianButton.addEventListener('click', eventHandler);
 glutenFreeButton.addEventListener('click', eventHandler);
 showAllButon.addEventListener('click', eventHandler);
 
-
 formElement.addEventListener('submit', (e) => {
     e.preventDefault(e);
     const data = new FormData(formElement);
@@ -154,12 +144,8 @@ formElement.addEventListener('submit', (e) => {
     };
     foodData.push(newFood);
     setGlobalDataStorage(foodData);
-    // dietType = foodData;
-    // sortDiet(foodData);
-    // for (let iterator of dietType) {
-    //     const foodItem = renderFood(iterator);
-    //     ul.append(foodItem);
-    // }
+    formElement.reset();
+    
 });
 
 toFoodLogButton.addEventListener('click', () => {
