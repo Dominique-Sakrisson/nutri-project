@@ -5,7 +5,7 @@ import { calculateTotalCalories, calculateTotalCarbs, calculateTotalFat, calcula
 import { instructions } from '../data.js';
 
 
-import { displayUserInfo } from '../food-select/renderfood.js';
+import { displayUserInfo } from '../food-select/food-utils.js';
 
 import { getDayStorage, getUserStorage, getWeekStorage, setUserStorage } from '../localStorage-utils.js';
 

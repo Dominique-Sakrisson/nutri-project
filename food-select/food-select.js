@@ -1,6 +1,6 @@
 import { getGlobalDataStorage, getUserStorage, setGlobalDataStorage, setUserStorage } from '../localStorage-utils.js';
-import { renderFood } from './renderfood.js';
-import { glutenFreeFoods, paleoFoods, vegetarianFoods, sortDiet } from './food-select-utils.js';
+import { renderFood } from './food-utils.js';
+import { glutenFreeFoods, paleoFoods, vegetarianFoods, sortDiet } from './filter-and-sort.js';
 import { instructions } from '../data.js';
 //reference our necessary data from local storage
 let foodData = getGlobalDataStorage();
