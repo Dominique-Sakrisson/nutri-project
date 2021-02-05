@@ -1,7 +1,7 @@
 @import url('https://css.gg/push-chevron-right-o.css');
 
 .food-image{
-    height: 3rem;
+    height: 5rem;
 }
 .food-facts{
     width: 100%;
@@ -12,6 +12,7 @@
 }
 .food-list-item{
     font-family: Roboto;
+    font-weight: 500;
     display: flex;
     margin: 8px;
     transition: 200ms ease-in-out;
@@ -24,7 +25,7 @@
 .food-div{
     width: 55%;
     overflow: scroll;
-    height: 500px;
+    height: 100vh;
 }
 .food-list{
     width: 92%;
@@ -60,9 +61,7 @@
     left: 10px;
     /* margin-left: auto; */
 }
-.form-div input:active {
-    /* left: 5px */
-}
+
 
 .arrow{
     margin-left: 10px;
@@ -81,7 +80,7 @@
 }
 
 .active {
-    left: 0;
+    left: 10px;
 }
 
 #sidebar .toggle-btn {
@@ -92,6 +91,7 @@
 
 .toggle-btn span {
     border: 2px solid green;
+    color: green;
     border-radius: 10px;
     display: block;
     margin-top: 4px;
@@ -106,4 +106,10 @@
 
 .food-form {
     text-align: center;
+    height: 450px;
+}
+.search {
+    background-color: rgba(255,255,255,0.6);
+    
+    /* opacity: .7; */
 }

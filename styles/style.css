@@ -226,3 +226,6 @@ input:focus{
     cursor: pointer;
   }
 
+  #to-food-log {
+      margin-top: 5px;
+  }
