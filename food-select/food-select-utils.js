@@ -20,3 +20,21 @@ export function sortDiet(diet){
         return 0;
     });
 }
+
+export function testUserDiet(userDiet){
+    let dietType = [];
+    if (userDiet === 'paleo') {
+        dietType = paleoFoods;
+        sortDiet(paleoFoods);
+    } else if (userDiet === 'vegetarian') {
+        dietType = vegetarianFoods;
+        sortDiet(vegetarianFoods);
+    } else if (userDiet === 'gluten-free') {
+        dietType = glutenFreeFoods;
+        sortDiet(glutenFreeFoods);
+    } else if (userDiet === 'no-diet') {
+        dietType = foodData;
+        sortDiet(foodData);
+    }
+    return dietType;
+}
