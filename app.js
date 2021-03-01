@@ -11,11 +11,9 @@ const modal = document.getElementById('myModal');
 // Get the <span> element that closes the modal
 const modalSpan = document.getElementsByClassName('close')[0];
 
-for (let item of instructions){
-    if (item.name === 'homePage'){
-        modalText.textContent = item.description;
-    }
-}
+const homePage = instructions.find(it => it.name === 'homePage');
+
+modalText.textContent = homePage.description;
 
 const form = document.querySelector('form');
 
@@ -36,9 +34,9 @@ form.addEventListener('submit', (e) => {
 
 // When the user clicks on the button, open the modal
 window.addEventListener('load', () => {
-    if (user){
-        return;
-    } else {modal.style.display = 'block';}
+    if (!user){
+        modal.style.display = 'block';
+    }
 });
 
 // When the user clicks on <span> (x), close the modal
@@ -48,7 +46,7 @@ modalSpan.addEventListener('click', () => {
 
 // When the user clicks anywhere outside of the modal, close it
 window.addEventListener('click', (e)=>{
-    if (e.target === modal){
+    if (e.target === modal) { // woah, very cool!
         modal.style.display = 'none';
     }
 });

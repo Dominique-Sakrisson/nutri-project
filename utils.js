@@ -6,44 +6,26 @@ export function findById(array, id){
     }
 }
 
-export function calculateTotalCalories(dayFoodData){
+// seems like these functions could be refactored into one function like so
+function calculateCalories(dayFoodData, type) {
     let totalCalories = 0;
     for (let item of dayFoodData) {
-        totalCalories += item.calories * item.quantity;
+        totalCalories += item[type] * item.quantity;
     }
     return totalCalories.toFixed(1);
 }
 
-export function calculateTotalFat(dayFoodData){
-    let totalFat = 0;
-    for (let item of dayFoodData) {
-        totalFat += item.fat * item.quantity;
-    }
-    return totalFat.toFixed(1);
-}
-
-export function calculateTotalCarbs(dayFoodData){
-    let totalCarbs = 0;
-    for (let item of dayFoodData) {
-        totalCarbs += item.carbs * item.quantity;
-    }
-    return totalCarbs.toFixed(1);
-}
-
-export function calculateTotalProtein(dayFoodData){
-    let totalProtein = 0;
-    for (let item of dayFoodData) {
-        totalProtein += item.protein * item.quantity;
-    }
-    return totalProtein.toFixed(1);
-}
+const calculateTotalCalories = (dayFoodData) => calculateCalories(dayFoodData, 'calories');
+const calculateTotalFat = (dayFoodData) => calculateCalories(dayFoodData, 'fat');
+const calculateTotalCarbs = (dayFoodData) => calculateCalories(dayFoodData, 'carbs');
+const calculateTotalProtein = (dayFoodData) => calculateCalories(dayFoodData, 'protein');
 
 export function calculateAllMacros(dayFoodData){
-    let dataToReturn = [];
-    dataToReturn.push(calculateTotalCalories(dayFoodData));
-    dataToReturn.push(calculateTotalCarbs(dayFoodData));
-    dataToReturn.push(calculateTotalFat(dayFoodData));
-    dataToReturn.push(calculateTotalProtein(dayFoodData));
-    
-    return dataToReturn;
+   
+    return [
+        calculateTotalCalories(dayFoodData), 
+        calculateTotalCarbs(dayFoodData), 
+        calculateTotalFat(dayFoodData), 
+        calculateTotalProtein(dayFoodData),
+    ];
 }

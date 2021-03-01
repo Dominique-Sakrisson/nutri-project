@@ -37,11 +37,10 @@ recallFoodList();
 
 const modalText = document.getElementById('modal-text');
 
-for (let item of instructions) {
-    if (item.name === 'foodPageMain') {
-        modalText.textContent = item.description;
-    }
-}
+const foodPageMain = instructions.find(it => it.name === 'foodPageMain');
+
+modalText.textContent = foodPageMain.description;
+
 
 let keyDownString = '';
 searchInput.addEventListener('keydown', (e) => {

@@ -59,4 +59,6 @@ export function displayUserInfo(user) {
     userDietChoice.textContent = `Diet Type: ${getUserDietChoice()}`;
     userStatsDiv.append(userName, userCalGoal, userActual, userDietChoice);
 }
+
+// seems like this should be imported elsewhere and used? I'd say t's an antipattern to call functions in global scope in a utils file like this
 displayUserInfo(userData);
