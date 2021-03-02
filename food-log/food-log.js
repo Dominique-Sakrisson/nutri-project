@@ -16,11 +16,11 @@ setDayStorage(userFoods);
 
 const modalText = document.getElementById('modal-text');
 
-for (let item of instructions) {
-    if (item.name === 'food-log') {
-        modalText.textContent = item.description;
-    }
-}
+// since you do this process on every page, it might make sense to abstract it out into a utility function
+const foodLog = instructions.find(it => it.name === 'food-log');
+
+modalText.textContent = foodLog.description;
+
 
 for (let food of userFoods) {
     const foodObject = findById(userFoods, food.id);
@@ -55,13 +55,11 @@ const modal = document.getElementById('myModal');
 const modalSpan = document.getElementsByClassName('close')[0];
 // When the user clicks on the button, open the modal
 window.addEventListener('load', () => {
-    if (userData.logVisited) {
-        return;
-    } else {
+    if (!userData.logVisited) {
         modal.style.display = 'block';
+        userData.logVisited = true;
+        setUserStorage(userData);
     }
-    userData.logVisited = true;
-    setUserStorage(userData);
 });
 
 // When the user clicks on <span> (x), close the modal
@@ -70,6 +68,7 @@ modalSpan.addEventListener('click', () => {
 });
 
 // When the user clicks anywhere outside of the modal, close it
+// seems like you use this code a few times thorough the app--could it be a function?
 window.addEventListener('click', (e)=>{
     if (e.target === modal){
         modal.style.display = 'none';

@@ -60,6 +60,7 @@ export function getWeekStorage() {
     const stringWeek = localStorage.getItem(WEEKUSERFOODS);
     let weekStorage = JSON.parse(stringWeek);
 
+    // seems like you do this process a lot in this file--might be worth refactoring this into a reusable function
     if (!stringWeek) {
         localStorage.setItem(WEEKUSERFOODS, '[]');
 

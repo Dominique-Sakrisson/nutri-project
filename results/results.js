@@ -17,11 +17,9 @@ const modalSpan = document.getElementsByClassName('close')[0];
 
 displayUserInfo(user);
 
-for (let item of instructions){
-    if (item.name === 'resultsPage'){
-        modalText.textContent = item.description;
-    }
-}
+const resultsPage = instructions.find(it => it.name === 'resultsPage');
+
+modalText.textContent = resultsPage.description;
 
 const weekArray = [];
 

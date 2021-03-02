@@ -91,6 +91,7 @@ export function renderTableRows(userFoodObject, foodObject){
     return tableRow;
 }
 
+// it doesn't feel like a utils file to me if there are DOM elements in global scope--though I do this sometimes, so it makes sense
 const tdTotalCals = document.createElement('td');
 const totalsRow = document.createElement('tr');
 const tdBlank1 = document.createElement('td');
